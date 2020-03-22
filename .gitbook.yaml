@@ -1,0 +1,9 @@
+root: ./web/
+
+structure:
+    readme: main.md  # This is the front page for the web
+    # It should not be the README.md in directory
+    summary: SUMMARY.md
+
+# redirects:
+    # help: ./support.md
