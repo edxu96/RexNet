@@ -1,5 +1,5 @@
 
-# RexNet: Mechanisms, Dynamics and Control of Stochastic Service Systems
+# RexNet: Next-Generation Market and Delivery Networks for Stochastic Service Systems
 
 ![](./images/1-1.png)
 

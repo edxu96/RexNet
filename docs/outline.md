@@ -13,7 +13,7 @@ _Discussion about general questions about ABM._
 	* there is no centralized coordinator, interaction between agents through the market
   * external factors affect agents
 
-### 4-1. Additive Model Structures
+### 4-1. Clients and Brokers
 
 - assumptions about ABM
   * agents interact with each other only through the market.
@@ -37,7 +37,13 @@ _Discussion about general questions about ABM._
 	* anticipated stochasticity
 	* arrival of new information: how the new info will affect realization and the market
 
-### 4-2. Mixed Consumption
+### 4-2. Three Kinds of Clients
+
+#### 4-2-1. Simulated Stochastic Uncontrollable Generations
+
+
+
+#### 4-2-2. Realization of Mixed Consumption when the Market is Lacking
 
 - reservation-realization and realization without the market
 	* decision making process
@@ -46,7 +52,7 @@ _Discussion about general questions about ABM._
   * typical life schedule, time and date
   * factors affecting the life schedule
 
-#### 4-2-1. Unaffected Realization
+##### Unaffected Realization
 
 - evolution without market
   * the effect of other factors is neutral
@@ -54,7 +60,14 @@ _Discussion about general questions about ABM._
   * Markov property
   * subjective probability
 
-#### 4-2-2. Dynamic Inconsistency, Sub-Game and Anticipation
+##### Simulated Realization
+
+
+### 4-3. Brokers and Three Kinds of Strategies
+
+#### 4-3-1. Mixed Consumption
+
+##### Dynamic Inconsistency, Sub-Game and Anticipation
 
 - reservation-realization
 	* the anticipation is becoming more clear with lead time shrinkingm, thus the deviation will become smaller
@@ -63,15 +76,15 @@ _Discussion about general questions about ABM._
 
 model the decision making process when the effect of reservation is taken into account as part of the probability.
 
-#### 4-2-3. Simulated Realization
 
-#### 4-2-4. Anticipated Transition Probability Matrix (ATPM)
 
-#### 4-2-5. Action Rules
+##### Anticipated Transition Probability Matrix (ATPM)
+
+##### Action Rules
 
 Event Routine 1
 
-#### 4-2-6. Parameters Describing the Population
+##### Parameters Describing the Population
 
 - population
   * elasticity, reaction to prices in the market
@@ -80,17 +93,10 @@ Event Routine 1
   * other characteristics are homogeneous
   * reactions to external factors are the same
 
-### 4-3. Simulated Stochastic Uncontrollable Realization
-
-- scenarios for realization and forecast
-	* discrete state
-	* capacity
-	* forecast correlations
-
-#### 4-3-1. Model-Free Scenario Generation
+#### 4-3-2. Uncontrollable Generation
 
 
-#### 4-3-2. Simulation of Forecast
+##### Simulation of Forecast
 
 continuous Markov chain with fixed number of states ?
 
@@ -100,14 +106,17 @@ continuous Markov chain with fixed number of states ?
 
 asymmetric because of capacity
 
-#### 4-3-3. Forecast Update and Trading
+##### Forecast Update and Trading
 
-Event Routine 2
+- scenarios for realization and forecast
+	* discrete state
+	* capacity
+	* forecast correlations
 
-#### 4-3-4. Spatial Representation and Correlation
+##### Spatial Representation and Correlation
 
 
-### 4-4. "P&O" Model for Controllable Generations
+### 4-3-3. "P&O" Model for Controllable Generations
 
 - assumptions
 	* no random factor in generation states
@@ -117,24 +126,24 @@ Event Routine 2
 - find the benefits from
 	* controllability: constraints on power adjustments
 
-#### 4-4-1. Standard Follower, Discrete Production
+##### Standard Follower, Discrete Production
 
 modeled and analyzed individually
 
-#### 4-4-2. Receding Horizon Decision Making
+##### Receding Horizon Decision Making
 
 - The start-up and shut-down costs are assumed to be zero.
 
-
-
-
-#### 4-4-3. Plan & Order
+##### Plan & Order
 
 - Event Routine 3
 
-### 4-5. Arbitraging Agents
+### 4-3-4. Arbitraging Agents
 
 Demand-Side Production Function
+
+
+
 
 ## 5. discrete event simulation and result
 
