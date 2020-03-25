@@ -17,12 +17,6 @@ two-sided market, limit order books, agent-based models, reservation-realization
 - To illustrate the market operations and explore the effect of external factors on the market performance, agent-based models are used to represent heterogeneous prosumers, and their interactions are demonstrated by discrete event simulations. The dynamics of the market is affected by the orders submitted by prosumers only, and the behaviors of prosumers are affected by their controllable, uncontrollable production and consumption.
 - The resilience of the market against sudden changes of external factors is explored. Also, parameters describing prosumers have an impact on market operations. From the simulation, we find that ...
 
-## Table of Contents
-
-- [Reservation Exchange: A Small-Scale Friendly Electricity Market](./files/Rex-200316.md)
-- [Short Version](./docs/short.md)
-- [Models](./src/README.md)
-
 ## Guidelines
 
 - To provide a way for relatively poor prosumers to lower their electricity consumption, and not to lower the living standard of normal people.
@@ -31,3 +25,7 @@ two-sided market, limit order books, agent-based models, reservation-realization
 - Not to prove the efficiency for now, but to demonstrate that the market allows direct participation.
 - To analysis from the perspective of the designer of the market. We are not the centralized market organizer, because there is no one.
 - Spatially lumped delivery networks for now.
+
+## Discussion
+
+3. [DES-MAS-CDA Simulation Platform for RexNet](./discussion/3.md)

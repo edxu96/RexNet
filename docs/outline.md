@@ -1,4 +1,50 @@
 
+## 4. discrete event simulation and result
+
+- basic settings
+	* next-event time-advance approach
+	* realization happens simutaneouly at fixed-interval time points
+	* discrete states
+
+- Simulation program
+	* system states: the market and the population
+	* simulation clock
+	* event list
+	* statistical counters
+
+### 4-1. Discrete Event Simulation of Multi-Agent Systems (DES-MAS)
+
+- system states in a distributed way
+	* the market state and states of brokers are of concern
+	* states are unknown to each other
+	* number of agents, types of agents and parameters of agents
+	* the market's transparency is set
+
+- market-mediated communication only
+- agents' identities are not revealed in the market pool
+
+- events are associated with agents or scheduled 
+
+- number of agents, types of agents and parameters of agents don't evolve for now
+
+- two types of events in the market
+	* order events
+	* realizations and opening auctions
+
+- Models are event routine
+	* uncontrollable generations: executions of limit orders
+	* controllable generaions: submissions of market orders
+	* mixed consumptions: submissions of market orders
+
+
+### 5-1. Correlation of Heterogeneous Factors
+
+- what is the simulation results
+	* how the matching is distributed
+	* the surden effect from external factors, the intermittency of renewable resources
+	* the impacts of different features of agents on the market and their profits from the market
+
+
 ## 4. ABM of Prosumers
 
 _Discussion about general questions about ABM._
@@ -145,33 +191,6 @@ Demand-Side Production Function
 
 
 
-## 5. discrete event simulation and result
-
-- basic settings
-	* next-event time-advance approach
-	* realization happens simutaneouly at fixed-interval time points
-	* discrete states
-
-- two types of event,
-	* order events
-	* realizations and opening auctions
-- Models are event routine
-	* uncontrollable generations: executions of limit orders
-	* controllable generaions: submissions of market orders
-	* mixed consumptions: submissions of market orders
-
-- Simulation program
-	* system states: the market and the population
-	* simulation clock
-	* event list
-	* statistical counters
-
-### 5-1. Correlation of Heterogeneous Factors
-
-- what is the simulation results
-	* how the matching is distributed
-	* the surden effect from external factors, the intermittency of renewable resources
-	* the impacts of different features of agents on the market and their profits from the market
 
 ## 6. Conclusion and Discussion
 
