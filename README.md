@@ -26,6 +26,6 @@ two-sided market, limit order books, agent-based models, reservation-realization
 - To analysis from the perspective of the designer of the market. We are not the centralized market organizer, because there is no one.
 - Spatially lumped delivery networks for now.
 
-## Discussion
+## [Discussion](./discussion) and [Outline](./docs/outline.md)
 
 3. [DES-MAS-CDA Simulation Platform for RexNet](./discussion/3.md)

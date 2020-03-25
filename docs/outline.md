@@ -1,5 +1,5 @@
 
-## 4. discrete event simulation and result
+## 4. Discrete Event Simulation of Multi-Agent Systems (DES-MAS)
 
 - basic settings
 	* next-event time-advance approach
@@ -12,7 +12,7 @@
 	* event list
 	* statistical counters
 
-### 4-1. Discrete Event Simulation of Multi-Agent Systems (DES-MAS)
+### 4-1. Introduction
 
 - system states in a distributed way
 	* the market state and states of brokers are of concern
@@ -23,12 +23,10 @@
 - market-mediated communication only
 - agents' identities are not revealed in the market pool
 
-- events are associated with agents or scheduled 
-
 - number of agents, types of agents and parameters of agents don't evolve for now
 
 - two types of events in the market
-	* order events
+	* order events associated with agents or scheduled 
 	* realizations and opening auctions
 
 - Models are event routine
@@ -37,15 +35,25 @@
 	* mixed consumptions: submissions of market orders
 
 
-### 5-1. Correlation of Heterogeneous Factors
+### 4-2. Correlation of Heterogeneous Factors
 
 - what is the simulation results
 	* how the matching is distributed
 	* the surden effect from external factors, the intermittency of renewable resources
 	* the impacts of different features of agents on the market and their profits from the market
 
+### 4-3. System Evolution without Market
 
-## 4. ABM of Prosumers
+- passive load to be satisfied
+- cost distributed accoding to quantity
+- automatic generation control
+- benchmark
+
+### 4-4. System Evolution with Market
+
+
+
+## 5. ABM of Prosumers
 
 _Discussion about general questions about ABM._
 

@@ -1,24 +1,37 @@
 module Order
 
+#### Market Orders ####
+
+function init_oms()
+  return DataFrame(
+    time = real[],
+    client = Int64[],
+    size = Int64[],
+    if_ask = boolen[],
+    )
+end
+
+#### Limit Orders ####
 
 ```
-    LimitOrderSet(time::real, client::Int64)
+  OrderLimitSet(time::real, client::Int64)
+
+Onced defined, time, client and seats are immutable.
 ```
-struct LimitOrderSet
-  ## Onced defined, following three variables are immutable.
+struct OrderLimitSet
   time::real
   client::Int64
   seats::DataFrame
 
-  function LimitOrderSet(time::real, client::Int64)
-    ## Initialize the data frame for seats
-    seats = DataFrame(target = Int64[], price = Int64[],
-      sizes = MutableLinkedList{Int64}[])
-
+  function OrderLimitSet(time::real, client::Int64)
+    seats = DataFrame(
+      target = Int64[],
+      price = Int64[],
+      sizes = MutableLinkedList{Int64}[]
+      )
     new(time, client, seats)
   end
 end
-
 
 ```
     quote_size(seats::DataFrame, target::Int64, price::Int64)
