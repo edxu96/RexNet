@@ -1,6 +1,5 @@
 module Order
-
-#### Market Orders ####
+export OrderLimitSet
 
 function init_oms()
   return DataFrame(
@@ -11,7 +10,6 @@ function init_oms()
     )
 end
 
-#### Limit Orders ####
 
 ```
   OrderLimitSet(time::real, client::Int64)
@@ -27,7 +25,7 @@ struct OrderLimitSet
     seats = DataFrame(
       target = Int64[],
       price = Int64[],
-      sizes = MutableLinkedList{Int64}[]
+      sizes = MutableLinkedList{Int64}[]  # history of size changes
       )
     new(time, client, seats)
   end
