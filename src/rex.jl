@@ -3,7 +3,7 @@ export Rex, match_oms!, push_ols!
 
 
 ```
-    Rex(lot_size, tick_size, num_forward)
+  Rex(lot_size, tick_size, num_forward)
 
 Reservation Exchange.
 
@@ -20,16 +20,16 @@ struct Rex
   lot_size::Float64
   tick_size::Float64
   num_forward::Int64
-  lob3d::MutableLinkedList{LimitOrderBook}
+  lob3::MutableLinkedList{LimitOrderBook}
 
   function Rex(lot_size::Float64, tick_size::Float64, num_forward::Int64)
-    ## Initialize the set of LOB3D with dummy target nodes.
-    lob3d = MutableLinkedList{LimitOrderBook}()
+    ## Initialize the set of lob3 with dummy target nodes.
+    lob3 = MutableLinkedList{LimitOrderBook}()
     for i = 1: num_forward
-      push!(lob3d, LimitOrderBook(target))
+      push!(lob3, LimitOrderBook(target))
     end
 
-    new(lot_size, tick_size, num_forward, lob3d)
+    new(lot_size, tick_size, num_forward, lob3)
   end
 end
 
@@ -45,7 +45,7 @@ mutable struct LimitOrderBook
   end
 end
 
-`Initiate a dataframe for bid/ask-side depth profile (pd)`
+`Initiate a dataframe for bid/ask-side depth profile (`pd`). `
 function init_pd()
   return DataFrame(
     price = Int64[],
@@ -54,28 +54,44 @@ function init_pd()
     )
 end
 
+`Push a new seat queue to the bid/ask-side depth profile (`pd`). `
+function push_pd!(pd::DataFrame, price::Int64, ols::LimitOrderSet)
+  push!(pd, DataFrame(price = [price], depth = [0],
+    sq = MutableLinkedList{OrderLimitSet}(ols)))
+end
+
 
 ```
-  push_ols!(lob3d::MutableLinkedList{LimitOrderBook}, ols::OrderLimitSet)
+  push_ol!(lob3::MutableLinkedList{LimitOrderBook}, row::DataFrame,
+    ols::OrderLimitSet)
 
 For some seat in some set of limit orders, find the corresponding seat queue
 in Rex and push the order into the queue. Taht is, the reference of the order
 is add at the end of the seat queue.
 ```
-function push_ols!(lob3d::MutableLinkedList{LimitOrderBook}, ols::OrderLimitSet)
-  map(row -> push_ol!(lob3d, row, ols), ols.seats)
+function push_ols!(lob3::MutableLinkedList{LimitOrderBook}, ols::OrderLimitSet)
+  map(row -> push_ol!(lob3, row, ols), ols.seats)
 end
 
 `To push a seat for a limit order. Used in `push_ols!`. `
-function push_ol!(lob3d::MutableLinkedList{LimitOrderBook}, row::DataFrame,
+function push_ol!(lob3::MutableLinkedList{LimitOrderBook}, row::DataFrame,
     ols::OrderLimitSet)
-  qs = locate_qs(lob3d, row.target[1], row.price[1])
-  push!(qs, ols)
+  qs = locate_qs(lob3, row.target[1], row.price[1])
+  if qs = NaN
+    lob = locate_lob(lob3, target)
+    push_pd!(lob.pd, row.price[1], ols)
+    whe_new_price = true
+  else
+    push!(qs, ols)
+    whe_new_price = false
+  end
+
+  return whe_new_price
 end
 
 
 ```
-  match_oms!(lob3d::MutableLinkedList{LimitOrderBook}, oms::DataFrame)
+  match_oms!(lob3::MutableLinkedList{LimitOrderBook}, oms::DataFrame)
 
 Match the submitted market order set.
 
@@ -96,12 +112,12 @@ based on the new `NodePrice`.
 > no incentive for traders to show their hand by submitting limit orders
 > earlier than is absolutely necessary. [_gould2013limit_]
 ```
-function match_om!(lob3d::MutableLinkedList{LimitOrderBook}, om::DataFrame)
+function match_om!(lob3::MutableLinkedList{LimitOrderBook}, om::DataFrame)
   target = om.target[1]
   price = om.price[1]
   size_om = om.size[1]
 
-  qs = locate_qs(lob3d, target, - price)
+  qs = locate_qs(lob3, target, - price)
 
   lo_first = first(qs)  # first limit order in the queue
   size_lo_first = quote_size(lo_first.seats, target, price)
@@ -117,56 +133,57 @@ function match_om!(lob3d::MutableLinkedList{LimitOrderBook}, om::DataFrame)
     if ~whe_continue
       break
     end
-    
+
     global lo_first = first(qs)
     global size_lo_first = quote_size(lo_first.seats, target, price)
   end
 
 
-
 end
 
-function match_oms!(lob3d::MutableLinkedList{LimitOrderBook}, oms::DataFrame)
-  map(row -> match_om!(lob3d, row), oms)
+function match_oms!(lob3::MutableLinkedList{LimitOrderBook}, oms::DataFrame)
+  map(row -> match_om!(lob3, row), oms)
 end
 
 
 ```
-  qs = locate_qs(lob3d::MutableLinkedList{LimitOrderBook}, target::Int64,
-    price::Int64)
+  qs = locate_qs(lob3::MutableLinkedList{LimitOrderBook}, target::Int64)
 
-Locate the seat queue according to `target` and `price`.
-- `nt`: target node
+Locate the seat queue according to `target`.
+- `lob`: a set of limit order book
 - `qs`: seat queue
 ```
-function locate_qs(lob3d::MutableLinkedList{LimitOrderBook},
-    target::Int64, price::Int64)
-
-  ## Locate the target node according to `target`
-  nts = filter(x -> x.target = target, lob3d)
-  if length(nts) == 0
-    error("There is no such `LimitOrderBook` with target $(target).")
-  elseif length(nts) > 1
-    error("There are duplicated `LimitOrderBook` with target $(target).")
+function locate_lob(lob3::MutableLinkedList{LimitOrderBook},
+    target::Int64)
+  lobs = filter(x -> x.target = target, lob3)
+  if length(lobs) == 0
+    @warn "There is no such `LimitOrderBook` with target $(target)."
+    lob = NaN
+  elseif length(lobs) > 1
+    @error "There are duplicated `LimitOrderBook` with target $(target)."
   else
-    nt = nts[1]
+    lob = lobs[1]
   end
 
-  ## Locate the seat queue according to `price`
-  qs_raw = filter(x -> x.price = price, nt)
+  return lob
+end
+
+function locate_qs(lob3::MutableLinkedList{LimitOrderBook},
+    target::Int64, price::Int64)
+  lob = locate_lob(lob3, target)
+
+  qs_raw = filter(x -> x.price = price, lob)
   if nrow(qs_raw) == 0
-    error("There is no such seat queue with target $(target)
-      and price $(price).")
+    qs = NaN
   elseif nrow(qs_raw) > 1
-    error("There are duplicated `LimitOrderBook` with target $(target)
-      and price $(price).")
+    @error "There are duplicated `LimitOrderBook` with target $(target)
+      and price $(price)."
   else
     qs = qs_raw[1]
   end
 
   return qs
 end
-
 
 
 function cancel_seat!(l3::L3, odr_cancel::,)
