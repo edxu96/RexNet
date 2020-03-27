@@ -119,9 +119,9 @@ function match_om!(lob3::MutableLinkedList{LimitOrderBook}, om::DataFrame)
 
   qs = locate_qs(lob3, target, - price)
 
-  lo_first = first(qs)  # first limit order in the queue
-  size_lo_first = quote_size(lo_first.seats, target, price)
-  # if the market order cannot be matched by this limit order
+  size_ol_first = quote_size(first(qs))
+  # size of first limit order in the queue
+  ## if the market order cannot be matched by this limit order
   while size_om > size_lo_first
     ## The limit order is offset.
     size_om -= size_lo_first
@@ -134,8 +134,7 @@ function match_om!(lob3::MutableLinkedList{LimitOrderBook}, om::DataFrame)
       break
     end
 
-    global lo_first = first(qs)
-    global size_lo_first = quote_size(lo_first.seats, target, price)
+    global size_ol_first = quote_size(first(qs))
   end
 
 
