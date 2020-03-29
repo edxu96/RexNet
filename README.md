@@ -28,4 +28,9 @@ two-sided market, limit order books, agent-based models, reservation-realization
 
 ## [Discussion](./discussion) and [Outline](./docs/outline.md)
 
+2. [Self anticipation and manipulation of future state](./discussion/2.md)
 3. [DES-MAS-CDA Simulation Platform for RexNet](./discussion/3.md)
+5. [Why ABM and DES?](./discussion/5.md)
+7. [Difference compared to ordinary limit order markets](./discussion/7.md)
+9. [Why Prosumers Trade?](./discussion/9.md)
+10. [New structure for energy systems](./discussion/10.md)
