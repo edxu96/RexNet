@@ -1,10 +1,12 @@
 
 # Simulated Realization and Forecast
 
+1. Analysis of Error Sequences
+2. Martingale Model of Forecast Evolution (MMFE)
+3. Continuous-Time Fixed-Volume MMFE
+4. Resampling of Non-Stationary Dependent Time Series
 
-## Analysis of Error sequences
-
-
+## 1. Analysis of Error Sequences
 
 time-dependent continuous-time Markov
 
@@ -30,7 +32,7 @@ multiple realization of a stochastic process with fixed length
 
 ### Performance in Different Horizons
 
-![](./1.png)
+![](../images/SRF-1.png)
 
 _Figure 1. Performance in terms of normalized mean absolute error (NMAE) of two prediction models (persistence and a state-of-art artificial-intelligence based prediction method) for short-term wind power in four different sites._
 
@@ -38,10 +40,6 @@ _Figure 1. Performance in terms of normalized mean absolute error (NMAE) of two 
 - __kariniotakis2004what__ What performance can be expected by short-term wind power prediction models depending on site characteristics?
 
 reproduce the result using realized error sequence
-
-
-
-
 
 ### Autocorrelation of Error Sequences
 
@@ -55,8 +53,35 @@ there is no correlation in the error
 
 the aggregated estimation will be lowered.
 
-## Fixed-Volume Adjustments
 
+
+## 2. Martingale Model of Forecast Evolution (MMFE)
+
+- __wang2012multiordering__ a multiordering newsvendor model with dynamic forecast evolution
+
+> The newsvendor can spread her orders over the planning horizon to take advantage of lower ordering costs with early orders and more accurate demand forecasts with late orders. [_wang2012multiordering_]
+
+When horizons of forecasts are fixed, like those in electricity market families, there is no need for MMFE, because there is no evolution. Instead, empirical findings regarding relationships of two forecasts are essential.
+
+### 2-1. Martingale Model of Asymmetric Forecast Evolutions (MMAFE)
+
+> Both MMFE and CTMMFE are not forecasting techniques; they simply provide a framework to represent the evolution of forecasts over time. The actual forecasts could be made using any forecasting technique such as time-series methods or a combination of human judgement and statistical techniques. The MMFE and CTMMFE models treat the forecasts over time as realizations of a stochastic process, namely, a martingale process; that is, the forecasts are the conditional expectation of the future demand, given all the available information. [_sapra2013equilibrium_]
+
+### 2-2. Forecast Cooperation
+
+> The supplier, however, does not know the manufacturer’s private forecast information. To facilitate information sharing, the manufacturer can report her forecast prior to the capacity decision. However, the manufacturer’s forecast report is non-binding (it is not a firm order and can be canceled or revised), non-verifiable (after demand is realized, a third party cannot verify that the manufacturer disclosed her actual forecast), and costless (the manufacturer does not incur any cost when sharing her forecast). This kind of forecast reporting strategy leads to what is known as “cheap talk” communication. [_oh2013mechanism_]
+
+Auctioneers collect everyone's forecast and willings to clear the markets once in a while.
+
+### 2-3. Evolution of Forward Prices
+
+When future forward prices are unknown, their realization should be simulated as well. Most of the time, the realization can be correlated to that of quantites.
+
+- __hair2014energy__ energy procurement strategies in the presence of intermittent sources
+
+> In general, conventional energy tends to be more expensive in markets closer to real time. The reason for this is that the marginal costs of production tend to be higher in spot markets than in forward or long term markets because any conventional energy that is demanded closer to real time is provided by generators that have low start up time and these generators typically are more expensive than generators that require several hours to start up. [_hair2014energy_]
+
+## 3. Continuous-Time Fixed-Volume MMFE
 
 it usually turns out to be one-way adjustment
 
@@ -68,18 +93,7 @@ it usually turns out to be one-way adjustment
 ### Horizon Distribution of Adjustments
 
 
-
-## Simulation of Error sequences
-
-
-
----
-
-## 1, Introduction
-
-> In the day-ahead market, the wind forecast is simulated based on the realization of WG and the simulation of wind forecast error. The realization of WG is assumed to be the same as historical data. Wind forecast error is simulated based on a probability distribution considering the associated temporal correlation. Demand forecast is also simulated using this approach. [4]
-
-## 2, Resampling of Non-Stationary Dependent Time Series
+## 4. Resampling of Non-Stationary Dependent Time Series
 
 ### Model-Based Resampling
 
@@ -112,6 +126,14 @@ Assume that sub-processes are iid.
 > It is thus required to develop procedures to reduce the number of scenarios initially generated. These procedures should retain most of the relevant information on the stochastic process contained in the original scenario set while reducing significantly its cardinality. [2]
 
 
+---
+
+## 1, Introduction
+
+> In the day-ahead market, the wind forecast is simulated based on the realization of WG and the simulation of wind forecast error. The realization of WG is assumed to be the same as historical data. Wind forecast error is simulated based on a probability distribution considering the associated temporal correlation. Demand forecast is also simulated using this approach. [4]
+
+
+
 ## 3, References
 
 1. Kirschen, D.S. and Strbac, G., 2018. Fundamentals of power system economics. John Wiley & Sons.
@@ -119,3 +141,9 @@ Assume that sub-processes are iid.
 under uncertainty in electricity markets (Vol. 1). New York: Springer.
 3. Madsen, H., 2007. Time series analysis. Chapman and Hall/CRC.
 4. Ma, J., Silva, V., Belhomme, R., Kirschen, D.S. and Ochoa, L.F., 2013, July. Evaluating and planning flexibility in sustainable power systems. In 2013 IEEE power & energy society general meeting (pp. 1-11). IEEE.
+
+[_wang2012multiordering_]: https://github.com/edxu96/symposium/tree/master/src/MMFE
+[_sapra2013equilibrium_]: https://github.com/edxu96/symposium/tree/master/src/MMFE
+[_oh2013mechanism_]: https://github.com/edxu96/symposium/tree/master/src/MMFE
+[_hair2014energy_]: https://github.com/edxu96/symposium/tree/master/src/MMFE
+[_madsen2005standardizing_]: https://github.com/edxu96/symposium/tree/master/src/SimRealFore
