@@ -34,3 +34,14 @@ two-sided market, limit order books, agent-based models, reservation-realization
 7. [Difference compared to ordinary limit order markets](./discussion/7.md)
 9. [Why Prosumers Trade?](./discussion/9.md)
 10. [New structure for energy systems](./discussion/10.md)
+11. [Why does it not exist before?](./discussion/11.md)
+
+Three most important programs / policies
+  - CTBA-MMFE
+  - Make-Take Management (MTM)
+  - Anticipated Forecast and Realization
+
+Three easier ones:
+  - Model-Free Uncontrollable Realization (MFUR)
+  - Simulated Action Space
+  - Unaffected State Realization

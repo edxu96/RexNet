@@ -53,9 +53,14 @@ there is no correlation in the error
 
 the aggregated estimation will be lowered.
 
+### 1-4. Information
 
+Information may have similar influence on forecasts for different time units.
 
 ## 2. Martingale Model of Forecast Evolution (MMFE)
+
+> Although it might seem desirable to develop a stochastic model for these quantities based on the particular statistical method which is used to produce the forecasts, this turns out (in many cases) to be unnecessary. It is indeed fortunate that this is so. for many forecasting techniques are based on more data than past demands. For example, prices of competing goods, and marketing, advertising, and other promotional plans, and sometimes even expert judgement are used to produce the forecasts on which decisions are based. For many reasons (lack of data, the difficulty of modeling competitors' price changes, and the obvious problem of modeling expert judgement) it would be very difficult to produce and fit a model in this way, and to have confidence in the resulting model. [_heath1994modeling_]
+
 
 When horizons of forecasts are fixed, like those in electricity market families, there is no need for MMFE, because there is no evolution. Instead, empirical findings regarding relationships of two forecasts are essential.
 
@@ -65,13 +70,20 @@ When horizons of forecasts are fixed, like those in electricity market families,
 
 > Note that this assumption does not mean that the elements of $\varepsilon_{s}$ are uncorrelated. On the contrary, they are likely to be correlated since they are equal to forecast updates for future periods given the same new information in period $s$. [_sapra2012continuous_]
 
-### 2-1. Dynamic Procurement
+### 2-1. Dynamic Procurement and Cancellation
 
 __wang2012multiordering__ A multiordering newsvendor model with dynamic forecast evolution.
   - Eq. 9 uses deterministic future ordering costs
 
 > The newsvendor can spread her orders over the planning horizon to take advantage of lower ordering costs with early orders and more accurate demand forecasts with late orders. [_wang2012multiordering_]
 
+### 2-1. Optimal Stopping and Procurement Quantity
+
+For procurements of goods, companies may not have the ability to make decisions regard target units only, and the demand in target units may be uncertain. The delivery of goods procured takes time, and it may be uncertain. That is, the lead time of procurements may be uncertain. For goods instead of services, they are storable. So it's better for companies to receive the goods early when the lead time varies.
+
+> Moreover, the procurement lead times are often uncertain. Delays can occur for many reasons, including transportation-infrastructure issues in rapidly-developing economies, congestion in foreign and domestic ports, customs inspections, and logistical issues involving export quotas. [_wang2009wait_]
+
+> Ordering earlier reduces the “lateness” risk associated with uncertain lead times but it also increases the firms’ demand risk, i.e., the potential mismatch between the quantity procured and the realized demand. [_wang2009wait_]
 
 ### 2-2. Martingale Model of Asymmetric Forecast Evolutions (MMAFE)
 
@@ -90,18 +102,6 @@ When future forward prices are unknown, their realization should be simulated as
 - __hair2014energy__ energy procurement strategies in the presence of intermittent sources
 
 > In general, conventional energy tends to be more expensive in markets closer to real time. The reason for this is that the marginal costs of production tend to be higher in spot markets than in forward or long term markets because any conventional energy that is demanded closer to real time is provided by generators that have low start up time and these generators typically are more expensive than generators that require several hours to start up. [_hair2014energy_]
-
-## 3. Continuous-Time Fixed-Volume MMFE
-
-it usually turns out to be one-way adjustment
-
-
-- one-way adjustment
-- early adjustment
-- infrequent adjustment
-
-### Horizon Distribution of Adjustments
-
 
 ## 4. Resampling of Non-Stationary Dependent Time Series
 
@@ -158,3 +158,5 @@ under uncertainty in electricity markets (Vol. 1). New York: Springer.
 [_hair2014energy_]: https://github.com/edxu96/symposium/tree/master/src/SRF
 [_madsen2005standardizing_]: https://github.com/edxu96/symposium/tree/master/src/SRF
 [_sapra2012continuous_]: https://github.com/edxu96/symposium/tree/master/src/SRF
+[_heath1994modeling_]: https://github.com/edxu96/symposium/tree/master/src/SRF
+[_wang2009wait_]: https://github.com/edxu96/symposium/tree/master/src/SRF
