@@ -69,21 +69,6 @@ When horizons of forecasts are fixed, like those in electricity market families,
 
 > Note that this assumption does not mean that the elements of <img src="/SimRealFore/tex/8da637c817923dad700f6c2d36783d16.svg?invert_in_darkmode&sanitize=true" align=middle width=13.869873599999991pt height=14.15524440000002pt/> are uncorrelated. On the contrary, they are likely to be correlated since they are equal to forecast updates for future periods given the same new information in period <img src="/SimRealFore/tex/6f9bad7347b91ceebebd3ad7e6f6f2d1.svg?invert_in_darkmode&sanitize=true" align=middle width=7.7054801999999905pt height=14.15524440000002pt/>. [_sapra2012continuous_]
 
-### 2-1. Dynamic Procurement and Cancellation
-
-__wang2012multiordering__ A multiordering newsvendor model with dynamic forecast evolution.
-  - Eq. 9 uses deterministic future ordering costs
-
-> The newsvendor can spread her orders over the planning horizon to take advantage of lower ordering costs with early orders and more accurate demand forecasts with late orders. [_wang2012multiordering_]
-
-### 2-1. Optimal Stopping and Procurement Quantity
-
-For procurements of goods, companies may not have the ability to make decisions regard target units only, and the demand in target units may be uncertain. The delivery of goods procured takes time, and it may be uncertain. That is, the lead time of procurements may be uncertain. For goods instead of services, they are storable. So it's better for companies to receive the goods early when the lead time varies.
-
-> Moreover, the procurement lead times are often uncertain. Delays can occur for many reasons, including transportation-infrastructure issues in rapidly-developing economies, congestion in foreign and domestic ports, customs inspections, and logistical issues involving export quotas. [_wang2009wait_]
-
-> Ordering earlier reduces the “lateness” risk associated with uncertain lead times but it also increases the firms’ demand risk, i.e., the potential mismatch between the quantity procured and the realized demand. [_wang2009wait_]
-
 ### 2-2. Martingale Model of Asymmetric Forecast Evolutions (MMAFE)
 
 > Both MMFE and CTMMFE are not forecasting techniques; they simply provide a framework to represent the evolution of forecasts over time. The actual forecasts could be made using any forecasting technique such as time-series methods or a combination of human judgement and statistical techniques. The MMFE and CTMMFE models treat the forecasts over time as realizations of a stochastic process, namely, a martingale process; that is, the forecasts are the conditional expectation of the future demand, given all the available information. [_sapra2013equilibrium_]
@@ -151,11 +136,10 @@ under uncertainty in electricity markets (Vol. 1). New York: Springer.
 3. Madsen, H., 2007. Time series analysis. Chapman and Hall/CRC.
 4. Ma, J., Silva, V., Belhomme, R., Kirschen, D.S. and Ochoa, L.F., 2013, July. Evaluating and planning flexibility in sustainable power systems. In 2013 IEEE power & energy society general meeting (pp. 1-11). IEEE.
 
-[_wang2012multiordering_]: https://github.com/edxu96/symposium/tree/master/src/SRF
+
 [_sapra2013equilibrium_]: https://github.com/edxu96/symposium/tree/master/src/SRF
 [_oh2013mechanism_]: https://github.com/edxu96/symposium/tree/master/src/SRF
 [_hair2014energy_]: https://github.com/edxu96/symposium/tree/master/src/SRF
 [_madsen2005standardizing_]: https://github.com/edxu96/symposium/tree/master/src/SRF
 [_sapra2012continuous_]: https://github.com/edxu96/symposium/tree/master/src/SRF
 [_heath1994modeling_]: https://github.com/edxu96/symposium/tree/master/src/SRF
-[_wang2009wait_]: https://github.com/edxu96/symposium/tree/master/src/SRF
