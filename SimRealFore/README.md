@@ -3,8 +3,7 @@
 
 1. Analysis of Error Sequences
 2. Martingale Model of Forecast Evolution (MMFE)
-3. Continuous-Time Fixed-Volume MMFE
-4. Resampling of Non-Stationary Dependent Time Series
+3. Resampling of Non-Stationary Dependent Time Series
 
 ## 1. Analysis of Error Sequences
 
@@ -103,7 +102,7 @@ When future forward prices are unknown, their realization should be simulated as
 
 > In general, conventional energy tends to be more expensive in markets closer to real time. The reason for this is that the marginal costs of production tend to be higher in spot markets than in forward or long term markets because any conventional energy that is demanded closer to real time is provided by generators that have low start up time and these generators typically are more expensive than generators that require several hours to start up. [_hair2014energy_]
 
-## 4. Resampling of Non-Stationary Dependent Time Series
+## 3. Resampling of Non-Stationary Dependent Time Series
 
 ### Model-Based Resampling
 
