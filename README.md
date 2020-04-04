@@ -38,6 +38,7 @@ two-sided market, limit order books, agent-based models, reservation-realization
 
 Three most important programs / policies
   - Program: CTBA-MMFE
+  - Program: CTBA-MMFE for populations
   - Policy: Make-Take Management (MTM), Request Queue Management
   - Policy: Anticipated Forecast and Realization
 
@@ -48,3 +49,5 @@ Four easier ones:
   - Program: Unaffected Realization of Responsive Consumption
   - Policy: State-Dependent Base-Stock
   - Policy: Instant Decision (ID)
+
+The main contribution is the simulation framework: DES-MAS-CDA. There are not too many variations of clients, but there are many policies for brokers to choose.

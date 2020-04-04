@@ -14,7 +14,7 @@ simulation program structure
 - agent
 - broker and client
 
-![](../../images/idea-2.png)
+![](../../images/5-3.png)
 
 System states compose states of all agents.
 
