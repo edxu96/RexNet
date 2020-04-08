@@ -11,7 +11,7 @@ $$
 x^u_i(t) = x^u_i (\kappa \epsilon) + z^u_i(t)
 $$
 
-$z^u_i(t)$ is a counting process, summarizing all adjustments during interval $(c_i - \kappa \epsilon, c_i - t]$.
+$z^u_i(t)$ is a counting process, summarizing all adjustments during interval $(c_i - \kappa \epsilon, t]$ with $t < c_i $.
 
 sojourn times $S_{n} = W_{n+1} - W_{n}$ are independent.
 
@@ -32,5 +32,3 @@ P_{\Delta x} (t) = \frac{(\kappa \epsilon - t)^2 + (\Delta x)^2}{\kappa^2 \epsil
 $$
 
 $\Delta x = \min\{x - x_{\mathrm{min}}, x_{\mathrm{max}} - x \} $
-
-### Birth and Death Processes
