@@ -35,20 +35,16 @@ two-sided market, limit order books, agent-based models, reservation-realization
 9. [Quantity Discovery and Formation](./discussion/9.md)
 10. [New structure for energy systems](./discussion/10.md)
 11. [Why does it not exist before?](./discussion/11.md)
-13. [why limit orders?](./discussion/13.md)
+13. [stochastic continuous provision](./discussion/13.md)
 
-Three most important programs / policies
-  - Program: CTBA-MMFE
-  - Program: CTBA-MMFE for populations
-  - Policy: Make-Take Management (MTM), Request Queue Management
-  - Policy: Anticipated Forecast and Realization
+## To-Do
 
-Four easier ones:
-  - Framework: DES-MAS-CDA
-  - Program: Model-Free Uncontrollable Realization (MFUR)
-  - Program: Simulated Action Space
-  - Program: Unaffected Realization of Responsive Consumption
-  - Policy: State-Dependent Base-Stock
-  - Policy: Instant Decision (ID)
+1. MMFE (UC)
+2. DES-MAS-CDA
+3. building dynamics (UC)
+4. simulation
+5. continuous provision, discrete time state space control system
+6. responsive
+7. Multi-State CTBA-MMFE
 
-The main contribution is the simulation framework: DES-MAS-CDA. There are not too many variations of clients, but there are many policies for brokers to choose.
+The main contribution is the simulation framework. There are not too many variations of clients, but there are many policies for brokers to choose.
