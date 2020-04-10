@@ -7,11 +7,7 @@
 
 ## Continuous-Time Binary-Adjustment Martingale Model of Forecast Evolution (CTBA-MMFE)
 
-$$
-x^u_i(t) = x^u_i (\kappa \epsilon) + z^u_i(t)
-$$
 
-$z^u_i(t)$ is a counting process, summarizing all adjustments during interval $(c_i - \kappa \epsilon, t]$ with $t < c_i $.
 
 sojourn times $S_{n} = W_{n+1} - W_{n}$ are independent.
 
