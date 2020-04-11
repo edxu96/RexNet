@@ -19,7 +19,6 @@
 	* number of agents, types of agents and parameters of agents
 	* the market's transparency is set
 
-
 - agents' identities are not revealed in the market pool
 
 - number of agents, types of agents and parameters of agents don't evolve for now
@@ -35,40 +34,40 @@
 	* the surdden effect from external factors, the intermittency of renewable resources
 	* the impacts of different features of agents on the market and their profits from the market
 
-	- what is ABM
+- what is ABM
 
-	- why ABM
-		* it is hard by analytical methods
-		* how the initially mismatched supply and demand are balanced through the market, unaffected consumption and uncontrollable generation
-		* no need to replicate empirical findings like market micro-structure literature
-		* decision making frameworks
-		* there is no centralized coordinator, interaction between agents through the market
-	  * external factors affect agents
-	- two kinds of agent-based models
-		* brokers
-		* clients
+- why ABM
+	* it is hard by analytical methods
+	* how the initially mismatched supply and demand are balanced through the market, unaffected consumption and uncontrollable generation
+	* no need to replicate empirical findings like market micro-structure literature
+	* decision making frameworks
+	* there is no centralized coordinator, interaction between agents through the market
+  * external factors affect agents
+- two kinds of agent-based models
+	* brokers
+	* clients
 
-	- assumptions about ABM
-	  * agents interact with each other only through the market.
-	  * hypothesis of independence
-		* no learning ability
-		* components
-	  * two major sources of external factors: intermittency of renewable sources and daily activity cycles
+- assumptions about ABM
+  * agents interact with each other only through the market.
+  * hypothesis of independence
+	* no learning ability
+	* components
+  * two major sources of external factors: intermittency of renewable sources and daily activity cycles
 
-	- any prosumer can be represented by a set of agent models
-		* have no effect on each other
-		* summation
+- any prosumer can be represented by a set of agent models
+	* have no effect on each other
+	* summation
 
-	- agents
-		* homogeneous structure
-		* external inputs
-		* non-homogeneous parameters and functions
+- agents
+	* homogeneous structure
+	* external inputs
+	* non-homogeneous parameters and functions
 
-	- correlation in the population
+- correlation in the population
 
-	- stochasticity
-		* anticipated stochasticity
-		* arrival of new information: how the new info will affect realization and the market
+- stochasticity
+	* anticipated stochasticity
+	* arrival of new information: how the new info will affect realization and the market
 
 
 ## 4-2. System Evolution without Market
@@ -99,6 +98,11 @@
 
 ### 2. Continuous Provision Plant
 
+- assumptions
+	* linear
+	* no stochasticity
+	* time-invariant
+
 - __ABM__ CPP
 	* DT-LTI-SS
 	* SISO
@@ -121,4 +125,43 @@
 	* responsible for multiple clients
 	* states
 
-$\lambda_{k}(t) = \frac{\partial \mathcal{M}_t \left[\mathbf{Y}(t), \mathbf{B}^{\mathrm{p}}(t), \mathbf{A}^{\mathrm{p}}(t) \right]}{\partial e_k(t)}$
+## 4-4. Receding Horizon Plan & Order Management
+
+- model predictive control
+	* what
+	* why
+	* difference
+
+- participate in the market
+	* why market orders
+	* dynamic procurement
+	* final value of the assets
+
+- Event: Receding Horizon Plan & Order
+	* what coordinators do when they arrive
+	* optimize the problem based on newly executed limit orders and the request queue
+	* leave part of the request queue and the reservation mismatches unattended
+	* update limit orders
+	* submit market orders
+
+- settings similar to MPC
+	* controller sample time
+	* range of prediction
+	* range of control
+	* quadratic or linear
+	* no move suppression, because it's already considered
+
+- uncontrollable time-dependent inputs and parameters
+
+- linear damping weight matrix
+
+- formulation of the programming problem
+	* decision variables: inputs, market orders, responsiveness, request queue, order mismatches
+	* the cost function five parts for corresponding variables
+	* constraints for inputs, outputs and input increment
+
+- MPC-CC
+
+- MPC-UC
+
+- Make-Take Management for Controllable Clients (MTM-CC)
