@@ -89,6 +89,9 @@ When future forward prices are unknown, their realization should be simulated as
 
 ## 3. Resampling of Non-Stationary Dependent Time Series
 
+- [How do you do bootstrapping with time series data?](https://stats.stackexchange.com/questions/25706/how-do-you-do-bootstrapping-with-time-series-data)
+- https://stats.stackexchange.com/questions/106389/what-are-some-methods-for-generating-simulated-time-series-data-for-use-in-model?noredirect=1&lq=1
+
 ### Model-Based Resampling
 
 > Model-based resampling is easily adopted to time series. The resamples are obtained by simulating the time series model. For example, if the model is ARIMA(p,d,q), then the resamples of an ARIMA(p, q) model with MLEs (from the differenced series) of the autoregressive and moving average coefficients and the noise variance. The resamples are the sequences of partial sum of the simulated ARIMA(p, q) process.
@@ -118,6 +121,12 @@ Assume that sub-processes are iid.
 > To adequately describe a stochastic process, it is critical to generate a sufficient number of scenarios so that these scenarios cover the most plausible realizations of the considered stochastic process. To achieve this, it is generally required to generate a very large number of scenarios, which may render the associated stochastic programming problem computationally intractable. [2]
 
 > It is thus required to develop procedures to reduce the number of scenarios initially generated. These procedures should retain most of the relevant information on the stochastic process contained in the original scenario set while reducing significantly its cardinality. [2]
+
+#### Bootstrap
+
+- https://cran.r-project.org/web/packages/boot/index.html
+- https://github.com/juliangehring/Bootstrap.jl
+- https://github.com/colintbowers/DependentBootstrap.jl
 
 
 ---
