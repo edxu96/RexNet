@@ -1,4 +1,7 @@
-
+---
+for: GitHub/edxu96/RexNet/src/CPP
+date: April 12, 2020
+---
 
 <p align="center"><img src="/src/CPP/tex/a05098e5ee88a76f9c10fc13ba59ce49.svg?invert_in_darkmode&sanitize=true" align=middle width=113.23747875000001pt height=54.1956129pt/></p>
 
