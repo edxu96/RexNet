@@ -28,10 +28,14 @@ two-sided market, limit order books, agent-based models, reservation-realization
 
 ## [Discussion](./discussion) and [Outline](./docs/outline.md)
 
+1. [Key points, arguments, data](./discussion/1.md)
 2. [Self anticipation and manipulation of future state](./discussion/2.md)
 3. [DES-MAS-CDA Simulation Platform for RexNet](./discussion/3.md)
+4. [Difference between RexNet and incumbent electricity market families](./discussion/4.md)
 5. [Why ABM and DES?](./discussion/5.md)
+6. [Hierarchical system structure](./discussion/6.md)
 7. [Difference compared to ordinary limit order markets](./discussion/7.md)
+8. [Why CDA not PDA ?](./discussion/8.md)
 9. [Quantity Discovery and Formation](./discussion/9.md)
 10. [New structure for energy systems](./discussion/10.md)
 11. [Why does it not exist before?](./discussion/11.md)
@@ -39,12 +43,8 @@ two-sided market, limit order books, agent-based models, reservation-realization
 
 ## To-Do
 
-1. MMFE (UC)
-2. DES-MAS-CDA
-3. building dynamics (UC)
-4. simulation
-5. continuous provision, discrete time state space control system
-6. responsive
-7. Multi-State CTBA-MMFE
-
-The main contribution is the simulation framework. There are not too many variations of clients, but there are many policies for brokers to choose.
+1. CTBA-MMFE (for UC)
+2. Bootstrap of dependent data
+3. simulation
+4. responsive
+5. Multi-State CTBA-MMFE

@@ -33,7 +33,7 @@ multiple realization of a stochastic process with fixed length
 
 ![](../images/SRF-1.png)
 
-_Figure 1. Performance in terms of normalized mean absolute error (NMAE) of two prediction models (persistence and a state-of-art artificial-intelligence based prediction method) for short-term wind power in four different sites._
+_Figure 1. Performance in terms of normalized mean absolute error (NMAE) of two prediction models (persistence and a state-of-art artificial-intelligence based prediction method) for short-term wind power in four different sites. [_madsen2005standardizing_]_
 
 - __madsen2005standardizing__ Standardizing the performance evaluation of short-term wind power prediction models
 - __kariniotakis2004what__ What performance can be expected by short-term wind power prediction models depending on site characteristics?
@@ -68,6 +68,8 @@ When horizons of forecasts are fixed, like those in electricity market families,
 > The model requires an assumption that the forecast update vector in period $s, \varepsilon_{s},$ be a zero-mean normally distributed random vector that is identically distributed for all $s$ and that $\varepsilon_{s}$ is uncorrelated with past forecast update vectors $\varepsilon_{s_{1}}, s_{1}<s .$ The last assumption is satisfied if, for any $s,$ the forecast made in period $s$ for demand in period $t, \mathcal{D}_{s, t},$ is a conditional expectation of $\mathcal{D}_{t, t}$ given all of the information available at time $s$. In this case, the sequence of forecasts for the demand of period $t\left\{\mathcal{D}_{s, t}: s \leq t\right\}$ forms a Martingale process. [_sapra2012continuous_]
 
 > Note that this assumption does not mean that the elements of $\varepsilon_{s}$ are uncorrelated. On the contrary, they are likely to be correlated since they are equal to forecast updates for future periods given the same new information in period $s$. [_sapra2012continuous_]
+
+
 
 ### 2-2. Martingale Model of Asymmetric Forecast Evolutions (MMAFE)
 

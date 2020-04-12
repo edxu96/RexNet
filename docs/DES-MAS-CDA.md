@@ -139,10 +139,10 @@
 
 - Event: Receding Horizon Plan & Order
 	* what coordinators do when they arrive
-	* optimize the problem based on newly executed limit orders and the request queue
-	* leave part of the request queue and the reservation mismatches unattended
-	* update limit orders
-	* submit market orders
+	* 1. optimize the problem based on newly executed limit orders and the request queue
+	* 2. leave part of the request queue and the reservation mismatches unattended
+	* 3. update limit orders
+	* 4. submit market orders
 
 - settings similar to MPC
 	* controller sample time
@@ -154,6 +154,11 @@
 - uncontrollable time-dependent inputs and parameters
 
 - linear damping weight matrix
+	* cost of minor input
+	* price of market orders
+	* responsiveness
+	* risk associated with request queue
+	* risk associated with order mismatches
 
 - formulation of the programming problem
 	* decision variables: inputs, market orders, responsiveness, request queue, order mismatches
