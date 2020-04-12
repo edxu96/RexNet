@@ -17,6 +17,16 @@ two-sided market, limit order books, agent-based models, reservation-realization
 - To illustrate the market operations and explore the effect of external factors on the market performance, agent-based models are used to represent heterogeneous prosumers, and their interactions are demonstrated by discrete event simulations. The dynamics of the market is affected by the orders submitted by prosumers only, and the behaviors of prosumers are affected by their controllable, uncontrollable production and consumption.
 - The resilience of the market against sudden changes of external factors is explored. Also, parameters describing prosumers have an impact on market operations. From the simulation, we find that ...
 
+## To-Do
+
+- [x] DES-MAS-CDA
+- [x] MPC-UC, MPC-CC
+- [ ] CTBA-MMFE (for UC)
+- [ ] Bootstrap of dependent data
+- [ ] simulation
+<!-- - [ ] responsive
+- [ ] Multi-State CTBA-MMFE -->
+
 ## Guidelines
 
 - To provide a way for relatively poor prosumers to lower their electricity consumption, and not to lower the living standard of normal people.
@@ -26,7 +36,7 @@ two-sided market, limit order books, agent-based models, reservation-realization
 - To analysis from the perspective of the designer of the market. We are not the centralized market organizer, because there is no one.
 - Spatially lumped delivery networks for now.
 
-## [Discussion](./discussion) and [Outline](./docs/outline.md)
+## Discussions
 
 1. [Key points, arguments, data](./discussion/1.md)
 2. [Self anticipation and manipulation of future state](./discussion/2.md)
@@ -39,12 +49,5 @@ two-sided market, limit order books, agent-based models, reservation-realization
 9. [Quantity Discovery and Formation](./discussion/9.md)
 10. [New structure for energy systems](./discussion/10.md)
 11. [Why does it not exist before?](./discussion/11.md)
+12. [Continuous-Time Binary-Adjustment Martingale Model of Fore- cast Evolution (CTBA-MMFE)](./discussion/12.pdf)
 13. [stochastic continuous provision](./discussion/13.md)
-
-## To-Do
-
-1. CTBA-MMFE (for UC)
-2. Bootstrap of dependent data
-3. simulation
-4. responsive
-5. Multi-State CTBA-MMFE
