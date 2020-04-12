@@ -20,6 +20,7 @@ two-sided market, limit order books, agent-based models, reservation-realization
 ## To-Do
 
 - [x] DES-MAS-CDA
+- [x] Continuous Provision Plants
 - [x] MPC-UC, MPC-CC
 - [ ] CTBA-MMFE (for UC)
 - [ ] Bootstrap of dependent data
@@ -49,5 +50,4 @@ two-sided market, limit order books, agent-based models, reservation-realization
 9. [Quantity Discovery and Formation](./discussion/9.md)
 10. [New structure for energy systems](./discussion/10.md)
 11. [Why does it not exist before?](./discussion/11.md)
-12. [Continuous-Time Binary-Adjustment Martingale Model of Fore- cast Evolution (CTBA-MMFE)](./discussion/12.pdf)
 13. [stochastic continuous provision](./discussion/13.md)
