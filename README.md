@@ -22,8 +22,8 @@ two-sided market, limit order books, agent-based models, reservation-realization
 - [x] DES-MAS-CDA
 - [x] Continuous Provision Plants
 - [x] MPC-UC, MPC-CC
+- [ ] simulation of similar RNGs according to samples
 - [ ] CTBA-MMFE (for UC)
-- [ ] Bootstrap of dependent data
 - [ ] simulation
 <!-- - [ ] responsive
 - [ ] Multi-State CTBA-MMFE -->
