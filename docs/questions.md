@@ -1,4 +1,5 @@
 ---
+for: github/edxu96/RexNet/docs
 date: Mar 8, 2020
 author: Edward J. Xu
 ---
@@ -56,7 +57,7 @@ For service industries like supermarket chain, banking, energy industry, supply 
 
 In this project, a concept called __stochastic service system__ has been proposed to describe a special kind of service systems with stochasticity from both supply and demand side. The stochasticity refers to the uncertainty about their future state. When there is no spot market, buyers and sellers have to make decision considering their future corresponding states. Distributed energy networks and markets, food supply chains, the banking, Internet streaming services, etc are prototypical examples. Note that "system" is used to include the all the markets and delivery networks in this industry. Market is the institution where services are traded, and services are delivered through networks, like power grids transmitting electricity and on-site barber shops.
 
-Different stochastic service systems have different features. 
+Different stochastic service systems have different features.
 
 ---
 
