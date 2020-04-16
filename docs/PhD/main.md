@@ -1,7 +1,12 @@
 
-## Introduction
+# PhD Proposal: Reservation-Based Exchange Market to Match Stochastic Supply and Demand
 
-### What
+- keep the main text short
+- relate the project to what they have done
+- reference letter
+- can share a detailed discussion with you if interested
+
+## What is RexNet and Why
 
 Some features prevent the application of unorganized markets and most of organized markets. For example, food and electricity is consumed and produced in a continuous rather than a batch-based manner and is perishable and hard to be stored. Disposal of inventory in food industry increase the average cost.
 
@@ -11,9 +16,13 @@ In this project, a market satisfying requirements discussed above is designed. S
 
 For example, to liberalize the electricity generation market, the periodic double auction has been used in day-ahead market to find the equilibrium, and other facilitating markets are needed. However, small-scale prosumers, which refer to the participants who can be either supply or consume in low power rate, cannot participate directly due to three requirements. First of all, it is hard to anticipate and express the demand and supply curves for future units. Even if they manage to provide, the periodic clearings require them to present in the market at the same time. Also, transactions are not instantaneous. Additionally, the complexity from the existence of market families is another challenge for home-own generation business. The flexibility in demand side can be the solution to many problems. Many kinds of demand response programs have been designed to invite small-scale prosumers to participate, but the resulted flexibility is not enough.
 
-### How
+## How to Justify RexNet
 
-To illustrate the market operations and explore the effect of randomness on the market performance, agent-based models are used to represent heterogeneous prosumers, and their interactions through Rex are demonstrated by discrete event simulations. Heterogeneous agents make decisions according to local information and the market condition. It is hard to obtain analytical solutions directly.
+To illustrate the market operations and explore the effect of randomness on the market performance, agent-based models are used to represent heterogeneous prosumers, and their interactions through Rex are demonstrated by discrete event simulations. The continuous operation of the market will be demonstrated by discrete event simulation, with prosumers represented by different agent-based models. Each model corresponds to one kind of event routines, which are series of actions executed when the event is triggered. There is another event routine representing the simultaneous realizations of all pro- sumers and the opening auction for the new unit. All these event updates the states describing the market. Heterogeneous agents make decisions according to local information and the market condition. It is hard to obtain analytical solutions directly.
+
+The simulation of RexNet for energy systems can be illustrated by the following two figures. Figure `a` models the supply chain of energy from its extraction to end-use. The key stage is the distribution of energy from the supply side to the demand side. Alternatively, the chain can be model using figure `b`, with both suppliers and consumers being prosumers. Prosumers can be modeled as three parts, __continuous provision plants (CPP)__, clients and coordinators. CPP is the underlying physical and economical system to satisfy the requests of clients. Coordinators control their CPPs and trade in Rex
+
+![](../../images/1-3.png)
 
 Prosumers are simulated and endowed with supply or demand if they are uncontrollable. Because they don't know the precise quantity in advance, they will forecast based on the current information, the process of which will be simulated as well. The forcasting process depends on lots of external factors, which are hard to simulate. Specifically, there are at least five novel programs in this project:
 
@@ -27,6 +36,6 @@ Related literature is dispersed in a wide range of research areas. For example, 
 
 However, different disciplines do provided powerful tools. For example, cost allocation
 
-###
+## Why I am Qualified
 
 there may be other designs satisfying the requirements. the main focus will be CDA and electricity market. Besides the promising potential application in distributed energy systems, this market can be applied in many other industries as well, like food supply chains, the retailing management, and the banking.
