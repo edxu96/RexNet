@@ -46,6 +46,7 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
 	* delivery networks
 
 - how: DES-MAS-CDA with ABM
+	* endowment
 
 - why simulation
   * utility theory is not used

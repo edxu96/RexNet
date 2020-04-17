@@ -26,8 +26,6 @@ Take energy systems for example, they can be illustrated by the following two fi
 
 To illustrate the market operations and explore the effect of randomness on the market performance, __agent-based models__ are used to represent heterogeneous prosumers, and their interactions through RexNet are demonstrated by __discrete event simulations__.
 
-It is hard to obtain analytical solutions directly.
-
 Clients are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on the current information, the processes of which are simulated as well. Coordinators participate in the market with requests from clients and predicted output from CPPs. Specifically, there are at least five novel programs in this project:
 
 * different RNGs, wind power output
@@ -35,6 +33,8 @@ Clients are endowed with prosumptions, the quantity of which are simulated with 
 * continuous provision plant
 * decision making process, make-take management
 * coordination with clients
+
+It is hard to obtain analytical solutions directly.
 
 Related literature is dispersed in a wide range of research areas. For example, dynamic procurement of perishable products has been seen as a typical newsvendor problem in supply chain management. [_wang2012multiordering_] However, trading periods are isolated with each other. The wellfare of participants is never considered in discrete event simulation and market micro-structure.
 
