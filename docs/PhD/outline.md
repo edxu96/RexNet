@@ -15,13 +15,14 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
 ### What
 
 - background
-  * electricity market
+	* in most industries, consumers are isolated from fluctuations
+	* perishable
+	* food and water waste around the world
+- what do we need
   * more penetration of renewable generations
   * modern power grids are too expensive for rural areas
-  * food and water waste around the world
-- what do we need
-  * special requirements of energy carriers
-  * small-scale participation
+  * small-scale participation is cheaper
+  * command-and-control is insufficient
   * small-scale-friendly two-sided market
 - what: reservation exchange
   * forward market
@@ -29,6 +30,10 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
 - why CDA market
   * small-scale prosumers cannot participate directly in PDA (one-sided market)
   * flexibility from demand response programs is not enough
+- main difference
+  * responsibility
+  * cost allocation
+  * applicability
 
 ### How
 
