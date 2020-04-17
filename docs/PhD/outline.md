@@ -27,6 +27,7 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
 - what: reservation exchange
   * forward market
   * fragmentation and hierarchy
+
 - why CDA market
   * small-scale prosumers cannot participate directly in PDA (one-sided market)
   * flexibility from demand response programs is not enough
@@ -37,6 +38,15 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
 
 ### How
 
+- structure
+	* clients
+	* coordinators
+	* CPPs
+	* Rex
+	* delivery networks
+
+- how: DES-MAS-CDA with ABM
+
 - why simulation
   * utility theory is not used
   * analytical solution is hard
@@ -45,12 +55,7 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
   * demonstrate the equilibrium quantity discovery ability facing sudden arrivals of new information
   * explore effect of different factors
   * demonstrate the cost allocation
-- how: DES-MAS-CDA with ABM
-  * different RNGs, wind power output
-  * auxiliary activities, forecast
-  * continuous provision plant
-  * decision making process, make-take management
-  * coordination with clients
+
 - literature
   * supply chain management
   * control
