@@ -10,10 +10,11 @@ author: Edward J. Xu
 - relate the project to what they have done
 - reference letter
 - can share a detailed discussion with you if interested
+- add in-depth discussion about relevant literature
 
 dynamic pricing to avoid adverse selection
 
-## What is Rex
+## What is Rex and Why do we need it
 
 - background
 	* in most industries, consumers are isolated from fluctuations
@@ -38,7 +39,7 @@ dynamic pricing to avoid adverse selection
   * cost allocation
   * applicability
 
-## What is RHPO
+## What is RHPO 
 
 - structure
 	* clients
@@ -56,7 +57,7 @@ dynamic pricing to avoid adverse selection
 - problems:
 	* effect of reservation on responsive clients
 	* interaction between outsourcing coordinators and clients
-	* nonlinear optimization programs in RHPO 
+	* nonlinear optimization programs in RHPO
 
 ## How to Prove RexNet Practical and RHPO Representative
 
@@ -66,7 +67,7 @@ dynamic pricing to avoid adverse selection
   * heterogeneous agents have local information
 
 - objective, what are the questions to be answered?
-  * demonstrate the equilibrium quantity discovery ability facing sudden arrivals of new information
+  * demonstrate the equilibrium quantity discovery process with sudden arrivals of new information
   * explore effect of different factors
   * demonstrate the cost allocation
 
@@ -75,7 +76,7 @@ dynamic pricing to avoid adverse selection
 
 - compare the situation when there is no market
 
-## What to Do
+## What to Do once with Mature Models
 
 - different Rex for different industries
 	* determine resolution parameters
@@ -108,7 +109,7 @@ dynamic pricing to avoid adverse selection
 
 ## literature
 
-- 
+-
   * supply chain management
   * control
   * operations research

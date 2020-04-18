@@ -30,7 +30,7 @@ Take energy systems, including power systems, for example, they can be represent
 
 ![](../../images/1-3.png)
 
-To illustrate the market operations and explore the effect of randomness on the market performance, __agent-based models__ are used to represent heterogeneous prosumers, and their interactions through RexNet are demonstrated by __discrete event simulations__. [_lebaron2001builder_], [_iori2012agent_]
+In this project we are interested in both the market and prosumers, which therefore have to be modeled as a __multi-agent system__, because prosumers have diverging information and interests. [_shoham2009multiagent_] __Agent-based models__ are used to represent heterogeneous prosumers, and their interactions through RexNet are demonstrated by __discrete event simulations__. [_lebaron2001builder_], [_iori2012agent_]
 
 Clients are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on the current information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before the gate closure. High-resolution models of CPPs are known to corresponding coordinators only, in order to protect the privacy. Future outputs can be predicted from CPP models and planned inputs. Then, coordinators modify plans, participate in Rex and respond to clients. The decisions can be optimized by the program called __receding horizon plan & order management (RHPO)__, which has similar structures to model predictive control problems. [_siroky2011experimental_]. Coordinators can be seen as intermediaries between clients and the market, which resembles the intermediation theory of firms. [_spulber1996market_] Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions.
 
@@ -64,6 +64,8 @@ validate simulation programs based on measured data. For example, simulated fore
 
 there may be other designs satisfying the requirements. the main focus will be CDA and electricity market. Besides the promising potential application in distributed energy systems, this market can be applied in many other industries as well, like food supply chains, the retailing management, and the banking.
 
+## [Appendix: Brief Mathematical Description](./appendix.md)
+
 ---
 
 [_wang2012multiordering_]: https://github.com/edxu96/symposium/tree/master/src
@@ -77,5 +79,6 @@ there may be other designs satisfying the requirements. the main focus will be C
 [_lebaron2001builder_]: https://github.com/edxu96/symposium/tree/master/src
 [_iori2012agent_]: https://github.com/edxu96/symposium/tree/master/src
 [_spulber1996market_]: https://github.com/edxu96/symposium/tree/master/src
+[_shoham2009multiagent_]: https://github.com/edxu96/symposium/tree/master/src
 
 > It is often useful to think of the “same” good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations. [_varian2014intermediate_] _Chapter 3_.
