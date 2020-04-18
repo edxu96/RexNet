@@ -30,20 +30,21 @@ Take energy systems, including power systems, for example, they can be represent
 
 ![](../../images/1-3.png)
 
-To illustrate the market operations and explore the effect of randomness on the market performance, __agent-based models__ are used to represent heterogeneous prosumers, and their interactions through RexNet are demonstrated by __discrete event simulations__.
+To illustrate the market operations and explore the effect of randomness on the market performance, __agent-based models__ are used to represent heterogeneous prosumers, and their interactions through RexNet are demonstrated by __discrete event simulations__. [_lebaron2001builder_], [_iori2012agent_]
 
-Clients are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on the current information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before the gate closure. High-resolution models of CPPs are known to corresponding coordinators only, in order to protect the privacy. Future outputs can be predicted from CPP models and planned inputs. Then, coordinators modify plans, participate in Rex and respond to clients. The decisions can be optimized by the program called __receding horizon plan & order management (RHPO)__, which has similar structures to model predictive control problems. [_siroky2011experimental_]. Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions.
+Clients are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on the current information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before the gate closure. High-resolution models of CPPs are known to corresponding coordinators only, in order to protect the privacy. Future outputs can be predicted from CPP models and planned inputs. Then, coordinators modify plans, participate in Rex and respond to clients. The decisions can be optimized by the program called __receding horizon plan & order management (RHPO)__, which has similar structures to model predictive control problems. [_siroky2011experimental_]. Coordinators can be seen as intermediaries between clients and the market, which resembles the intermediation theory of firms. [_spulber1996market_] Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions.
 
 Specifically, there are many stochastic simulation programs used in this project. For example:
 
-* To simulate wind power output at new locations according to historical data as needs of some clients to sell electricity. [_woods2013simulation_]
-* Martingale model of forecast evolution (MMFE) to simulate requests sent to coordinators because of arrival of new information. [_wang2012multiordering_]
+* To simulate wind power output at new locations according to historical data as needs of some clients to sell electricity. Statistical in frequency domain can be introduced to exhibit the spatial diversity and utilize available information as much as possible. [_woods2013simulation_]
+* Martingale model of forecast evolution (MMFE) to simulate requests sent to coordinators because of arrival of new information. [_heath1994modeling_] Cumulative adjustments can managed using methods from inventory management. [_wang2012multiordering_]
 * Multi-input multi-output state space stochastic control systems as models of CPPs. [_siroky2011experimental_] Grey-box modelling techniques, which combines statistical methods and physical knowledge, can be used to calibrate the models. [_bacher2011identifying_]
 
 There are some problems need to be solved:
 
 * The effect of reservation on future requests of responsive clients. Responsive clients will adapt their needs to current states. It may be modeled by an intra-personal game where a decision-maker is summarized by a succession of selves. [_brocas2009dynamic_]
-* When optimization problems in RHPO are formulated nonlinearly, it is hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness. 
+* When optimization problems in RHPO are formulated nonlinearly, it is hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness.
+* Agent-based models should be able to learn and adapt to evolving situations.
 
 ## 3. How to Prove RexNet Practical and RHPO Representative
 
@@ -72,5 +73,9 @@ there may be other designs satisfying the requirements. the main focus will be C
 [_bacher2011identifying_]: https://github.com/edxu96/symposium/tree/master/src
 [_siroky2011experimental_]: https://github.com/edxu96/symposium/tree/master/src
 [_brocas2009dynamic_]: https://github.com/edxu96/symposium/tree/master/src
+[_heath1994modeling_]: https://github.com/edxu96/symposium/tree/master/src
+[_lebaron2001builder_]: https://github.com/edxu96/symposium/tree/master/src
+[_iori2012agent_]: https://github.com/edxu96/symposium/tree/master/src
+[_spulber1996market_]: https://github.com/edxu96/symposium/tree/master/src
 
 > It is often useful to think of the “same” good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations. [_varian2014intermediate_] _Chapter 3_.
