@@ -20,6 +20,8 @@ In this project, at least one market satisfying previous requirements is designe
 
 For example, to liberalize the electricity generation market, the periodic double auction has been used in day-ahead market to find the equilibrium, and other facilitating markets are needed. However, small-scale prosumers, which refer to the participants who can be either supply or consume in low power rate, cannot participate directly due to three requirements. First of all, it is hard to anticipate and express the demand and supply curves for future units. Even if they manage to provide, the periodic clearings require them to present in the market at the same time. Also, transactions are not instantaneous. Additionally, the complexity from the existence of market families is another challenge for home-own generation business. The flexibility in demand side can be the solution to many problems. Many kinds of demand response programs have been designed to invite small-scale prosumers to participate, but the resulted flexibility is not enough.
 
+[_weber2010adequate_]
+
 The main difference of Rex is the lack of responsible party for satisfying uninformed demand. For example, utility companies are not obliged to satisfy demand in peak hours. If someone does not have the reservation to consume or supply, he/she has to be responsible himself/herself.
 
 ## What is RHPO
@@ -38,6 +40,10 @@ Specifically, there are many stochastic simulation programs used in this project
 * Use martingale model of forecast evolution (MMFE) to simulate requests sent to coordinators because of arrival of new information. [_wang2012multiordering_]
 * Use multi-input multi-output stochastic control systems as models of CPPs.
 
+There are some programs still need to be formulated:
+
+* The effect of reservation on future requests of responsive clients. Responsive clients will adapt their needs to current states.
+
 ## How to Prove RexNet Practical and RHPO Representative
 
 It is hard to obtain analytical solutions directly.
@@ -45,6 +51,9 @@ It is hard to obtain analytical solutions directly.
 Related literature is dispersed in a wide range of research areas. For example, dynamic procurement of perishable products has been seen as a typical newsvendor problem in supply chain management. [_wang2012multiordering_] However, trading periods are isolated with each other. The wellfare of participants is never considered in discrete event simulation and market micro-structure.
 
 However, different disciplines do provided powerful tools. For example, cost allocation
+
+validate simulation programs based on measured data. For example, simulated forecast evolution should be analyzed according to standard statistical tools for forecasting. [_madsen2005standardizing_]
+
 
 ## Why I am Qualified
 
@@ -55,12 +64,6 @@ there may be other designs satisfying the requirements. the main focus will be C
 [_wang2012multiordering_]: https://github.com/edxu96/symposium/tree/master/src
 [_varian2014intermediate_]: https://github.com/edxu96/symposium/tree/master/src
 [_woods2013simulation_]: https://github.com/edxu96/symposium/tree/master/src
+[_madsen2005standardizing_]: https://github.com/edxu96/symposium/tree/master/src
 
 > It is often useful to think of the “same” good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations. [_varian2014intermediate_] _Chapter 3_.
-
-- keep the main text short
-- relate the project to what they have done
-- reference letter
-- can share a detailed discussion with you if interested
-
-dynamic pricing to avoid adverse selection
