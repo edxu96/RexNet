@@ -1,12 +1,12 @@
+---
+for: GitHub/edxu96/RexNet/docs/PhD
+author: Edward J. Xu
+date: April 17, 2020
+---
 
-# PhD Proposal: Reservation-Based Exchange Market to Match Stochastic Supply and Demand
+# `PhD Proposal` Intermediated Forward Exchange to Match Stochastic Prosumptions: Reservation-Based Limit Order Market and its Intermediary-Like Participants
 
-- keep the main text short
-- relate the project to what they have done
-- reference letter
-- can share a detailed discussion with you if interested
-
-## What is RexNet and Why
+## What is RexNet
 
 Small-scale producers/consumers (__prosumer__) prefer selling/purchasing on a tariff to fluctuating prices in the wholesale market, so their participation is mediated by retailers, who take risks and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and perishability. These features further prevent the application of unorganized markets and most of organized markets. Disposal of food inventory and backup electricity generations increase average costs.
 
@@ -18,7 +18,7 @@ For example, to liberalize the electricity generation market, the periodic doubl
 
 The main difference of Rex is the lack of responsible party for satisfying uninformed demand. For example, utility companies are not obliged to satisfy demand in peak hours. If someone does not have the reservation to consume or supply, he/she has to be responsible himself/herself.
 
-## How to Prove RexNet Practical
+## What is RHPO
 
 Take energy systems for example, they can be illustrated by the following two figures. Figure `a` models the supply chain of energy from its extraction to end-use. The key stage is the distribution of energy from the supply side to the demand side. Alternatively, the chain can be model using figure `b` as RexNet. Prosumers can be modeled as three parts. __Clients__ represent the need of the prosumer to be satisfied, the realizations of which can be modeled by univariate stochastic processes. __Continuous provision plants (CPPs)__ are the underlying physical and economical systems with inputs being traded assets mainly and output to meet	the	needs	of clients. __Coordinators__ control CPPs and participate in Rex.
 
@@ -33,6 +33,8 @@ Clients are endowed with prosumptions, the quantity of which are simulated with 
 * continuous provision plant
 * decision making process, make-take management
 * coordination with clients
+
+## How to Prove RexNet Practical
 
 It is hard to obtain analytical solutions directly.
 
@@ -50,3 +52,10 @@ there may be other designs satisfying the requirements. the main focus will be C
 [_varian2014intermediate_]: https://github.com/edxu96/symposium/tree/master/src
 
 > It is often useful to think of the “same” good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations. [_varian2014intermediate_] _Chapter 3_.
+
+- keep the main text short
+- relate the project to what they have done
+- reference letter
+- can share a detailed discussion with you if interested
+
+dynamic pricing to avoid adverse selection
