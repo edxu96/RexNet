@@ -1,18 +1,14 @@
 ---
 for: github/edxu96/RexNet/docs
-date: April 15, 2020
+date: April 18, 2020
 author: Edward J. Xu
 ---
 
-# PhD Proposal: Mechanisms, Simulation and Control of Stochastic Service Systems
-
-## Keywords
-
-reservation-realization-settlement, two-sided market, dynamic equilibrium discovery, agent-based models, stochastic simulation, model predictive control, forward market, discrete event simulation
+# PhD Proposal: Intermediated Forward Exchange to Match Stochastic Prosumptions: Reservation-Based Limit Order Market and its Intermediary-Like Participants
 
 ## Outline
 
-### What
+### What is Rex
 
 - background
 	* in most industries, consumers are isolated from fluctuations
@@ -36,7 +32,7 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
   * cost allocation
   * applicability
 
-### How
+### What is RHPO
 
 - structure
 	* clients
@@ -57,6 +53,8 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
   * explore effect of different factors
   * demonstrate the cost allocation
 
+### How to Prove RexNet Practical and RHPO Representative
+
 - literature
   * supply chain management
   * control
@@ -69,7 +67,7 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
   * market microstructure
   * cost allocation
 
-###
+### Why I am Qualified
 
 - feasibility: why I am qualified for this project
   * familiar with energy systems and markets
