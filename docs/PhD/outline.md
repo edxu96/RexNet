@@ -29,9 +29,10 @@ dynamic pricing to avoid adverse selection
   * forward market
   * fragmentation and hierarchy
 
-- why CDA market
+- why RexNet
   * small-scale prosumers cannot participate directly in PDA (one-sided market)
   * flexibility from demand response programs is not enough
+
 - main difference
   * responsibility
   * cost allocation
@@ -74,6 +75,8 @@ dynamic pricing to avoid adverse selection
 
 - compare the situation when there is no market
 
+## What to Do
+
 - different Rex for different industries
 	* determine resolution parameters
 	* existence of dealers
@@ -82,18 +85,12 @@ dynamic pricing to avoid adverse selection
 - design RHPO
 	* impact of different objective functions
 	* different kinds of weight matrix
+	* energy management system
 
-- literature
-  * supply chain management
-  * control
-  * operations research
-  * simulation
-  * energy system
-  * finance
-  * statistics
-  * revenue management
-  * market microstructure
-  * cost allocation
+- long-term investment
+
+- new structure for power systems and supply chains
+	* especially for under-development areas
 
 ## Why I am Qualified
 
@@ -108,3 +105,17 @@ dynamic pricing to avoid adverse selection
   * responsive clients
   * different rules and market design
   * real-world application
+
+## literature
+
+- 
+  * supply chain management
+  * control
+  * operations research
+  * simulation
+  * energy system
+  * finance
+  * statistics
+  * revenue management
+  * market microstructure
+  * cost allocation

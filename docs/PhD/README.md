@@ -10,7 +10,7 @@ date: April 18, 2020
 
 reservation-realization-settlement, two-sided market, dynamic equilibrium discovery, agent-based models, stochastic simulation, model predictive control, forward market, discrete event simulation
 
-## What is RexNet
+## 1. What is RexNet
 
 Small-scale producers/consumers (__prosumer__) prefer selling/purchasing on a tariff to fluctuating prices in the wholesale market, so their participation is mediated by retailers, who take risks and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and perishability. These features further prevent the application of unorganized markets and most of organized markets. Disposal of food inventory and backup electricity generations increase average costs.
 
@@ -24,7 +24,7 @@ For example, to liberalize the electricity generation market, the periodic doubl
 
 The main difference of Rex is the lack of responsible party for satisfying uninformed demand. For example, utility companies are not obliged to satisfy demand in peak hours. If someone does not have the reservation to consume or supply, he/she has to be responsible himself/herself.
 
-## What is RHPO
+## 2. What is RHPO
 
 Take energy systems, including power systems, for example, they can be represented by figure `a`, showing the supply chain from extractions to end-uses. The key stage is the distribution of energy from the supply side to the demand side. Alternatively, the system can be restructured using figure `b` by introducing RexNet. Prosumers can be modeled as three parts. __Clients__ are used to simulate the ultimate need of the prosumer, which can be expressed by stochastic processes. For example, the temperature of the room. __Continuous provision plants (CPPs)__ are underlying physical and economical systems with inputs being energy mainly and output to meet	the	needs	of clients. For example, a electricity-driven heat pump and pipes to supply heat to the room. It is __coordinators__ who control CPPs and participate in Rex whose objectives are to make more profit (or lower costs), satisfy needs and respect constraints at the same time.
 
@@ -32,19 +32,20 @@ Take energy systems, including power systems, for example, they can be represent
 
 To illustrate the market operations and explore the effect of randomness on the market performance, __agent-based models__ are used to represent heterogeneous prosumers, and their interactions through RexNet are demonstrated by __discrete event simulations__.
 
-Clients are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on the current information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before the gate closure. High-resolution models of CPPs are known to corresponding coordinators only, in order to protect the privacy. Future outputs can be predicted from CPP models and planned inputs, and coordinators modify plans, participate in Rex and respond to clients. The decisions can be optimized by the program called __receding horizon plan & order management (RHPO)__. Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions.
+Clients are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on the current information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before the gate closure. High-resolution models of CPPs are known to corresponding coordinators only, in order to protect the privacy. Future outputs can be predicted from CPP models and planned inputs. Then, coordinators modify plans, participate in Rex and respond to clients. The decisions can be optimized by the program called __receding horizon plan & order management (RHPO)__, which has similar structures to model predictive control problems. [_siroky2011experimental_]. Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions.
 
 Specifically, there are many stochastic simulation programs used in this project. For example:
 
 * To simulate wind power output at new locations according to historical data as needs of some clients to sell electricity. [_woods2013simulation_]
-* Use martingale model of forecast evolution (MMFE) to simulate requests sent to coordinators because of arrival of new information. [_wang2012multiordering_]
-* Use multi-input multi-output stochastic control systems as models of CPPs.
+* Martingale model of forecast evolution (MMFE) to simulate requests sent to coordinators because of arrival of new information. [_wang2012multiordering_]
+* Multi-input multi-output state space stochastic control systems as models of CPPs. [_siroky2011experimental_] Grey-box modelling techniques, which combines statistical methods and physical knowledge, can be used to calibrate the models. [_bacher2011identifying_]
 
-There are some programs still need to be formulated:
+There are some problems need to be solved:
 
-* The effect of reservation on future requests of responsive clients. Responsive clients will adapt their needs to current states.
+* The effect of reservation on future requests of responsive clients. Responsive clients will adapt their needs to current states. It may be modeled by an intra-personal game where a decision-maker is summarized by a succession of selves. [_brocas2009dynamic_]
+* When optimization problems in RHPO are formulated nonlinearly, it is hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness. 
 
-## How to Prove RexNet Practical and RHPO Representative
+## 3. How to Prove RexNet Practical and RHPO Representative
 
 It is hard to obtain analytical solutions directly.
 
@@ -54,8 +55,11 @@ However, different disciplines do provided powerful tools. For example, cost all
 
 validate simulation programs based on measured data. For example, simulated forecast evolution should be analyzed according to standard statistical tools for forecasting. [_madsen2005standardizing_]
 
+## 4. How RexNet and RHPO Contribute
 
-## Why I am Qualified
+
+
+## 5. Why I am Qualified
 
 there may be other designs satisfying the requirements. the main focus will be CDA and electricity market. Besides the promising potential application in distributed energy systems, this market can be applied in many other industries as well, like food supply chains, the retailing management, and the banking.
 
@@ -65,5 +69,8 @@ there may be other designs satisfying the requirements. the main focus will be C
 [_varian2014intermediate_]: https://github.com/edxu96/symposium/tree/master/src
 [_woods2013simulation_]: https://github.com/edxu96/symposium/tree/master/src
 [_madsen2005standardizing_]: https://github.com/edxu96/symposium/tree/master/src
+[_bacher2011identifying_]: https://github.com/edxu96/symposium/tree/master/src
+[_siroky2011experimental_]: https://github.com/edxu96/symposium/tree/master/src
+[_brocas2009dynamic_]: https://github.com/edxu96/symposium/tree/master/src
 
 > It is often useful to think of the “same” good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations. [_varian2014intermediate_] _Chapter 3_.
