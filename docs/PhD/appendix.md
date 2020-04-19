@@ -51,6 +51,8 @@ The risk weights associated with mismatched <img src="/docs/PhD/tex/61ccc6d099c3
 
 > Choosing appropriate values of Q and R (i.e., tuning) is not always obvious, and this difficulty is one of the challenges faced by industrial practitioners of LQ control. [_rawlings2019model_]
 
+Damping weights provide buffers against fluctuations to reduce round trades.
+
 ## Make-Take Management
 
 Being linear in both objective functions and constraints, the above problem can provide prices for one-unit limit orders and one-unit cooperations based on Lagrange multipliers. Take one-unit limit orders for example, to price a one-unit limit order <img src="/docs/PhD/tex/1161987854e9308a987f774c131ea730.svg?invert_in_darkmode&sanitize=true" align=middle width=62.90453234999998pt height=24.65753399999998pt/> for target unit <img src="/docs/PhD/tex/8d1a78f3c7c6efdefdef6ecaf333edd8.svg?invert_in_darkmode&sanitize=true" align=middle width=34.82978564999999pt height=22.831056599999986pt/>, a new plan <img src="/docs/PhD/tex/8be54632fd8381f60b2977c77684015d.svg?invert_in_darkmode&sanitize=true" align=middle width=41.10164024999999pt height=24.65753399999998pt/> can be introduced. The price can be calculated using <img src="/docs/PhD/tex/64a1e139deec42c40db51b56c161341b.svg?invert_in_darkmode&sanitize=true" align=middle width=169.48032089999998pt height=24.65753399999998pt/> based on the current bid-ask prices <img src="/docs/PhD/tex/198ec338f865b3bd32348201cc7871b7.svg?invert_in_darkmode&sanitize=true" align=middle width=32.168949449999985pt height=24.65753399999998pt/> and <img src="/docs/PhD/tex/b53ac7d921eee1159278bc69d9383682.svg?invert_in_darkmode&sanitize=true" align=middle width=33.01369664999999pt height=24.65753399999998pt/>.
@@ -80,3 +82,5 @@ where <img src="/docs/PhD/tex/1307d945728dfe6d10c801ad1c414f0b.svg?invert_in_dar
 The determination of <img src="/docs/PhD/tex/1307d945728dfe6d10c801ad1c414f0b.svg?invert_in_darkmode&sanitize=true" align=middle width=35.37494894999999pt height=24.65753399999998pt/> can be simulated as well.
 
 The decisions can be optimized as a robust optimization problem.
+
+Some prosumers may learn their position according to order flows.
