@@ -33,6 +33,12 @@ dynamic pricing to avoid adverse selection
 - why RexNet
   * small-scale prosumers cannot participate directly in PDA (one-sided market)
   * flexibility from demand response programs is not enough
+  * prosumers don't arrive in the market at the same time [foucault2013market] or we can use frequent PDA
+  * existence of multiple market and responsibility [_weber2010adequate_]
+
+- quantity discovery
+	* coordinators have diverge information about the mismatch
+	* their local information may be correlated to the global information
 
 - main difference
   * responsibility
@@ -48,16 +54,27 @@ dynamic pricing to avoid adverse selection
 	* Rex
 	* delivery networks
 
+- interested in both the market and prosumers
+	* multi-agent system
+	* ABM
+	* DES
+
 - how: DES-MAS-CDA with ABM
 	* endowment
 	* request queue
 	* model predictive control
 	* make-take management
 
-- problems:
+- programs
+	* 
+
+- current and anticipated problems:
 	* effect of reservation on responsive clients
 	* interaction between outsourcing coordinators and clients
 	* nonlinear optimization programs in RHPO
+	* unit commitment of controllable generations
+	* make-take management
+	* centralized market makers can be introduced to provide liquidity, which concerns the responsibility
 
 ## How to Prove RexNet Practical and RHPO Representative
 
@@ -75,6 +92,8 @@ dynamic pricing to avoid adverse selection
 	* if available
 
 - compare the situation when there is no market
+
+- simulate the market and analyze the effect of different trategies
 
 ## What to Do once with Mature Models
 

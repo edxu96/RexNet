@@ -8,6 +8,8 @@ author: Edward J. Xu
 
 Two resolution parameters for the CDA market are given: tick size $\epsilon$, and lot size $\sigma$.
 
+## Clients and CPPs
+
 For now, univariate delivery $\mathbf{U}^{*}$ is used. Given some prosumer, for target unit $i$, , the final realization is a random variable $x_i(c_i)$.
 
 __CPPs__ convert input $\mathbf{U}$ to output $\mathbf{V}$, which can be modeled by discrete-time linear time-invariant state space multiple-input multiple-output systems models:
@@ -19,13 +21,15 @@ $$ \begin{align}
 
 Given some prosumer, for target unit $i$, the evolution of forecasts for the final realization can be represented by a continuous time stochastic process $x_i(t) \text{ ,  } c_i - \kappa \epsilon \leq t \leq c_i$. If all the information regarding target unit $i$ at time $t$ can be represented by $\Omega_i(t)$, the forecast is the expectation of final realization condition on all current information:
 
-$$ x_i(t) = \mathbb{E}\left[x_i(c_i) | \Omega_i(t) \right] $$
+$$ x_i(t) = \mathbb{E}\left[x_i(c_i) | \Omega_i(t) \right] \tag{4} $$
 
 It is hard to simulate the evolution of $\Omega_i(t)$ and forecast processes directly, so the first part of prosumer models is introduced as __clients__ to simulate the forecast evolutions:
 
 $$ x_i(t) = x_i(\kappa \epsilon) + z_i(t) $$
 
 where $z_i(t)$ is a counting process, summarizing all adjustments during interval $(c_i - \kappa \epsilon, t]$. Because of the existence of lot size $\sigma$, all values are assumed to be integers. For now, it is assumed that there is no frictions between two parts of prosumers. So $x_i(t)$ is known to the second part, __coordinators__, who are responsible for managing CPPs.
+
+## Receding Horizon Plan & Order Management
 
 The state of some coordinator and its CPP at time $t$ can be described by:
 
@@ -92,6 +96,10 @@ $$ \begin{align}
 \end{array} \right]
 \end{align} $$
 
+> Choosing appropriate values of Q and R (i.e., tuning) is not always obvious, and this difficulty is one of the challenges faced by industrial practitioners of LQ control. [_rawlings2019model_]
+
+## Make-Take Management
+
 Being linear in both objective functions and constraints, the above problem can provide prices for one-unit limit orders and one-unit cooperations based on Lagrange multipliers. Take one-unit limit orders for example, to price a one-unit limit order $\Delta e_{i+k}(t)$ for target unit $i+k$, a new plan $\mathbf{Y}_{k}(t)$ can be introduced. The price can be calculated using $ \mathcal{M}_t \left[\mathbf{Y}_{k}(t) \right] - \mathcal{M}_t \left[\mathbf{Y}(t) \right] $ based on the current bid-ask prices $\mathbf{B}(t)$ and $\mathbf{A}(t)$.
 
 The introduction of $\Delta y_k(t)$ changes the right side of equation (1) by one unit. The resulting change of the objective function will be the value of the dual variable associated with the equation (1) in the dual problem of $\mathcal{M}(t)$. That is, the resulting change will be the corresponding Lagrange multiplier:
@@ -106,3 +114,21 @@ $$ \begin{align}
 \frac{\partial \mathcal{M}_t \left[\mathbf{Y}(t), \mathbf{B}^{\mathrm{p}}(t), \mathbf{A}^{\mathrm{p}}(t) \right]}{\partial b_k(t)} &= e^+_k(t) \\
 \frac{\partial \mathcal{M}_t \left[\mathbf{Y}(t), \mathbf{B}^{\mathrm{p}}(t), \mathbf{A}^{\mathrm{p}}(t) \right]}{\partial a_k(t)} &= - e^-_k(t)
 \end{align} $$
+
+Regarding optimized market orders, their profit may be increased by make-take management:
+
+For any prosumer $n$ in the population $N$, equation (4) can be used to obtain the aggregated forecast of uncontrollable prosumptions:
+
+$$ x_i(t) = \sum_{n \in N} x_i^n(t) $$
+
+However, the exact value is unknown to anyone, because prosumers don't reveal their information to any one. Instead, coordinators all have their own anticipation based on their current information:
+
+$$ \mathbb{E} \left[x_i(t) | \Psi_i^n(t) \right] = s_i^n(t) + u_i(t) $$
+
+where $s_i^n(t)$ is the expected position in the market:
+
+$$ s_i^n(t) = \mathbb{E} \left[x_i(t) - u_i(t) | \Psi_i^n(t) \right] $$
+
+The determination of $s_i^n(t)$ can be simulated as well.
+
+The decisions can be optimized as a robust optimization problem.
