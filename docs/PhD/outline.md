@@ -34,7 +34,7 @@ dynamic pricing to avoid adverse selection
   * small-scale prosumers cannot participate directly in PDA (one-sided market)
   * flexibility from demand response programs is not enough
   * prosumers don't arrive in the market at the same time [foucault2013market] or we can use frequent PDA
-  * existence of multiple market and responsibility [_weber2010adequate_]
+  * existence of multiple market and responsibility [_weber2010adequate_] because of no direct participation
 
 - quantity discovery
 	* coordinators have diverge information about the mismatch
@@ -55,7 +55,7 @@ dynamic pricing to avoid adverse selection
 	* delivery networks
 
 - interested in both the market and prosumers
-	* multi-agent system
+	* multi-agent system, heterogeneous agents have local information
 	* ABM
 	* DES
 
@@ -63,9 +63,11 @@ dynamic pricing to avoid adverse selection
 	* endowment
 	* request queue
 	* model predictive control
-	* make-take management
 
-- programs
+- make-take management
+	* conduct order submissions
+
+- simulation programs
 	* 
 
 - current and anticipated problems:
@@ -81,10 +83,9 @@ dynamic pricing to avoid adverse selection
 - why simulation
   * utility theory is not used
   * analytical solution is hard
-  * heterogeneous agents have local information
 
 - objective, what are the questions to be answered?
-  * demonstrate the equilibrium quantity discovery process with sudden arrivals of new information
+  * demonstrate the quantity discovery process with sudden arrivals of new information
   * explore effect of different factors
   * demonstrate the cost allocation
 

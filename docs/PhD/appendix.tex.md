@@ -98,6 +98,8 @@ $$ \begin{align}
 
 > Choosing appropriate values of Q and R (i.e., tuning) is not always obvious, and this difficulty is one of the challenges faced by industrial practitioners of LQ control. [_rawlings2019model_]
 
+Damping weights provide buffers against fluctuations to reduce round trades.
+
 ## Make-Take Management
 
 Being linear in both objective functions and constraints, the above problem can provide prices for one-unit limit orders and one-unit cooperations based on Lagrange multipliers. Take one-unit limit orders for example, to price a one-unit limit order $\Delta e_{i+k}(t)$ for target unit $i+k$, a new plan $\mathbf{Y}_{k}(t)$ can be introduced. The price can be calculated using $ \mathcal{M}_t \left[\mathbf{Y}_{k}(t) \right] - \mathcal{M}_t \left[\mathbf{Y}(t) \right] $ based on the current bid-ask prices $\mathbf{B}(t)$ and $\mathbf{A}(t)$.
@@ -132,3 +134,5 @@ $$ s_i^n(t) = \mathbb{E} \left[x_i(t) - u_i(t) | \Psi_i^n(t) \right] $$
 The determination of $s_i^n(t)$ can be simulated as well.
 
 The decisions can be optimized as a robust optimization problem.
+
+Some prosumers may learn their position according to order flows.

@@ -20,19 +20,21 @@ In this project, at least one market satisfying previous requirements is designe
 
 For example, to liberalize the electricity generation market, the periodic double auction has been used in day-ahead market to find the equilibrium, and other facilitating markets are needed. However, small-scale prosumers, which refer to the participants who can be either supply or consume in low power rate, cannot participate directly due to three requirements. First of all, it is hard to anticipate and express the demand and supply curves for future units. Even if they manage to provide, the periodic clearings require them to present in the market at the same time. Also, transactions are not instantaneous. Additionally, the complexity from the existence of market families is another challenge for home-own generation business. The flexibility in demand side can be the solution to many problems. Many kinds of demand response programs have been designed to invite small-scale prosumers to participate, but the resulted flexibility is not enough.
 
-The most important function of Rex is the __quantity discovery__, which is similar the concept of price discovery in limit order markets for financial assets. The fundamental values of financial assets can be discovered as transaction prices because the market incentive participants to reveal their private information. The process creates knowledge by incorporating dispersed information. [_maloney2003complexity_] Likewise, prosumers are encouraged to take advantage of their information about the global condition in RexNet. That way, deviations from power balance can be eliminated in high speed without necessity for centralized monitoring.
+The most important function of Rex is the __quantity discovery__, which is similar the concept of price discovery in limit order markets for financial assets. The consensus values of financial assets can be discovered as transaction prices because the market incentive participants to reveal their private information. [_birchler2007information_] The process creates knowledge by incorporating dispersed information in high speed. [_maloney2003complexity_] Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet. That way, deviations from power balance can be eliminated in high speed without necessity for centralized monitoring.
 
 The main difference of Rex is the lack of responsible party for satisfying uninformed demand. For example, utility companies are not obliged to satisfy demand in peak hours. If someone does not have the reservation to consume or supply, he/she has to be responsible himself/herself.
 
 ## 2. What is RHPO
 
-Take energy systems, including power systems, for example, they can be represented by figure `a`, showing the supply chain from extractions to end-uses. The key stage is the distribution of energy from the supply side to the demand side. Alternatively, the system can be restructured using figure `b` by introducing RexNet. Prosumers can be modeled as three parts. __Clients__ are used to simulate the ultimate need of the prosumer, which can be expressed by stochastic processes. For example, the temperature of the room. __Continuous provision plants (CPPs)__ are underlying physical and economical systems with inputs being energy mainly and output to meet	the	needs	of clients. For example, a electricity-driven heat pump and pipes to supply heat to the room. It is __coordinators__ who control CPPs and participate in Rex whose objectives are to make more profit (or lower costs), satisfy needs and respect constraints at the same time. The direct participation of small-scale prosumers is a critical premise for this structure, so that there is no friction between these three parts because they refer to the same prosumer. The distribution of assets must rely on __delivery networks__.
+Take energy systems, including power systems, for example, they can be represented by figure `a`, showing the supply chain from extractions to end-uses. The key stage is the distribution of energy from the supply side to the demand side. Alternatively, the system can be restructured using figure `b` by introducing RexNet. Prosumers can be modeled as three parts. __Clients__ are used to simulate the ultimate need of the prosumer, which can be expressed by stochastic processes. For example, the temperature of the room. __Continuous provision plants (CPPs)__ are underlying physical and economical systems with inputs being energy mainly and output to meet	the	needs	of clients. For example, a electricity-driven heat pump and pipes to supply heat to the room. It is __coordinators__ who control CPPs and participate in Rex whose objectives are to make more profit (or lower costs), satisfy needs and respect constraints at the same time. The direct participation of small-scale prosumers is a critical premise for this structure, so that there is no friction between these three parts because they refer to the same prosumer. In addition, CPPs may correlate with each other so they must be modeled by an aggregated CPPs controlled by one coordinator to satisfy several clients. For example, the space heating system for multi-dwelling buildings must be modeled by MIMO. The distribution of assets must rely on __delivery networks__.
 
 ![](../../images/1-3.png)
 
-In this project we are interested in both the market and prosumers, which therefore have to be modeled as a __multi-agent system__, because prosumers have diverging information and interests. [_shoham2009multiagent_] There is no centralized manager knowing all the variable outcomes and controlling everything, so the market clearing process needs to be optimized in a distributed manner, so prosumers coordinate with each other through RexNet. __Agent-based models__ are used to represent heterogeneous prosumers, and their interactions through RexNet are demonstrated by __discrete event simulations__. [_lebaron2001builder_], [_iori2012agent_]
+In this project we are interested in both the market and prosumers, which therefore have to be modeled as a __multi-agent system__, because prosumers have diverging information and interests. [_shoham2009multiagent_] There is no centralized manager knowing all the variable outcomes and controlling everything, so the market clearing process needs to be optimized in a distributed manner, so prosumers coordinate with each other through RexNet. __Agent-based models__ are used to represent heterogeneous prosumers, and their interactions through RexNet are demonstrated by __discrete event simulations__. [iori2012agent](#reference)
 
 Clients are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on the current information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before the gate closure. High-resolution models of CPPs are known to corresponding coordinators only, in order to protect the privacy. Future outputs can be predicted from CPP models and planned inputs. Then, coordinators modify plans, participate in Rex and respond to clients. The decisions can be optimized by the program called __receding horizon plan & order management (RHPO)__, which has similar structures to model predictive control problems. [_rawlings2019model_]. Coordinators can be seen as intermediaries between clients and the market, which resembles the intermediation theory of firms. [_spulber1996market_] Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions.
+
+make-take management
 
 Specifically, there are many stochastic simulation programs used in this project. For example:
 
@@ -42,20 +44,20 @@ Specifically, there are many stochastic simulation programs used in this project
 
 There are some problems need to be solved:
 
-* The effect of reservation on future requests of responsive clients. Responsive clients will adapt their needs to current states. It may be modeled by an intra-personal game where a decision-maker is summarized by a succession of selves. [_brocas2009dynamic_]
+* The effect of reservation on future requests of responsive clients. Responsive clients will adapt their needs to current states. It may be modeled by an intra-personal game where a decision-maker is summarized by a succession of selves. [_brocas2009dynamic_] joint workings of time inconsistency and consciousness. [_birchler2007information_] Chapter 17
+* To simulate consumptions. [_page2008generalised_]
 * When optimization problems in RHPO are formulated nonlinearly, it is hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness.
 * Agent-based models should be able to learn and adapt to evolving situations.
 * The determination of weight matrices is the challenge faced by MPC researchers as well. [_rawlings2019model_]
+* coordination failure.
 
 ## 3. How to Prove RexNet Practical and RHPO Representative
 
-It is hard to obtain analytical solutions directly.
+There are three alternative perspectives on how to analyze the multi-agent system, which can be illustrated using the following figure. Firstly, the two solid blue boxes include three elements for any prosumer. Coordinators control the CPP, cooperate with the client and submit orders to the market. There is much relevant literature, like the newsvendor problem in supply chain management [wang2012multiordering](#reference) and dynamic pricing [shy2008how](#reference). The second perspectives is to focus on the evolution of market and it includes coordinators only, which is shown by the dashed red box. How to deducted the stylized facts is the primary question, which makes it possible to construct the market directly. [buchanan2011it](#reference) The effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunity for researcher with the first perspective to tune parameters. However, it must be hard to obtain analytical solutions directly compared to literature in market microstructure. As discussed in section 2, agent-based financial simulations are necessary. [lebaron2001builder](#reference) Last but not least, a holistic view including all models is necessary. The shift from quantity-based to power-time-based cost allocation is the primary concern.
 
-Related literature is dispersed in a wide range of research areas. For example, dynamic procurement of perishable products has been seen as a typical newsvendor problem in supply chain management. [_wang2012multiordering_] However, trading periods are isolated with each other. The wellfare of participants is never considered in discrete event simulation and market micro-structure.
+![](../../images/4-10.png)
 
-However, different disciplines do provided powerful tools. For example, cost allocation
-
-validate simulation programs based on measured data. For example, simulated forecast evolution should be analyzed according to standard statistical tools for forecasting. [_madsen2005standardizing_]
+It is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard statistical tools for forecasting. [madsen2005standardizing](#reference)
 
 ## 4. How RexNet and RHPO Contribute
 
@@ -64,6 +66,11 @@ validate simulation programs based on measured data. For example, simulated fore
 ## 5. Why I am Qualified
 
 there may be other designs satisfying the requirements. the main focus will be CDA and electricity market. Besides the promising potential application in distributed energy systems, this market can be applied in many other industries as well, like food supply chains, the retailing management, and the banking.
+
+## Reference
+
+- [lebaron2001builder]
+- [iori2012agent]
 
 ## [Appendix: Brief Mathematical Description](./appendix.md)
 
@@ -83,6 +90,7 @@ there may be other designs satisfying the requirements. the main focus will be C
 [_shoham2009multiagent_]: https://github.com/edxu96/symposium/tree/master/src
 [_rawlings2019model_]: https://github.com/edxu96/symposium/tree/master/src
 [_maloney2003complexity_]: https://github.com/edxu96/symposium/tree/master/src
-
+[_page2008generalised_]: https://github.com/edxu96/symposium/tree/master/src
+[_birchler2007information_]: https://github.com/edxu96/symposium/tree/master/src
 
 > It is often useful to think of the “same” good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations. [_varian2014intermediate_] _Chapter 3_.
