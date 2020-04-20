@@ -96,22 +96,33 @@ dynamic pricing to avoid adverse selection
 
 - simulate the market and analyze the effect of different trategies
 
-## What to Do once with Mature Models
-
-- different Rex for different industries
+- three perspectives
 	* determine resolution parameters
 	* existence of dealers
-	* introduction of bilateral trade agreements to form P2P markets
 
 - design RHPO
 	* impact of different objective functions
 	* different kinds of weight matrix
 	* energy management system
 
-- long-term investment
 
-- new structure for power systems and supply chains
+## What to Do once with Mature Models
+
+- different Rex for different industries
+	* introduction of bilateral trade agreements to form P2P markets
+
+- RHPO
+
+- long-term investment
+	* new structure for power systems and supply chains
 	* especially for under-development areas
+
+- expected output
+  * master thesis
+  * other forms of interaction: stochastic MIMO with identification
+  * responsive clients
+  * different rules and market design
+  * real-world application
 
 ## Why I am Qualified
 
@@ -120,12 +131,6 @@ dynamic pricing to avoid adverse selection
   * simulation
   * applied mathematics
 - when
-- expected output
-  * master thesis
-  * other forms of interaction: stochastic MIMO with identification
-  * responsive clients
-  * different rules and market design
-  * real-world application
 
 ## literature
 

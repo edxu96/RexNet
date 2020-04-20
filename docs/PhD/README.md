@@ -12,9 +12,9 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
 
 ## 1. What is RexNet
 
-Small-scale producers/consumers (__prosumer__) prefer selling/purchasing on a tariff to fluctuating prices in the wholesale market, so their participation is mediated by retailers, who take risks and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and perishability. These features further prevent the application of unorganized markets and most of organized markets. Disposal of food inventory and backup electricity generations increase average costs.
+Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference) prefer selling/purchasing on a tariff to fluctuating prices in the wholesale market, so their participation is mediated by retailers, who take risks and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and perishability. These features further prevent the application of unorganized markets and most of organized markets. Disposal of food inventory and backup electricity generations increase average costs.
 
-For the power industry, with more penetration of intermittent renewable generations and promotion of power systems in rural area, to have responsive prosumers is necessary, because it is cheaper for flexible consumers to mitigate mismatches caused by renewables. In addition, centralized command-and-control is inefficient in such settings because of the conflict between better market clearings and the information protection. __Small-scale-friendly two-sided markets__ are the only solution.
+For the power industry, with more penetration of intermittent renewable generations and promotion of power systems in underdeveloped area, to have responsive prosumers is necessary, because it is cheaper for flexible consumers to mitigate mismatches caused by renewables. [] In addition, neither centralized command-and-control nor retailing is efficient in such settings because of the conflict between better market clearings and the information protection. [kirschen2018fundamentals](#reference) __Small-scale-friendly two-sided markets__ are the only solution.
 
 In this project, at least one market satisfying previous requirements is designed. Some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially. [varian2014intermediate](#reference) For now, there is one candidate, whose mechanism is __continuous double auction__ with __3-dimensional limit order books__, where prosumers can bid/offer continuously and get transacted once matched with another order. It allows immediate transactions and standby orders at the same time. More specific settings vary according to different features in different industries. Because of the constraints in delivery networks, the transactions are not allowed to happen in the spot market, so it is a __forward market__ in essence. There is gate closure at the beginning of any time units. The behavior of trading can be referred to as reservation, therefore the market is named __reservation exchange (Rex)__. With delivery networks having huge impact, the whole system is named __RexNet__. For power industries, RexNet can be used to replace the market families for power systems including the day-ahead market, the intra-day market, the balancing market, the capacity market and other ancillary markets, so prosumers can focus on just one market.
 
@@ -53,7 +53,7 @@ There are some problems need to be solved:
 
 ## 3. How to Prove RexNet Practical and RHPO Representative
 
-There are three alternative perspectives on how to analyze the multi-agent system, which can be illustrated using the following figure. Firstly, the two solid blue boxes include three elements for any prosumer. Coordinators optimize CPP operations, cooperate with the client and submit orders to the market. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [shy2008how](#reference) and inventory management for perishable products [nahmias2011perishable](#reference). The second perspectives is to focus on the evolution of market and it includes coordinators only, which is shown by the dashed red box. How to deducted the stylized facts is the primary question, which makes it possible to construct the market directly. [buchanan2011it](#reference) The effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunity for researcher with the first perspective to tune parameters. Last but not least, a holistic view including all models is necessary. The shift from quantity-based to power-time-based cost allocation is the primary concern.
+There are three alternative perspectives on how to analyze the multi-agent system, which can be illustrated using the following figure. Firstly, the two solid blue boxes include three elements for any prosumer. Coordinators optimize CPP operations, cooperate with the client and submit orders to the market. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [shy2008how](#reference) and inventory management for perishable products [nahmias2011perishable](#reference). The second perspectives is to focus on the evolution of market and it includes coordinators only, which is shown by the dashed red box. How to deducted the stylized facts of the market is the primary question, which makes it possible to construct the market directly. [buchanan2011it](#reference) The effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunity for researcher with the first perspective to tune parameters. Last but not least, a holistic view including all models is necessary. The shift from quantity-based to power-time-based cost allocation is the primary concern.
 
 ![](../../images/4-10.png)
 
@@ -63,11 +63,13 @@ The impact of structures of delivery networks is important as well. Spatial arbi
 
 ## 4. How RexNet and RHPO Contribute
 
+Once validated procedures to simulate RexNet are formulated, they can help design reservation-based exchange markets for other industries like food supply chains, retailing, banking, etc. For example, similar assets can still be pooled, when personalized limit order books are introduced to make matches satisfy requirements from both sides. The process is similar to that in Peer-to-Peer markets with bilateral trade agreements. []
 
+New strategies for RHPO can be designed.
+
+The assumption of time invariance can be relaxed once short-term model are mature. The existence of investments, aging and accident brings about more randomness and flexibility. [spyrou2019planning](#reference) The ultimate goad of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems.
 
 ## 5. Why I am Qualified
-
-there may be other designs satisfying the requirements. the main focus will be CDA and electricity market. Besides the promising potential application in distributed energy systems, this market can be applied in many other industries as well, like food supply chains, the retailing management, and the banking.
 
 ## Reference
 
@@ -78,6 +80,7 @@ there may be other designs satisfying the requirements. the main focus will be C
 - [ross2012simulation](https://www.elsevier.com/books/simulation/ross/978-0-12-415825-2) Simulation.
 - [nahmias2011perishable](https://www.springer.com/gp/book/9781441979988) Perishable inventory systems.
 - [madsen2005standardizing](https://journals.sagepub.com/doi/abs/10.1260/030952405776234599) Standardizing the performance evaluation of short-term wind power prediction models.
+- [kirschen2018fundamentals](https://www.wiley.com/en-us/Fundamentals+of+Power+System+Economics%2C+2nd+Edition-p-9781119213253) Fundamentals of power system economics. Issues associated with retailers are discussed in section 4-3, and those with centralized tradings are in section 3-3-3.
 
 ## Appendix
 
