@@ -20,21 +20,20 @@ dynamic pricing to avoid adverse selection
 	* in most industries, consumers are isolated from fluctuations
 	* perishable
 	* food and water waste around the world
-- what do we need
-  * more penetration of renewable generations
+
+- what requirements -> small-scale-friendly TSM
+  * time varying peak load because of more penetration of renewable generations
   * modern power grids are too expensive for rural areas
   * small-scale participation is cheaper
-  * command-and-control is insufficient
-  * small-scale-friendly two-sided market
-- what: reservation exchange
+  * DSM like tariffs is too static, thus insufficient
+  * command-and-control 
+  * prosumers don't arrive in the market at the same time [foucault2013market] or we can use frequent PDA
+  * want instanteneous transaction
+  * simple: existence of multiple market and responsibility [_weber2010adequate_] because of no direct participation
+
+- what: RexNet
   * forward market
   * fragmentation and hierarchy
-
-- why RexNet
-  * small-scale prosumers cannot participate directly in PDA (one-sided market)
-  * flexibility from demand response programs is not enough
-  * prosumers don't arrive in the market at the same time [foucault2013market] or we can use frequent PDA
-  * existence of multiple market and responsibility [_weber2010adequate_] because of no direct participation
 
 - quantity discovery
 	* coordinators have diverge information about the mismatch
