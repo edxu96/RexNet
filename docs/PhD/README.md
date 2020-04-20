@@ -39,17 +39,17 @@ make-take management
 Specifically, there are many stochastic simulation programs used in this project. For example:
 
 * To simulate wind power output at new locations according to historical data as needs of some clients to sell electricity. Statistical in frequency domain can be introduced to exhibit the spatial diversity and utilize available information as much as possible. [woods2013simulation](#reference)
+* To simulate consumptions. [page2008generalised](#reference)
 * Martingale model of forecast evolution (MMFE) to simulate requests sent to coordinators because of arrival of new information. [heath1994modeling](#reference) Cumulative adjustments can managed using methods from inventory management. [wang2012multiordering](#reference)
 * Multi-input multi-output state space stochastic control systems as models of CPPs. [siroky2011experimental](#reference) Grey-box modelling techniques, which combines statistical methods and physical knowledge, can be used to calibrate the models. [bacher2011identifying](#reference)
 
 There are some problems need to be solved:
 
-* The effect of reservation on future requests of responsive clients. Responsive clients will adapt their needs to current states. It may be modeled by an intra-personal game where a decision-maker is summarized by a succession of selves. [brocas2009dynamic](#reference) joint workings of time inconsistency and consciousness. [birchler2007information](#reference) Chapter 17
-* To simulate consumptions. [page2008generalised](#reference)
+* The effect of reservation on future requests of responsive clients. Responsive clients will adapt their needs to current states. It may be modeled by an intra-personal game where a decision-maker is summarized by a succession of selves [brocas2009dynamic](#reference) and joint workings of time inconsistency and consciousness. [birchler2007information](#reference)
 * When optimization problems in RHPO are formulated nonlinearly, it is hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness.
 * Agent-based models should be able to learn and adapt to evolving situations.
 * The determination of weight matrices is the challenge faced by MPC researchers as well. [rawlings2019model](#reference)
-* coordination failure.
+* Rex may be unstable because of coordination failures.
 
 ## 3. How to Prove RexNet Practical and RHPO Representative
 
@@ -69,8 +69,6 @@ New strategies for RHPO can be designed.
 
 The assumption of time invariance can be relaxed once short-term model are mature. The existence of investments, aging and accident brings about more randomness and flexibility. [spyrou2019planning](#reference) The ultimate goad of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems.
 
-## 5. Why I am Qualified
-
 ## Reference
 
 - [lebaron2001builder](https://www.tandfonline.com/doi/abs/10.1088/1469-7688/1/2/307) A builder’s guide to agent-based financial markets. "It is not really a survey, but a kind of view from the trenches in terms of building artificial markets."
@@ -81,6 +79,23 @@ The assumption of time invariance can be relaxed once short-term model are matur
 - [nahmias2011perishable](https://www.springer.com/gp/book/9781441979988) Perishable inventory systems.
 - [madsen2005standardizing](https://journals.sagepub.com/doi/abs/10.1260/030952405776234599) Standardizing the performance evaluation of short-term wind power prediction models.
 - [kirschen2018fundamentals](https://www.wiley.com/en-us/Fundamentals+of+Power+System+Economics%2C+2nd+Edition-p-9781119213253) Fundamentals of power system economics. Issues associated with retailers are discussed in section 4-3, and those with centralized tradings are in section 3-3-3.
+- [spyrou2019planning](https://www.nature.com/articles/s41560-019-0346-x) Planning power systems in fragile and conflict-affected states.
+- [parag2016electricity](https://www.nature.com/articles/nenergy201632) Electricity market design for the prosumer era
+- [birchler2007information](https://www.taylorfrancis.com/books/9780203946558) Information economics. How the market aggregates information is discussed in 5 chapters in part 2. All kinds of deviations of behaviors by later self are introduced briefly in chapter 17.
+- [maloney2003complexity](https://www.sciencedirect.com/science/article/pii/S092911990200055X) The complexity of price discovery in an efficient market: the stock market reaction to the Challenger crash. An empirical event study on how the new knowledge and its associated equilibrium price is discovered.
+- [shoham2009multiagent](https://www.cambridge.org/core/books/multiagent-systems/B11B69E0CB9032D6EC0A254F59922360) Multiagent systems:
+algorithmic, game-theoretic, and logical foundations. MASs with continuous double auctions are discussed in section 11-4.
+- [rawlings2019model](https://sites.engineering.ucsb.edu/~jbraw/mpc/) Model predictive control: theory, computation, and design. MPC regulators are introduced in chapter 1.
+- [spulber1996market](https://www.aeaweb.org/articles?id=10.1257/jep.10.3.135) Market microstructure and intermediation. The similarity does not refer to market makers being intermediaries. There are at least three layers between clients from the second perspective, while the market maker are the only layer between two sides.
+- [woods2013simulation](https://ieeexplore.ieee.org/document/6262462) Simulation of wind power at several locations
+using a measured time-series of wind speed.
+- [heath1994modeling](https://www.tandfonline.com/doi/abs/10.1080/07408179408966604) Modeling the evolution of demand forecasts with application to safety stock analysis in production/distribution systems.
+- [wang2012multiordering](https://pubsonline.informs.org/doi/pdf/10.1287/msom.1120.0387) A multiordering newsvendor model with dynamic forecast evolution. Discrete forecast evolutions are used, and there is only one target selling season. Instead, continuous updates are required in the CDA market and the provision process is discrete over time.
+- [siroky2011experimental](https://www.sciencedirect.com/science/article/pii/S0306261911001668) Experimental analysis of model predictive control for an energy efficient building heating system. There are two outputs and inputs in the model.
+- [bacher2011identifying](https://www.sciencedirect.com/science/article/pii/S0378778811000491) Identifying suitable models for the heat dynamics of buildings.
+- [brocas2009dynamic](https://link.springer.com/article/10.1007/s11238-009-9183-x) Dynamic inconsistency and choice.
+- [page2008generalised](https://www.sciencedirect.com/science/article/pii/S037877880700031X) A generalised stochastic model for the simulation of occupant presence.
+- [buchanan2011it](https://www.nature.com/articles/nphys2191) It's a (stylized) fact.
 
 ## Appendix
 
