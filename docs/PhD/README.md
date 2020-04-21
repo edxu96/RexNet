@@ -12,19 +12,20 @@ reservation-realization-settlement, two-sided market, dynamic equilibrium discov
 
 ## 1. What is RexNet
 
-Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference) prefer selling/purchasing on a tariff to fluctuating prices in the wholesale market, so their participation is mediated by retailers, who take risks and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and perishability. These features further prevent the application of unorganized markets and most of organized markets. Disposal of food inventory and backup electricity generations increase average costs. Instead, the mechanism to coordinate prosumers should satisfy the following conditions:
+Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference) prefer entering into contracts to isolate themselves from the vagaries of the wholesale market, so their participation is mediated by retailers, who take the risk and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and perishability. Thus retailers must face price spikes from time to time because they are obliged to satisfy the needs of his customers. In addition, these features further prevent the application of unorganized markets and most of organized markets. Disposal of food inventory and backup electricity generations increase average costs. Instead, the mechanism to coordinate prosumers should satisfy the following conditions:
 
-* Adaptive to external factors, like time varying peak load because of more penetration of renewable generations.
-* Cheap. promotion of power systems in underdeveloped area
-* Prosumers have time to react to price signals. The real-time incentives from spot markets are hard to catch, because not only the current signals can hardly reveal any information about future, but also prosumers need time to adapt their activities to fit traded quantities.
-* It is prosumers who anticipate their future states, formulate trading strategies and act accordingly. There is no way for small-scale prosumers to quantify their utility function and report to the market organizer. Besides, the flexibility provided by command-and-control dispatch is insignificant because markets organizers can never have enough information.
-* Transactions are instantaneous, because the arrival times are random and they do not want to wait for confirmations. Also, they are allowed to make changes. On the other hand, they are allowed to trade for a long time periods covering many trading units to save the trouble from making decisions regarding few units but in high frequency.
-* The market should be as transparent as possible, while private information is tightly protected. So centralized command-and-control nor retailing is efficient in such settings because of the conflict between better market clearings and the information protection. [kirschen2018fundamentals](#reference)
-* The market is thick enough but not congested, so prosumers do not have to search or bargain. In other words, the market is liquid enough for prosumers to lower trans- action costs.
+* Adaptive to external factors temporally and spatially. For example, time varying peak loads because of more penetration of renewable generations exclude the application of traditional load shifting or shedding. [connell2014benefits](#reference)
+* Information. The market should be as transparent as possible, while private information is tightly protected. So centralized command-and-control nor retailing is efficient in such settings because of the conflict between better market clearings and the information protection. [kirschen2018fundamentals](#reference) It is prosumers who anticipate their future states, formulate trading strategies and act accordingly.
+* Low-cost. None of large-scale storages, hydropower, nuclear power can be relied on for the promotion of power systems in underdeveloped area. []
+* Prosumers have time to react to price signals. The real-time incentives from spot markets are hard to catch, because not only the current signals can hardly reveal any information about future, but also prosumers need time to adapt their activities to fit traded quantities. [varian2017intermediate](#reference)
+* Transactions can be instantaneous, because some prosumers arrive randomly and may demand liquidity. Also, some would like to trade for long time periods covering many trading units to save the trouble from making decisions regarding few units but in high frequency. [foucault2013market](#reference)
+* The market is thick enough but not congested, so prosumers do not have to search or bargain. In other words, the market is liquid enough for prosumers to lower transaction costs.
 * The number of statistics for decision making is as low as possible but different services can be distinguished based on those statistics.
-* The imbalance within trading units can be maintained, so that the system safety is not a concern.
+* The imbalance within trading units can be maintained without centralized system operators [kirschen2018fundamentals](#reference), because it may be hard to establish trustworthy regulatory authorities and operators responsible for the system safety.
 
 In this project, at least one market satisfying previous requirements is designed. Some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially. [varian2014intermediate](#reference) For now, there is one candidate, whose mechanism is __continuous double auction__ with __3-dimensional limit order books__, where prosumers can bid/offer continuously and get transacted once matched with another order. It allows immediate transactions and standby orders at the same time. More specific settings vary according to different features in different industries. Because of the constraints in delivery networks, the transactions are not allowed to happen in the spot market, so it is a __forward market__ in essence. There is gate closure at the beginning of any time units. The behavior of trading can be referred to as reservation, therefore the market is named __reservation exchange (Rex)__. With delivery networks having huge impact, the whole system is named __RexNet__. For power industries, RexNet can be used to replace the market families for power systems including the day-ahead market, the intra-day market, the balancing market, the capacity market and other ancillary markets, so prosumers can focus on just one market.
+
+In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. So the market is spatially fragmented by transmission networks when relevant edges are congested. Spatial arbitragers can be introduced to represent the participants of transmission networks. Moreover, the market can be established hierarchically.
 
 For example, to liberalize the electricity generation market, the periodic double auction has been used in day-ahead market to find the equilibrium, and other facilitating markets are needed. However, small-scale prosumers, which refer to the participants who can be either supply or consume in low power rate, cannot participate directly due to three requirements. First of all, it is hard to anticipate and express the demand and supply curves for future units. Even if they manage to provide, the periodic clearings require them to present in the market at the same time. Also, transactions are not instantaneous. Additionally, the complexity from the existence of market families is another challenge for home-own generation business. The flexibility in demand side can be the solution to many problems. Many kinds of demand response programs have been designed to invite small-scale prosumers to participate, but the resulted flexibility is not enough.
 
@@ -67,11 +68,13 @@ It is vital to validate simulation programs based on measured data. [ross2012sim
 
 The impact of structures of delivery networks is important as well. Spatial arbitragers representing transmission networks can be introduced as well.
 
+Some small-scale experiments regarding key assumptions can be conducted. As a new type of retailer
+
 ## 4. How RexNet and RHPO Contribute
 
 Once validated procedures to simulate RexNet are formulated, they can help design reservation-based exchange markets for other industries like food supply chains, retailing, banking, etc. For example, similar assets can still be pooled, when personalized limit order books are introduced to make matches satisfy requirements from both sides. The process is similar to that in Peer-to-Peer markets with bilateral trade agreements. [sousa2019peer](#reference)
 
-The assumption of time invariance can be relaxed once short-term model are mature. The existence of investments, aging and accident brings about more randomness and flexibility. [spyrou2019planning](#reference) The ultimate goad of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems.
+The assumption of time invariance can be relaxed once short-term model are mature. The existence of investments, aging and accident brings about more randomness and flexibility. [spyrou2019planning](#reference) The ultimate goal of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems.
 
 The expected outputs are listed:
 
@@ -79,7 +82,7 @@ The expected outputs are listed:
 * other forms of interaction: stochastic MIMO with identification
 * responsive clients
 * different rules and market design
-* real-world application
+* real-world application as a new retailer
 
 ## Reference
 
@@ -87,10 +90,10 @@ The expected outputs are listed:
 * [birchler2007information](https://www.taylorfrancis.com/books/9780203946558) Information economics. How the market aggregates information is discussed in 5 chapters in part 2. All kinds of deviations of behaviors by later self are introduced briefly in chapter 17.
 * [brocas2009dynamic](https://link.springer.com/article/10.1007/s11238-009-9183-x) Dynamic inconsistency and choice.
 * [buchanan2011it](https://www.nature.com/articles/nphys2191) It's a (stylized) fact.
-* [foucault2013market](https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199936243.001.0001/acprof-9780199936243) Market liquidity: theory, evidence, and policy. Make- and Take- decisions in LOB markets are discussed in chapter 6.
+* [foucault2013market](https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199936243.001.0001/acprof-9780199936243) Market liquidity: theory, evidence, and policy. How real-world markets work is introduced at the beginning of chapter 1. Make- and Take- decisions in LOB markets are discussed in chapter 6.
 * [heath1994modeling](https://www.tandfonline.com/doi/abs/10.1080/07408179408966604) Modeling the evolution of demand forecasts with application to safety stock analysis in production/distribution systems.
 * [iori2012agent](https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780199844371.001.0001/oxfordhb-9780199844371-e-43) Agent-based modelling for financial markets. Section 4-2 is about heterogeneous agents with market mediated interactions.
-* [kirschen2018fundamentals](https://www.wiley.com/en-us/Fundamentals+of+Power+System+Economics%2C+2nd+Edition-p-9781119213253) Fundamentals of power system economics. Issues associated with retailers are discussed in section 4-3, and those with centralized tradings are in section 3-3-3.
+* [kirschen2018fundamentals](https://www.wiley.com/en-us/Fundamentals+of+Power+System+Economics%2C+2nd+Edition-p-9781119213253) Fundamentals of power system economics. Issues associated with retailers are discussed in section 4-3, and those with centralized tradings are in section 3-3-3. Why and how centralized system operators in incumbent electricity markets maintain safety within trading units are discussed in chapter 6. However, system operators are expected to be eliminated in this project.
 * [lebaron2001builder](https://www.tandfonline.com/doi/abs/10.1088/1469-7688/1/2/307) A builder’s guide to agent-based financial markets. "It is not really a survey, but a kind of view from the trenches in terms of building artificial markets."
 * [madsen2005standardizing](https://journals.sagepub.com/doi/abs/10.1260/030952405776234599) Standardizing the performance evaluation of short-term wind power prediction models.
 * [maloney2003complexity](https://www.sciencedirect.com/science/article/pii/S092911990200055X) The complexity of price discovery in an efficient market: the stock market reaction to the Challenger crash. An empirical event study on how the new knowledge and its associated equilibrium price is discovered.
@@ -104,10 +107,11 @@ The expected outputs are listed:
 * [siroky2011experimental](https://www.sciencedirect.com/science/article/pii/S0306261911001668) Experimental analysis of model predictive control for an energy efficient building heating system. There are two outputs and inputs in the model.
 * [spulber1996market](https://www.aeaweb.org/articles?id=10.1257/jep.10.3.135) Market microstructure and intermediation. The similarity does not refer to market makers being intermediaries. There are at least three layers between clients from the second perspective, while the market maker are the only layer between two sides.
 * [spyrou2019planning](https://www.nature.com/articles/s41560-019-0346-x) Planning power systems in fragile and conflict-affected states.
-* [varian2017intermediate](https://wwnorton.com/books/9780393689983/about-the-book/product-details) Intermediate microeconomics with calculus: a modern approach. Chapter 3 writes "it is often useful to think of the “same” good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations."
+* [varian2017intermediate](https://wwnorton.com/books/9780393689983/about-the-book/product-details) Intermediate microeconomics with calculus: a modern approach. Chapter 3 writes "it is often useful to think of the “same” good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations." The short-term elasticity is expected to decrease as the gate closure approaches.
 * [wang2012multiordering](https://pubsonline.informs.org/doi/pdf/10.1287/msom.1120.0387) A multiordering newsvendor model with dynamic forecast evolution. Discrete forecast evolutions are used, and there is only one target selling season. Instead, continuous updates are required in the CDA market and the provision process is discrete over time.
 * [woods2013simulation](https://ieeexplore.ieee.org/document/6262462) Simulation of wind power at several locations.
 * [sousa2019peer](https://www.sciencedirect.com/science/article/pii/S1364032119300462) Peer-to-peer and community-based markets: A comprehensive review.
+* [connell2014benefits](https://www.sciencedirect.com/science/article/pii/S1364032114005504) Benefits and challenges of electrical demand response: A critical review. In section, the necessity of continuous demand response is disucssed.
 
 ## Appendix
 

@@ -22,14 +22,13 @@ dynamic pricing to avoid adverse selection
 	* food and water waste around the world
 
 - what requirements -> small-scale-friendly TSM
-  * time varying peak load because of more penetration of renewable generations
-  * modern power grids are too expensive for rural areas
-  * small-scale participation is cheaper
+  * adaptive temporally and spatially
   * DSM like tariffs is too static, thus insufficient
   * command-and-control 
   * prosumers don't arrive in the market at the same time [foucault2013market] or we can use frequent PDA
   * want instanteneous transaction
   * simple: existence of multiple market and responsibility [_weber2010adequate_] because of no direct participation
+  * low-cost, small-scale participation is cheaper
 
 - what: RexNet
   * forward market
