@@ -60,7 +60,7 @@ There are some problems need to be solved:
 
 ## 3. How to Prove RexNet Practical and RHPO Representative
 
-There are three alternative perspectives on how to analyze the multi-agent system, which can be illustrated using the following figure. Firstly, the two solid blue boxes include three elements for any prosumer. Coordinators optimize CPP operations, cooperate with the client and submit orders to the market. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [shy2008how](#reference) and inventory management for perishable products [nahmias2011perishable](#reference). The second perspectives is to focus on the evolution of market and it includes coordinators only, which is shown by the dashed red box. How to deducted the stylized facts of the market is the primary question, which makes it possible to construct the market directly. [buchanan2011it](#reference) The effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunity for researcher with the first perspective to tune parameters. Last but not least, a holistic view including all models is necessary. The shift from quantity-based to power-time-based cost allocation is the primary concern.
+There are three alternative perspectives on how to analyze the multi-agent system, which can be illustrated using the following figure. Firstly, the two solid blue boxes include three elements for any prosumer. Coordinators optimize CPP operations, cooperate with the client and submit orders to the market. This perspective will be discussed in more detail in the last paragraph of this section. The second perspectives is to focus on the evolution of market and it includes coordinators only, which is shown by the dashed red box. How to deducted the stylized facts of the market is the primary question, which makes it possible to construct the market directly. [buchanan2011it](#reference) The effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunity for researcher with the first perspective to tune parameters. Last but not least, a holistic view including all models is necessary. The shift from quantity-based to power-time-based cost allocation is the primary concern.
 
 ![](../../images/4-10.png)
 
@@ -68,7 +68,9 @@ It is vital to validate simulation programs based on measured data. [ross2012sim
 
 The impact of structures of delivery networks is important as well. Spatial arbitragers representing transmission networks can be introduced as well.
 
-Some small-scale experiments regarding key assumptions can be conducted. As a new type of retailer
+Some small-scale experiments regarding key assumptions can be conducted. As discussed before, RexNet can be established in a hierarchical structure. Retailers can be introduced to represent a group of prosumers, and this part can be applied in incumbent power systems. Retailer procure in incumbent electricity market families. It makes a dynamic pricing problem.  There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference) and inventory management for perishable products [nahmias2011perishable](#reference).
+
+![](../../images/4-11.png)
 
 ## 4. How RexNet and RHPO Contribute
 
@@ -113,6 +115,7 @@ The expected outputs are listed:
 * [varian2017intermediate](https://wwnorton.com/books/9780393689983/about-the-book/product-details) Intermediate microeconomics with calculus: a modern approach. Chapter 3 writes "it is often useful to think of the “same” good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations." The short-term elasticity is expected to decrease as the gate closure approaches.
 * [wang2012multiordering](https://pubsonline.informs.org/doi/pdf/10.1287/msom.1120.0387) A multiordering newsvendor model with dynamic forecast evolution. Discrete forecast evolutions are used, and there is only one target selling season. Instead, continuous updates are required in the CDA market and the provision process is discrete over time.
 * [woods2013simulation](https://ieeexplore.ieee.org/document/6262462) Simulation of wind power at several locations.
+* [monahan2004dynamic](https://pubsonline.informs.org/doi/abs/10.1287/msom.1030.0026) The dynamic pricing problem from a newsvendor’s perspective. There is only one chance to procure stocks, and "the randomness in demand is price independent and multiplicative in nature, and the parameter b denotes the price elasticity of demand."
 
 ## Appendix
 
