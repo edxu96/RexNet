@@ -28,7 +28,7 @@ dynamic pricing to avoid adverse selection
   * prosumers don't arrive in the market at the same time [foucault2013market] or we can use frequent PDA
   * want instanteneous transaction
   * simple: existence of multiple market and responsibility [_weber2010adequate_] because of no direct participation
-  * low-cost, small-scale participation is cheaper
+  * low-cost, price-sensitive consumers in under-developed areas
 
 - what: RexNet
   * forward market
