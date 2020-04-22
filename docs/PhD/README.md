@@ -25,7 +25,7 @@ Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference
 
 In this project, at least one market satisfying previous requirements is designed. Some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially. [varian2014intermediate](#reference) The potential candidate so far is __continuous double auction__ market with __3-dimensional limit order books__, where prosumers can bid/offer continuously and get transacted once matched with another order. It allows immediate transactions and standby orders at the same time. More specific settings vary according to different features in different industries. Similar to computerized reservation systems in airline industries, prosumers have to book before the delivery, and markets are segmented according to when bookings are made. [shy2008how](#reference) Therefore the market is named __reservation exchange (Rex)__. With delivery networks integrated, the whole system is named __RexNet__. For power industries, RexNet can be used to replace the market families for power systems including the day-ahead market, the intra-day market, the balancing market, the capacity market and other ancillary markets, so prosumers can focus on just one market.
 
-The most important function of Rex is the __quantity discovery__, which is similar the concept of price discovery in limit order markets for financial assets when markets motivate participants to reveal their private information. [birchler2007information](#reference) The process creates knowledge by incorporating dispersed information in high speed. [maloney2003complexity](#reference) Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet. That way, deviations from power balance can be eliminated in high speed without necessity for centralized monitoring.
+The most important function of Rex is the __quantity discovery__, which is similar the concept of price discovery in limit order markets for financial assets when markets motivate participants to reveal their private information. [birchler2007information](#reference) Both of them are dynamic equilibrium discovery. The process creates knowledge by incorporating dispersed information in high speed. [maloney2003complexity](#reference) Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet. That way, deviations from power balance can be eliminated in high speed without necessity for centralized monitoring.
 
 In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. So the market is spatially fragmented by transmission networks when relevant edges are congested. Stakeholders in control of transmission networks can participate in RexNet as spatial arbitragers. Moreover, RexNet can be established hierarchically. Representatives of prosumers in lower levels can serve as retailers, which will be discussed at the end of section [3](#3-how-to-prove-rexnet-practical-and-rhpo-representative).
 
@@ -55,21 +55,19 @@ Specifically, there are some stochastic simulation programs used in this project
 
 There are some problems need to be solved:
 
-* The effect of reservation on future requests of responsive clients. Responsive clients will adapt their needs to current states. It may be modeled by an intra-personal game where a decision-maker is summarized by a succession of selves [brocas2009dynamic](#reference) and joint workings of time inconsistency and consciousness. [birchler2007information](#reference)
-* When optimization problems in RHPO are formulated nonlinearly, it is hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness.
+* The effect of reservations on responsive clients, who can adapt their needs to current states, is not clear. It may be modeled by an intra-personal game where a decision-maker is summarized by a succession of selves [brocas2009dynamic](#reference) and joint workings of time inconsistency and consciousness. [birchler2007information](#reference)
+* When optimization problems in RHPO are formulated nonlinearly, it may be hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness.
 * Agent should be able to learn and adapt to evolving situations. [franklin1997it](#reference)
 * The determination of weight matrices is the challenge faced by MPC researchers as well. [rawlings2019model](#reference)
 * Rex may be unstable because of coordination failures.
 
 ## 3. How to Prove RexNet Practical and RHPO Representative
 
-There are three alternative perspectives on how to analyze the multi-agent system, which can be illustrated using the following figure. Firstly, the two solid blue boxes include three elements for any prosumer. Coordinators optimize CPP operations, cooperate with the client and submit orders to the market. This perspective will be discussed in more detail in the last paragraph of this section. The second perspectives is to focus on the evolution of market and it includes coordinators only, which is shown by the dashed red box. How to deducted the stylized facts of the market is the primary question, which makes it possible to construct the market directly. [buchanan2011it](#reference) The effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunity for researcher with the first perspective to tune parameters. Last but not least, a holistic view including all models is necessary. The shift from quantity-based to power-time-based cost allocation is the primary concern.
+There are three perspectives on how to analyze this multi-agent system, which can be illustrated using the following figure. The first perspective is from coordinators, and it includes three elements for prosumers like those in two solid blue boxes. This perspective will be discussed in more detail in the last paragraph of this section The second perspectives is to focus on the evolution of market and it includes coordinators only, which is shown by the dashed red box. The induction of stylized facts of Rex is the primary task, which makes it possible to construct the market directly. [buchanan2011it](#reference) Then the effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunities for researchers with the first perspective to tune parameters. Last but not least, a holistic view including all models is necessary, because lots of features of Rex, like the shift from quantity-based to power-time-based cost allocation [hougaard2009introduction](#reference), must be examined this way.
 
 ![](../../images/4-10.png)
 
 It is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard statistical tools for forecasting. [madsen2005standardizing](#reference)
-
-The impact of structures of delivery networks is important as well. Spatial arbitragers representing transmission networks can be introduced as well.
 
 Some small-scale experiments regarding key assumptions can be conducted. As discussed before, RexNet can be established in a hierarchical structure. Retailers can be introduced to represent a group of prosumers, and this part can be applied in incumbent power systems. Retailer procure in incumbent electricity market families. It makes a dynamic pricing problem.  There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference) and inventory management for perishable products [nahmias2011perishable](#reference).
 
@@ -83,8 +81,8 @@ The assumption of time invariance can be relaxed once short-term model are matur
 
 The expected outputs are listed:
 
-* master thesis
-* other forms of interaction: stochastic MIMO with identification
+* my DTU master thesis on the introduction to Rex
+* advanced RHPO like CPPs being stochastic MIMOs and their identification methods
 * responsive clients
 * different rules and market design
 * real-world application as a new retailer
@@ -93,16 +91,23 @@ The expected outputs are listed:
 
 * [bacher2011identifying](https://www.sciencedirect.com/science/article/pii/S0378778811000491) Identifying suitable models for the heat dynamics of buildings.
 * [birchler2007information](https://www.taylorfrancis.com/books/9780203946558) Information economics. How the market aggregates information is discussed in 5 chapters in part 2. All kinds of deviations of behaviors by later self are introduced briefly in chapter 17.
+* [blok2017introduction](https://www.taylorfrancis.com/books/9781315617213) Introduction to energy analysis. Figure `a` is the figure 0.1 in page xxv.
 * [brocas2009dynamic](https://link.springer.com/article/10.1007/s11238-009-9183-x) Dynamic inconsistency and choice.
 * [buchanan2011it](https://www.nature.com/articles/nphys2191) It's a (stylized) fact.
 * [connell2014benefits](https://www.sciencedirect.com/science/article/pii/S1364032114005504) Benefits and challenges of electrical demand response: A critical review. In section, the necessity of continuous demand response is disucssed.
 * [foucault2013market](https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199936243.001.0001/acprof-9780199936243) Market liquidity: theory, evidence, and policy. How real-world markets work is introduced at the beginning of chapter 1. Make- and Take- decisions in LOB markets are discussed in chapter 6.
+* [franklin1997it](https://link.springer.com/chapter/10.1007/BFb0013570) Is it an agent, or just a program: a taxonomy for autonomous agents.
+* [garnier2015balancing](https://link.springer.com/article/10.1007/s12667-015-0143-y) Balancing forecast errors in continuous-trade intraday markets
 * [heath1994modeling](https://www.tandfonline.com/doi/abs/10.1080/07408179408966604) Modeling the evolution of demand forecasts with application to safety stock analysis in production/distribution systems.
+* [hougaard2009introduction](https://link.springer.com/book/10.1007/978-3-642-01828-2) An introduction to allocation rules.
 * [iori2012agent](https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780199844371.001.0001/oxfordhb-9780199844371-e-43) Agent-based modelling for financial markets. Section 4-2 is about heterogeneous agents with market mediated interactions.
+* [jacome2019power](https://www.pnas.org/content/116/33/16308) Power quality and modern energy for all. The operation of power grids in less-developed areas is different from that in developed countries, because the systems are not resilient enough for lack of responsive generators, large-scale connections, regulations, etc.
+* [kirschen2003demand](https://ieeexplore.ieee.org/document/1198281) Demand-side view of electricity markets. Price spikes in electricity markets are discussed in section 2.
 * [kirschen2018fundamentals](https://www.wiley.com/en-us/Fundamentals+of+Power+System+Economics%2C+2nd+Edition-p-9781119213253) Fundamentals of power system economics. Issues associated with retailers are discussed in section 4-3, and those with centralized tradings are in section 3-3-3. Why and how centralized system operators in incumbent electricity markets maintain safety within trading units are discussed in chapter 6. However, system operators are expected to be eliminated in this project.
 * [lebaron2001builder](https://www.tandfonline.com/doi/abs/10.1088/1469-7688/1/2/307) A builder’s guide to agent-based financial markets. "It is not really a survey, but a kind of view from the trenches in terms of building artificial markets."
 * [madsen2005standardizing](https://journals.sagepub.com/doi/abs/10.1260/030952405776234599) Standardizing the performance evaluation of short-term wind power prediction models.
 * [maloney2003complexity](https://www.sciencedirect.com/science/article/pii/S092911990200055X) The complexity of price discovery in an efficient market: the stock market reaction to the Challenger crash. An empirical event study on how the new knowledge and its associated equilibrium price is discovered.
+* [monahan2004dynamic](https://pubsonline.informs.org/doi/abs/10.1287/msom.1030.0026) The dynamic pricing problem from a newsvendor’s perspective. There is only one chance to procure stocks, and "the randomness in demand is price independent and multiplicative in nature, and the parameter b denotes the price elasticity of demand."
 * [nahmias2011perishable](https://www.springer.com/gp/book/9781441979988) Perishable inventory systems.
 * [page2008generalised](https://www.sciencedirect.com/science/article/pii/S037877880700031X) A generalised stochastic model for the simulation of occupant presence.
 * [parag2016electricity](https://www.nature.com/articles/nenergy201632) Electricity market design for the prosumer era
@@ -113,18 +118,11 @@ The expected outputs are listed:
 * [shy2008how](https://www.cambridge.org/core/books/how-to-price/27B182881BC668B688F8DA949DF52554) How to price: a guide to pricing techniques and yield management.
 * [siroky2011experimental](https://www.sciencedirect.com/science/article/pii/S0306261911001668) Experimental analysis of model predictive control for an energy efficient building heating system. There are two outputs and inputs in the model.
 * [sousa2019peer](https://www.sciencedirect.com/science/article/pii/S1364032119300462) Peer-to-peer and community-based markets: A comprehensive review.
-<!-- * [spulber1996market](https://www.aeaweb.org/articles?id=10.1257/jep.10.3.135) Market microstructure and intermediation. The similarity does not refer to market makers being intermediaries. There are at least three layers between clients from the second perspective, while the market maker are the only layer between two sides. -->
 * [spyrou2019planning](https://www.nature.com/articles/s41560-019-0346-x) Planning power systems in fragile and conflict-affected states.
 * [varian2017intermediate](https://wwnorton.com/books/9780393689983/about-the-book/product-details) Intermediate microeconomics with calculus: a modern approach. Chapter 3 writes "it is often useful to think of the 'same' good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations." So preferences for assets with different leads time are different, and the short-term elasticity is expected to decrease as the gate closure approaches.
 * [wang2012multiordering](https://pubsonline.informs.org/doi/pdf/10.1287/msom.1120.0387) A multiordering newsvendor model with dynamic forecast evolution. Discrete forecast evolutions are used, and there is only one target selling season. Instead, continuous updates are required in the CDA market and the provision process is discrete over time.
-* [woods2013simulation](https://ieeexplore.ieee.org/document/6262462) Simulation of wind power at several locations.
-* [monahan2004dynamic](https://pubsonline.informs.org/doi/abs/10.1287/msom.1030.0026) The dynamic pricing problem from a newsvendor’s perspective. There is only one chance to procure stocks, and "the randomness in demand is price independent and multiplicative in nature, and the parameter b denotes the price elasticity of demand."
-* [garnier2015balancing](https://link.springer.com/article/10.1007/s12667-015-0143-y) Balancing forecast errors in continuous-trade intraday markets
-* [jacome2019power](https://www.pnas.org/content/116/33/16308) Power quality and modern energy for all. The operation of power grids in less-developed areas is different from that in developed countries, because the systems are not resilient enough for lack of responsive generators, large-scale connections, regulations, etc.
-* [kirschen2003demand](https://ieeexplore.ieee.org/document/1198281) Demand-side view of electricity markets. Price spikes in electricity markets are discussed in section 2.
 * [weber2010adequate](https://www.sciencedirect.com/science/article/pii/S0301421509005564) Adequate intraday market design to enable the integration of wind energy into the European power systems. Trading volumes in intra-day markets in Europe 10 years ago are shown in table 3.
-* [blok2017introduction](https://www.taylorfrancis.com/books/9781315617213) Introduction to energy analysis. Figure `a` is the figure 0.1 in page xxv.
-* [franklin1997it](https://link.springer.com/chapter/10.1007/BFb0013570) Is it an agent, or just a program: a taxonomy for autonomous agents.
+* [woods2013simulation](https://ieeexplore.ieee.org/document/6262462) Simulation of wind power at several locations.
 
 ## Appendix
 
@@ -135,3 +133,5 @@ The expected outputs are listed:
 - [2020年国家留学基金资助出国留学人员选派简章](https://www.csc.edu.cn/article/1710)
 
 The closet literature is [garnier2015balancing](#reference).
+
+<!-- * [spulber1996market](https://www.aeaweb.org/articles?id=10.1257/jep.10.3.135) Market microstructure and intermediation. The similarity does not refer to market makers being intermediaries. There are at least three layers between clients from the second perspective, while the market maker are the only layer between two sides. -->
