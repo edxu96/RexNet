@@ -1,16 +1,12 @@
 ---
 for: GitHub/edxu96/RexNet/docs/PhD
 author: Edward J. Xu
-date: April 18, 2020
+date: April 22, 2020
 ---
 
 # `PhD Proposal` Reservation-Based Exchange Market and its Participants
 
-## Keywords
-
-reservation-realization-settlement, two-sided market, dynamic equilibrium discovery, agent-based models, stochastic simulation, model predictive control, forward market, discrete event simulation, revenue management, multi-agent system, market microstructure
-
-## 1. What is RexNet
+## 1. Introduction
 
 Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference) prefer entering into contracts to isolate themselves from the vagaries of wholesale markets, so their participation is mediated by retailers, who take the risk and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and perishability. Retailers must face price spikes from time to time because they are obliged to satisfy the needs of their customers. [kirschen2003demand](#reference) Instead, mechanisms satisfying the following requirements should be designed:
 
@@ -23,25 +19,31 @@ Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference
 * The number of statistics for decision making is as low as possible but different assets can be distinguished based on those statistics.
 * The imbalance within trading units can be maintained without centralized system operators [kirschen2018fundamentals](#reference), because it may be hard to establish trustworthy regulatory authorities and operators responsible for the system safety.
 
-In this project, at least one market satisfying previous requirements is designed. Some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially. [varian2014intermediate](#reference) The potential candidate so far is the __continuous double auction__ market with __3-dimensional limit order books__, where prosumers can bid/offer continuously and get transacted once matched with another order. It allows immediate transactions and standby orders at the same time. More specific settings vary according to different features in different industries. Similar to computerized reservation systems in airline industries, prosumers have to book before the delivery, and markets are segmented according to when bookings are made. [shy2008how](#reference) Therefore the market is named __reservation exchange (Rex)__. With delivery networks integrated, the whole system is named __RexNet__. For power industries, RexNet can be used to replace the market families including the day-ahead market, the intra-day market, the balancing market, the capacity market and other ancillary markets, so prosumers can focus on just one market.
+In this project, at least one market satisfying previous requirements is designed. Some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially. [varian2014intermediate](#reference) The potential candidate so far is a reservation-based exchange market, which will be introduced in the next section, following discussions about its primary function and two features. In addition, it is compared with incumbent electricity market families. Prosumers participate in the market need a different framework because of its design and simulations methods we used, which will be briefed in section 3. Accordingly, prosumers in the market need to optimize their decisions based on a new framework, which will be introduced in section 4. Then, three perspectives on how to conduct researches are discussed in section 5, and how the project contributes is discussed in the last section.
+
+## 2. Reservation-Based Exchange Market
+
+Reservation-based exchange market is a __continuous double auction__ market with __3-dimensional limit order books__, where prosumers can bid/offer continuously and get transacted once matched with another order. It allows immediate transactions and standby orders at the same time. More specific settings vary according to different features in different industries. Similar to computerized reservation systems in airline industries, prosumers have to book before the delivery, and markets are segmented according to when bookings are made. [shy2008how](#reference) Therefore the market is named __reservation exchange (Rex)__. With delivery networks integrated, the whole system is named __RexNet__. For power industries, RexNet can be used to replace the market families including the day-ahead market, the intra-day market, the balancing market, the capacity market and other ancillary markets, so prosumers can focus on just one market.
 
 The most important function of Rex is the __quantity discovery__, which is similar to the concept of price discovery in limit order markets for financial assets when markets motivate participants to reveal their private valuation. [maloney2003complexity](#reference) Both of them can be generalized as the dynamic equilibrium discovery, which creates knowledge by incorporating dispersed information at high speed. [birchler2007information](#reference) Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet, so mismatches can be eliminated in high speed without the necessity for centralized monitoring.
 
-In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. The market is spatially fragmented by transmission networks when relevant edges are congested, so stakeholders in control of transmission networks can participate in RexNet as spatial arbitragers. Moreover, RexNet can be established hierarchically. Representatives of prosumers in lower levels can serve as retailers, which will be discussed at the end of section [3](#3-how-to-prove-rexnet-practical-and-rhpo-representative).
+In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. The market is spatially fragmented by transmission networks when relevant edges are congested, so stakeholders in control of transmission networks can participate in RexNet as spatial arbitragers. Moreover, RexNet can be established hierarchically. Representatives of prosumers in lower levels can serve as retailers, which will be discussed at the end of section 5.
 
 <!-- For example, to liberalize the electricity generation market, the periodic double auction has been used in day-ahead markets to find the equilibrium, and other facilitating markets are needed. However, small-scale prosumers, which refer to the participants who can be either supply or consume in low power rate, cannot participate directly due to three requirements. First of all, it is hard to anticipate and express the demand and supply curves for future units. Even if they manage to provide, the periodic clearings require them to present in the market at the same time. Also, transactions are not instantaneous. Additionally, the complexity from the existence of market families is another challenge for home-own generation business. The flexibility in the demand side can be the solution to many problems. Many kinds of demand response programs have been designed to invite small-scale prosumers to participate, but the resulted flexibility is not enough.  -->
 
 Though the structure of Rex is similar to that composed of day-ahead market and intraday market in the power industry, the main difference is that there is no one responsible for satisfying uninformed demand of prosumers in Rex. For example, utility companies are not obliged to satisfy demand in peak hours. If someone does not have the reservation to consume or supply, he/she has to be responsible himself/herself. Trading volumes in intraday markets are insignificant compared to those in day-ahead markets and balancing markets [weber2010adequate](#reference). The focus of this project deviates from the majority of current researches. The decision making framework expected to be used by participants in Rex is introduced in the following section.
 
-## 2. What is RHPO
+## 3. Discrete Event Simulation of Multi-Agent Systems
 
 Models and methods for the simulation of RexNet will be elaborated first, then the framework RHPO is introduced. Some specific simulation programs are presented, following unsolved problems so far and expected future challenges.
 
-Take energy systems, especially power systems, for example, they can be represented by the following figure `a`, summarizing the supply chain from extractions to end-uses, where he key stage is the distribution from the supply side to the demand side. [blok2017introduction](#reference) Alternatively, the system can be restructured using figure `b` by introducing RexNet. Prosumers can be modelled as three parts. __Clients__ are used to simulate the ultimate needs of the prosumer like the minimum requirements of room temperature in winter. __Continuous provision plants (CPPs)__ are underlying physical and economical systems with inputs being energy mainly and outputs to meet the needs of clients. For example, it can be an electricity-driven heat pump and pipes for space heating. It is __coordinators__ who control CPPs and participate in Rex, and their objectives are to make more profit (or lower costs), satisfy needs and respect constraints at the same time. The direct participation of small-scale prosumers discussed in section [1](1-what-is-rexnet) is a critical premise for this structure so that there is no friction between these three parts because they refer to the same prosumer.
+Take energy systems, especially power systems, for example, they can be represented by the following figure `a`, summarizing the supply chain from extractions to end-uses, where he key stage is the distribution from the supply side to the demand side. [blok2017introduction](#reference) Alternatively, the system can be restructured using figure `b` by introducing RexNet. Prosumers can be modelled as three parts. __Clients__ are used to simulate the ultimate needs of the prosumer like the minimum requirements of room temperature in winter. __Continuous provision plants (CPPs)__ are underlying physical and economical systems with inputs being energy mainly and outputs to meet the needs of clients. For example, it can be an electricity-driven heat pump and pipes for space heating. It is __coordinators__ who control CPPs and participate in Rex, and their objectives are to make more profit (or lower costs), satisfy needs and respect constraints at the same time. The direct participation of small-scale prosumers discussed in section 1 is a critical premise for this structure so that there is no friction between these three parts because they refer to the same prosumer.
 
 ![](../../images/1-3.png)
 
 In this project, we are interested in both the market and prosumers, which therefore have to be modelled as __multi-agent systems__, because prosumers have diverging information and interests. [shoham2009multiagent](#reference) There is no centralized manager knowing all variable outcomes and controlling everything, so the market clearing process needs to be optimized in a distributed manner. It is hard to obtain analytical solutions directly compared to the literature on market microstructure, so __agent-based models__ are used to represent heterogeneous prosumers [iori2012agent](#reference), [lebaron2001builder](#reference), and their interactions through RexNet are demonstrated by __discrete event simulations__.
+
+## 4. Decision Making Framework for Prosumers
 
 Some clients, like wind turbines in power systems, are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on their private up-to-date information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before gate closures. For the sake of privacy protections, high-resolution models of CPPs are known to corresponding coordinators only. Future outputs can be predicted from CPP models and planned inputs. Then, coordinators modify plans, participate in Rex and cooperate with clients. The decisions can be optimized by __receding horizon plan & order management (RHPO)__, which has similar structures to model predictive control problems. [rawlings2019model](#reference) After deciding trading volumes, coordinators have to make make-take decisions according to order flows and states of limit order books. [foucault2013market](#reference) Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions.
 
@@ -53,17 +55,9 @@ Specifically, there are some stochastic simulation programs used in this project
 * CPPs may correlate with each other so they must be modelled by an aggregated CPPs controlled by one coordinator to satisfy several clients. For example, the space heating system for multi-dwelling buildings must be modelled by multi-input-multi-output control systems. [siroky2011experimental](#reference) Thus hierarchical Rex can be introduced.
 * Grey-box modelling techniques, which combines statistical methods and physical knowledge, can be used to calibrate CPP models. [bacher2011identifying](#reference)
 
-There are some problems need to be solved:
+## 5. Three Points of Views
 
-* The effect of reservations on responsive clients, who can adapt their needs to current states, is not clear. It may be modelled by an intra-personal game where a decision-maker is summarized by a succession of selves [brocas2009dynamic](#reference) and joint workings of time inconsistency and consciousness. [birchler2007information](#reference)
-* When optimization problems in RHPO are formulated nonlinearly, it may be hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness.
-* Agent should be able to learn and adapt to evolving situations. [franklin1997it](#reference)
-* The determination of weight matrices is the challenge faced by MPC researchers as well. [rawlings2019model](#reference)
-* Rex may be unstable because of coordination failures.
-
-## 3. How to Prove RexNet Practical and RHPO Representative
-
-There are three perspectives on how to analyze this multi-agent system, which can be illustrated using the following figure. The first perspective is from coordinators, and it includes three elements for prosumers like those in two solid blue boxes. It is the perspective for real-world experiments discussed in more detail in the last paragraph of this section. The second perspective is to focus on the evolution of Rex and it includes coordinators only, which is shown by the dashed red box. The induction of stylized facts of Rex is the primary task, which makes it possible to construct the market directly. [buchanan2011it](#reference) Then the effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunities for researchers with the first perspective to tune parameters. Last but not least, a holistic view including all models is necessary, because lots of features of Rex, like the shift from quantity-based to power-time-based cost allocation [hougaard2009introduction](#reference), must be examined this way.
+There are three angles on how to analyze this multi-agent system, which can be illustrated using the following figure. The first one is from coordinators, and it includes three elements for prosumers like those in two solid blue boxes. It is the perspective for real-world experiments discussed in more detail in the last paragraph of this section. The second one is to focus on the evolution of Rex and it includes coordinators only, which is shown by the dashed red box. The induction of stylized facts of Rex is the primary task, which makes it possible to construct the market directly. [buchanan2011it](#reference) Then the effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunities for researchers with the first perspective to tune parameters. Last but not least, a holistic view including all models is necessary, because lots of features of Rex, like the shift from quantity-based to power-time-based cost allocation [hougaard2009introduction](#reference), must be examined this way.
 
 ![](../../images/4-10.png)
 
@@ -73,7 +67,15 @@ Some real-world experiments regarding key assumptions can be conducted. As discu
 
 ![](../../images/4-11.png)
 
-## 4. How RexNet and RHPO Contribute
+There are some problems need to be solved:
+
+* The effect of reservations on responsive clients, who can adapt their needs to current states, is not clear. It may be modelled by an intra-personal game where a decision-maker is summarized by a succession of selves [brocas2009dynamic](#reference) and joint workings of time inconsistency and consciousness. [birchler2007information](#reference)
+* When optimization problems in RHPO are formulated nonlinearly, it may be hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness.
+* Agent should be able to learn and adapt to evolving situations. [franklin1997it](#reference)
+* The determination of weight matrices is the challenge faced by MPC researchers as well. [rawlings2019model](#reference)
+* Rex may be unstable because of coordination failures.
+
+## 6. Expected Contributions
 
 The assumption of time invariance can be relaxed once short-term models are mature. The existence of investments, ageing and accidents bring about more randomness and flexibility. [spyrou2019planning](#reference) The ultimate goal of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems.
 
@@ -131,6 +133,10 @@ The expected outputs are listed:
 - [RexNet-Docs](https://edxu96.gitbook.io/rexnet-docs/)
 - [关于进一步调整2020年国家建设高水平大学公派研究生项目及部分国外合作项目工作安排的通知](https://www.csc.edu.cn/chuguo/s/1820)
 - [2020年国家留学基金资助出国留学人员选派简章](https://www.csc.edu.cn/article/1710)
+
+## Keywords
+
+reservation-realization-settlement, two-sided market, dynamic equilibrium discovery, agent-based models, stochastic simulation, model predictive control, forward market, discrete event simulation, revenue management, multi-agent system, market microstructure
 
 <!-- The closet literature is [garnier2015balancing](#reference).
 * [garnier2015balancing](https://link.springer.com/article/10.1007/s12667-015-0143-y) Balancing forecast errors in continuous-trade intraday markets
