@@ -11,6 +11,7 @@ date: April 23, 2020
 - A continuous double auction market with a new type of limit order books is proposed to replace incumber electricity families.
 - Discrete event simulations of multi-agent systems are used as the main research tools.
 - A new decision making framework based on model prediction controls is introduced.
+- The core idea can be concentrated on a new type of retailer in the power industry, on which a series of real-world experiments can be conducted.
 - Simulations can provide statistics for long-term investments, and a new structure for power systems can be utilized, especially for underdeveloped areas.
 - The market can be applied in other industries, like food supply chains, the retailing and the banking.
 
@@ -77,7 +78,7 @@ Some real-world experiments regarding key assumptions can be conducted. As discu
 
 ![](../../images/4-11.png)
 
-There are some problems need to be solved:
+Some problems are expected to be solved:
 
 * The effect of reservations on responsive clients, who can adapt their needs to current states, is not clear. It may be modelled by an intra-personal game where a decision-maker is summarized by a succession of selves [brocas2009dynamic](#reference) and joint workings of time inconsistency and consciousness. [birchler2007information](#reference)
 * When optimization problems in RHPO are formulated nonlinearly, it may be hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness.
