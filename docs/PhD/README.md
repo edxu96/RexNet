@@ -1,10 +1,18 @@
 ---
 for: GitHub/edxu96/RexNet/docs/PhD
 author: Edward J. Xu
-date: April 22, 2020
+date: April 23, 2020
 ---
 
 # `PhD Proposal` Reservation-Based Exchange Market and its Participants
+
+## Highlights
+
+- A continuous double auction market with a new type of limit order books is proposed to replace incumber electricity families.
+- Discrete event simulations of multi-agent systems are used as the main research tools.
+- A new decision making framework based on model prediction controls is introduced.
+- Simulations can provide statistics for long-term investments, and a new structure for power systems can be utilized, especially for underdeveloped areas.
+- The market can be applied in other industries, like food supply chains, the retailing and the banking.
 
 ## 1. Introduction
 
@@ -19,7 +27,7 @@ Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference
 * The number of statistics for decision making is as low as possible but different assets can be distinguished based on those statistics.
 * The imbalance within trading units can be maintained without centralized system operators [kirschen2018fundamentals](#reference), because it may be hard to establish trustworthy regulatory authorities and operators responsible for the system safety.
 
-In this project, at least one market satisfying previous requirements is designed. Some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially. [varian2014intermediate](#reference) The potential candidate so far is a reservation-based exchange market, which will be introduced in the next section, following discussions about its primary function and two features. In addition, it is compared with incumbent electricity market families. Prosumers participate in the market need a different framework because of its design and simulations methods we used, which will be briefed in section 3. Accordingly, prosumers in the market need to optimize their decisions based on a new framework, which will be introduced in section 4. Then, three perspectives on how to conduct researches are discussed in section 5, and how the project contributes is discussed in the last section.
+In this project, at least one market satisfying previous requirements is designed. Some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially. [varian2014intermediate](#reference) The potential candidate so far is a reservation-based exchange market, which will be introduced in the next section, following discussions about its primary function and two features. In addition, it is compared with incumbent electricity market families. Why and how simulations are used will be briefed in section 3. Accordingly, prosumers in the market need to optimize their decisions based on a new framework, which will be introduced in section 4. Then, three perspectives on how to conduct researches are discussed in section 5, and how the project contributes is discussed in the last section.
 
 ## 2. Reservation-Based Exchange Market
 
@@ -43,9 +51,11 @@ Take energy systems, especially power systems, for example, they can be represen
 
 In this project, we are interested in both the market and prosumers, which therefore have to be modelled as __multi-agent systems__, because prosumers have diverging information and interests. [shoham2009multiagent](#reference) There is no centralized manager knowing all variable outcomes and controlling everything, so the market clearing process needs to be optimized in a distributed manner. It is hard to obtain analytical solutions directly compared to the literature on market microstructure, so __agent-based models__ are used to represent heterogeneous prosumers [iori2012agent](#reference), [lebaron2001builder](#reference), and their interactions through RexNet are demonstrated by __discrete event simulations__.
 
+Some clients, like wind turbines in power systems, are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on their private up-to-date information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before gate closures. For the sake of privacy protections, high-resolution models of CPPs are known to corresponding coordinators only. Future outputs can be predicted from CPP models and planned inputs. Then, coordinators modify plans, participate in Rex and cooperate with clients.
+
 ## 4. Decision Making Framework for Prosumers
 
-Some clients, like wind turbines in power systems, are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on their private up-to-date information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before gate closures. For the sake of privacy protections, high-resolution models of CPPs are known to corresponding coordinators only. Future outputs can be predicted from CPP models and planned inputs. Then, coordinators modify plans, participate in Rex and cooperate with clients. The decisions can be optimized by __receding horizon plan & order management (RHPO)__, which has similar structures to model predictive control problems. [rawlings2019model](#reference) After deciding trading volumes, coordinators have to make make-take decisions according to order flows and states of limit order books. [foucault2013market](#reference) Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions.
+The decisions can be optimized by __receding horizon plan & order management (RHPO)__, which has similar structures to model predictive control problems. [rawlings2019model](#reference) After deciding trading volumes, coordinators have to make make-take decisions according to order flows and states of limit order books. [foucault2013market](#reference) Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions.
 
 Specifically, there are some stochastic simulation programs used in this project:
 
