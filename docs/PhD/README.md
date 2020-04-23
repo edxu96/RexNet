@@ -1,8 +1,8 @@
----
+<!-- ---
 for: GitHub/edxu96/RexNet/docs/PhD
 author: Edward J. Xu
 date: April 23, 2020
----
+--- -->
 
 # `PhD Proposal` Reservation-Based Exchange Market and its Participants
 
@@ -11,7 +11,7 @@ date: April 23, 2020
 - A continuous double auction market with a new type of limit order books is proposed to replace incumber electricity families.
 - Discrete event simulations of multi-agent systems are used as the main research tools.
 - A new decision making framework based on model prediction controls is introduced.
-- The core idea can be concentrated on a new type of retailer in the power industry, on which a series of real-world experiments can be conducted.
+- The core idea can be concentrated on a new type of retailer in the power industry, and a series of real-world experiments can be conducted. The problem is simplified to a rolling vendor problem with dynamic pricing and procurement of perishable products. Spot demands and replenishment costs are uncertain.
 - Simulations can provide statistics for long-term investments, and a new structure for power systems can be utilized, especially for underdeveloped areas.
 - The market can be applied in other industries, like food supply chains, the retailing and the banking.
 
@@ -145,9 +145,9 @@ The expected outputs are listed:
 - [关于进一步调整2020年国家建设高水平大学公派研究生项目及部分国外合作项目工作安排的通知](https://www.csc.edu.cn/chuguo/s/1820)
 - [2020年国家留学基金资助出国留学人员选派简章](https://www.csc.edu.cn/article/1710)
 
-## Keywords
+<!-- ## Keywords
 
-reservation-realization-settlement, two-sided market, dynamic equilibrium discovery, agent-based models, stochastic simulation, model predictive control, forward market, discrete event simulation, revenue management, multi-agent system, market microstructure
+reservation-realization-settlement, two-sided market, dynamic equilibrium discovery, agent-based models, stochastic simulation, model predictive control, forward market, discrete event simulation, revenue management, multi-agent system, market microstructure -->
 
 <!-- The closet literature is [garnier2015balancing](#reference).
 * [garnier2015balancing](https://link.springer.com/article/10.1007/s12667-015-0143-y) Balancing forecast errors in continuous-trade intraday markets
