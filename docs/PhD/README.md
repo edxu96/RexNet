@@ -52,7 +52,7 @@ Models and methods for the simulation of RexNet will be elaborated first in subs
 
 ### 3-1. Discrete Event Simulation of Multi-Agent Systems
 
-Take energy systems, especially power systems, for example, they can be represented by the following figure `a`, summarizing the supply chain from extractions to end-uses, where the key stage is the distribution from the supply side to the demand side. [blok2017introduction](#reference) Alternatively, the system can be restructured using figure `b` by introducing RexNet. Prosumers can be modelled as three parts. __Clients__ are used to simulate the ultimate needs of the prosumer like the minimum requirements of room temperature in winter. __Continuous provision plants (CPPs)__ are underlying physical and economical systems with inputs being energy mainly and outputs to meet the needs of clients. For example, it can be an electricity-driven heat pump and pipes for space heating. It is __coordinators__ who control CPPs and participate in Rex, and their objectives are to make more profit (or lower costs), satisfy needs and respect constraints at the same time. The direct participation of small-scale prosumers discussed in section 1 is a critical premise for this structure so that there is no friction between these three parts because they refer to the same prosumer.
+Take energy systems, especially power systems, for example, they can be represented by the following figure `a`, summarizing the supply chain from extractions to end-uses, where the key stage is the distribution from the supply side to the demand side. [blok2017introduction](#reference) Alternatively, the system can be restructured using figure `b` by introducing RexNet. Prosumers can be modelled as three parts. __Clients__ are used to simulate the ultimate needs of the prosumer like the minimum requirements of room temperature in winter. __Continuous provision plants (CPPs)__ are underlying physical and economical systems with inputs being energy mainly and outputs to meet the needs of clients. For example, it can be an electricity-driven heat pump and pipes for space heating. Usually, there is inter-temporal dynamics within these systems. It is __coordinators__ who control CPPs and participate in Rex, and their objectives are to make more profit (or lower costs), satisfy needs and respect constraints at the same time. The direct participation of small-scale prosumers discussed in section 1 is a critical premise for this structure so that there is no friction between these three parts because they refer to the same prosumer.
 
 ![](../../images/1-3.png)
 
@@ -74,17 +74,21 @@ Specifically, there are some stochastic simulation programs used in this project
 
 ### 3-3. Three Ways to Analyze
 
-There are three angles on how to analyze this multi-agent system, which can be illustrated using the following figure. The first one is from coordinators, and it includes three elements for prosumers like those in two solid blue boxes. It is the perspective for real-world experiments discussed in more detail in the last paragraph of this section. The second one is to focus on the evolution of Rex and it includes coordinators only, which is shown by the dashed red box. The induction of stylized facts of Rex is the primary task, which makes it possible to construct the market directly. [buchanan2011it](#reference) Then the effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunities for researchers with the first perspective to tune parameters. Last but not least, a holistic view including all models is necessary, because lots of features of Rex, like the shift from quantity-based to power-time-based cost allocation [hougaard2009introduction](#reference), must be examined this way.
+There are three angles on how to analyze this multi-agent system, which can be illustrated using the following figure.
+
+- The first one is from coordinators, and it includes three elements for prosumers like those in two solid blue boxes. It is the perspective for real-world experiments discussed in more detail in the last paragraph of this section.
+- The second one is to focus on the evolution of Rex and it includes coordinators only, which is shown by the dashed red box. The induction of stylized facts of Rex is the primary task, which makes it possible to construct the market directly. [buchanan2011it](#reference) Then the effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunities for researchers with the first perspective to tune parameters.
+- Last but not least, a holistic view including all models is necessary, because lots of features of Rex, like the shift from quantity-based to power-time-based cost allocation [hougaard2009introduction](#reference), must be examined this way.
 
 ![](../../images/4-10.png)
-
-It is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard analytical tools for forecasting [madsen2005standardizing](#reference) and compared to results from state-of-art forecast techniques.
 
 ### 3-4. Dynamic Pricing and Procurement Problem
 
 Some real-world experiments regarding key assumptions can be conducted. As discussed before, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a dynamic pricing and procurement problem. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference) and inventory management for perishable products [nahmias2011perishable](#reference).
 
 ![](../../images/4-11.png)
+
+It is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard analytical tools for forecasting [madsen2005standardizing](#reference) and compared to results from state-of-art forecast techniques.
 
 ## 4. Expected Contributions
 
