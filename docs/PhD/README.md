@@ -11,13 +11,16 @@ date: April 23, 2020
 - A continuous double auction market with a new type of limit order books is proposed to replace incumber electricity families, making it possible for small-scale prosumers to directly participate.
 - Discrete event simulations of multi-agent systems are used as the main research tools.
 - A new decision making framework based on model prediction control is introduced to facilitate procurement, control and response of participants.
-- The core idea can be borrow by a new type of retailer in the power industry, and a series of real-world applications can be conducted. The problem can be simplified, being a vendor facing dynamic pricing and procurement of perishable products with uncertain spot demands and replenishment costs.
+- The core idea can be borrow by a new type of retailer in the power industry, and a series of real-world experiments can be conducted. The problem can be simplified, being a vendor facing dynamic pricing and procurement of perishable products with uncertain spot demands and replenishment costs.
 - Simulations can provide statistics for long-term investments, and a new structure for power systems can emerge, especially in underdeveloped areas.
 - The market can be applied in other industries, like food supply chains, the retailing and the banking.
 
 ## 1. Introduction
 
-In the power industry, it is urgent to reduce the carbon emission from power generations, avoid backup generators and penetrate modern power systems. Other industries, like food supply chains, face similar challenges. The lack of direct participation from the demand side is the central question, which may be solved by the market designed in the project. Because of the complexity, in the first stage, simulations instead of analysis are used primarily to demonstrate how the market operates under different settings. To facilitate the simulation of participants in the market, a new decision making framework is defined. Moreover, in the second stage, a new type of retailing business with similar features can be tested in incumbent power systems. Key assumptions can be examined using data obtained in this way.
+In the power industry, it is urgent to reduce the carbon emission from power generations, avoid backup generators and penetrate modern power systems. Other industries, like food supply chains, face similar challenges. The lack of direct participation from the demand side is the central question, which may be solved by the market designed in the project. Arguments for the new market can be established in two stages:
+
+- Because of the complexity, in the first stage, simulations instead of analysis are used primarily to demonstrate how the market operates under different settings. To facilitate the simulation of participants in the market, a new decision making framework is defined.
+- In the second stage, a new type of retailing business with similar features can be tested in incumbent power systems. Key assumptions can be examined using data obtained in this way.
 
 The necessity for the new market is discussed in section 2, followed by the description of the market in section 3. The methodology is discussed in four parts of section 4. The first part introduces the simulation schemes used, and the second part discuss the core simulation programs. The project can be researched into from three perspectives, which are listed in the third, and the most important one is elaborated in the last part. Expected contributions are summarized in the last section.
 
@@ -34,7 +37,7 @@ Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference
 * The number of statistics for decision making is as low as possible but different assets can be distinguished based on those statistics.
 * The imbalance within trading units can be maintained without centralized system operators [kirschen2018fundamentals](#reference), because it may be hard to establish trustworthy regulatory authorities and operators responsible for the system safety.
 
-Till now, all market designs fail to fulfill these requirements, while in this project, at least one capable market is designed. Some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially. [varian2014intermediate](#reference) The potential candidate so far is a reservation-based exchange market, which will be introduced in the next section, following discussions about its primary function and two features.
+Till now, all market designs fail to fulfill these requirements, while in this project, at least one capable market is designed. Above all, some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially, and they vary in different industries. The most promising candidate so far is introduced in the next section, following discussions about its primary function, two features, and superiority over others.
 
 ## 3. Solution: Reservation-Based Exchange Market
 
@@ -42,13 +45,15 @@ Reservation-based exchange market is a __continuous double auction__ market with
 
 The most important function of Rex is the __quantity discovery__, which is similar to the concept of price discovery in limit order markets for financial assets when markets motivate participants to reveal their private valuation. [maloney2003complexity](#reference) Both of them can be generalized as the dynamic equilibrium discovery, which creates knowledge by incorporating dispersed information at high speed. [birchler2007information](#reference) Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet, so mismatches can be eliminated in high speed without the necessity for centralized monitoring.
 
-In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. The market is spatially fragmented by transmission networks when relevant edges are congested, so stakeholders in control of transmission networks can participate in RexNet as spatial arbitragers. Moreover, RexNet can be established hierarchically. Representatives of prosumers in lower levels can serve as retailers, which will be discussed at the end of section 5.
+In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. The market is spatially fragmented by transmission networks when relevant edges are congested, so stakeholders in control of transmission networks can participate in RexNet as spatial arbitragers. Moreover, RexNet can be established hierarchically. Representatives of prosumers in lower levels can serve as retailers, which makes the experiments in subsection 4-4 plausible.
 
 Though the structure of Rex is similar to that composed of day-ahead market and intraday market in the power industry, the main difference is that there is no one responsible for satisfying uninformed demand of prosumers in Rex. For example, utility companies are not obliged to satisfy demand in peak hours. If someone does not have the reservation to consume or supply, he/she has to be responsible himself/herself. Trading volumes in intraday markets are insignificant compared to those in day-ahead markets and balancing markets [weber2010adequate](#reference), so most of current researches focus on periodic double auctions used in day-ahead markets. Approaches to Rex deviate from the majority of current researches. The way prosumers in Rex make decisions is different as well.
 
+There are many variations of limit order markets like quote-driven markets, where market makers are the primary source of liquidity. Besides, periodic double auctions are proven to be useful. As discussed in section 2, it may be hard for small-scale prosumers to participate if the market is not the most flexible one, the limit order market. As a result, limit order markets will be the focus in the simulation stage.
+
 ## 4. Methodology
 
-Models and methods for the simulation of RexNet will be elaborated first in subsection 3-1, then the decision making framework of prosumers is introduced in subsection 3-2. Some specific simulation programs are presented as well. Three different ways to analyze RexNet are discussed in subsection 3-3, followed by the most important experiment design in the last subsection.
+Models and methods in the simulation stage will be elaborated first in subsection 3-1, then the decision making framework of prosumers is introduced in subsection 3-2. Some specific simulation programs are presented as well. Three different ways to analyze RexNet are discussed in subsection 3-3. The experiment design in the second stage is outlined in subsection 3-4.
 
 ### 4-1. Discrete Event Simulation of Multi-Agent Systems
 
@@ -56,7 +61,7 @@ Take energy systems, especially power systems, for example, they can be represen
 
 ![](../../images/1-3.png)
 
-In this project, we are interested in both the market and prosumers, which therefore have to be modelled as __multi-agent systems__, because prosumers have diverging information and interests. [shoham2009multiagent](#reference) There is no centralized manager knowing all variable outcomes and controlling everything, so the market clearing process needs to be optimized in a distributed manner. It is hard to obtain analytical solutions directly compared to the literature on market microstructure, so __agent-based models__ are used to represent heterogeneous prosumers [iori2012agent](#reference), [lebaron2001builder](#reference), and their interactions through RexNet are demonstrated by __discrete event simulations__.
+In this project, we are interested in both the market and prosumers, which therefore have to be modelled as __multi-agent systems__, because prosumers have diverging information and interests. [shoham2009multiagent](#reference) There is no centralized manager knowing all variable outcomes and controlling everything, so the market clearing process needs to be optimized in a distributed manner. Compared to the literature on market microstructure, it is hard to obtain analytical solutions directly, because the welfare of participants is considered. [] So __agent-based models__ are used to represent heterogeneous prosumers [iori2012agent](#reference), [lebaron2001builder](#reference), and their interactions through RexNet are demonstrated by __discrete event simulations__. In the early stage, there is only one type of agents, prosumers, and the interaction is completely mediated by the market.
 
 ### 4-2. Decision Making Framework for Prosumers
 
@@ -110,7 +115,7 @@ As discussed above, the project can be divided into two stages. Expected outputs
 * RHPO for more complex CPPs, like those with stochastic MIMOs, and their statistical identification methods.
 * Rex with responsive clients.
 
-Based on the simulation results, field experiments can be conducted in the second year. Data is essential for assumptions to be examined. Furthermore, different rules and market design, like the introduction of centralized market makers and periodic double auctions, for Rex can be explored, the results of which can be used to compare. 
+Based on the simulation results, field experiments can be conducted in the second year. Data is essential for assumptions to be examined. Furthermore, different rules and market design, like the introduction of centralized market makers and periodic double auctions, for Rex can be explored, the results of which can be used to compare.
 
 ## Reference
 
