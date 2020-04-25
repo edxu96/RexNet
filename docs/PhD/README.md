@@ -17,9 +17,9 @@ date: April 23, 2020
 
 ## 1. Introduction
 
-In the power industry, it is urgent to reduce the carbon emission from power generations, avoid backup generators and penetrate modern power systems. Other industries, like food supply chains, face similar challenges. The lack of direct participation from the demand side is the central question, which may be solved by the market designed in the project. Because of the complexity, simulations instead of analysis are used primarily to demonstrate how the market operates under different settings. To facilitate the simulation of participants in the market, a new decision making framework is defined. Moreover, a new type of retailing business with similar elements can be design, making it possible for field experiment to be conducted in incumbent power systems. Key assumptions can be examined using data obtained in this way.
+In the power industry, it is urgent to reduce the carbon emission from power generations, avoid backup generators and penetrate modern power systems. Other industries, like food supply chains, face similar challenges. The lack of direct participation from the demand side is the central question, which may be solved by the market designed in the project. Because of the complexity, in the first stage, simulations instead of analysis are used primarily to demonstrate how the market operates under different settings. To facilitate the simulation of participants in the market, a new decision making framework is defined. Moreover, in the second stage, a new type of retailing business with similar features can be tested in incumbent power systems. Key assumptions can be examined using data obtained in this way.
 
-The reasons behind the new market design are discussed in section 2, followed by the description of the market in section 3. The methodology is discussed in four parts of section 4. The first part introduces the simulation schemes used, and the second part discuss the core simulation programs. The project can be researched into from three perspectives, which are listed in the third, and the most important one is elaborated in the last part. Expected contributions are summarized in the last section.
+The necessity for the new market is discussed in section 2, followed by the description of the market in section 3. The methodology is discussed in four parts of section 4. The first part introduces the simulation schemes used, and the second part discuss the core simulation programs. The project can be researched into from three perspectives, which are listed in the third, and the most important one is elaborated in the last part. Expected contributions are summarized in the last section.
 
 ## 2. Background and Motivation
 
@@ -43,8 +43,6 @@ Reservation-based exchange market is a __continuous double auction__ market with
 The most important function of Rex is the __quantity discovery__, which is similar to the concept of price discovery in limit order markets for financial assets when markets motivate participants to reveal their private valuation. [maloney2003complexity](#reference) Both of them can be generalized as the dynamic equilibrium discovery, which creates knowledge by incorporating dispersed information at high speed. [birchler2007information](#reference) Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet, so mismatches can be eliminated in high speed without the necessity for centralized monitoring.
 
 In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. The market is spatially fragmented by transmission networks when relevant edges are congested, so stakeholders in control of transmission networks can participate in RexNet as spatial arbitragers. Moreover, RexNet can be established hierarchically. Representatives of prosumers in lower levels can serve as retailers, which will be discussed at the end of section 5.
-
-<!-- For example, to liberalize the electricity generation market, the periodic double auction has been used in day-ahead markets to find the equilibrium, and other facilitating markets are needed. However, small-scale prosumers, which refer to the participants who can be either supply or consume in low power rate, cannot participate directly due to three requirements. First of all, it is hard to anticipate and express the demand and supply curves for future units. Even if they manage to provide, the periodic clearings require them to present in the market at the same time. Also, transactions are not instantaneous. Additionally, the complexity from the existence of market families is another challenge for home-own generation business. The flexibility in the demand side can be the solution to many problems. Many kinds of demand response programs have been designed to invite small-scale prosumers to participate, but the resulted flexibility is not enough.  -->
 
 Though the structure of Rex is similar to that composed of day-ahead market and intraday market in the power industry, the main difference is that there is no one responsible for satisfying uninformed demand of prosumers in Rex. For example, utility companies are not obliged to satisfy demand in peak hours. If someone does not have the reservation to consume or supply, he/she has to be responsible himself/herself. Trading volumes in intraday markets are insignificant compared to those in day-ahead markets and balancing markets [weber2010adequate](#reference), so most of current researches focus on periodic double auctions used in day-ahead markets. Approaches to Rex deviate from the majority of current researches. The way prosumers in Rex make decisions is different as well.
 
@@ -106,13 +104,13 @@ Some problems are expected to be solved:
 * The determination of weight matrices is the challenge faced by MPC researchers as well [rawlings2019model](#reference), and the tuning relies heavily on methods discussed in section 3-4.
 * Rex may be unstable because of coordination failures.
 
-The expected outputs are listed:
+As discussed above, the project can be divided into two stages. Expected outputs of simulation experiments in the first year are:
 
-* Introduction to Rex.
+* Introduction to Rex. (my DTU master thesis)
 * RHPO for more complex CPPs, like those with stochastic MIMOs, and their statistical identification methods.
 * Rex with responsive clients.
-* Different rules and market design for Rex.
-* Real-world application as a new type of retailers.
+
+Based on the simulation results, field experiments can be conducted in the second year. Data is essential for assumptions to be examined. Furthermore, different rules and market design, like the introduction of centralized market makers and periodic double auctions, for Rex can be explored, the results of which can be used to compare. 
 
 ## Reference
 
@@ -141,7 +139,7 @@ The expected outputs are listed:
 * [parag2016electricity](https://www.nature.com/articles/nenergy201632) Electricity market design for the prosumer era
 * [rawlings2019model](https://sites.engineering.ucsb.edu/~jbraw/mpc/) Model predictive control: theory, computation, and design. MPC regulators are introduced in chapter 1.
 * [ross2012simulation](https://www.elsevier.com/books/simulation/ross/978-0-12-415825-2) Simulation.
-* [secomandi2014optimal](https://pubsonline.informs.org/doi/10.1287/msom.2013.0473) Optimal energy procurement in spot and forward markets
+* [secomandi2014optimal](https://pubsonline.informs.org/doi/10.1287/msom.2013.0473) Optimal energy procurement in spot and forward markets.
 * [shoham2009multiagent](https://www.cambridge.org/core/books/multiagent-systems/B11B69E0CB9032D6EC0A254F59922360) Multiagent systems: algorithmic, game-theoretic, and logical foundations. MASs with continuous double auctions are discussed in section 11-4.
 * [shugan2000advance](https://journals.sagepub.com/doi/abs/10.1177/109467050023001?casa_token=nHdK2gtk0ZUAAAAA:JZm0jvC2O9C0qr7WPZZphEZINBT2hpYCLNSB5hykwAO1buCHLim0JzlleOeUOwCv0uIZWbmfE8vI) Advance pricing of services and other implications of separating purchase and consumption. Elasticities are different regarding purchasing for the same asset at different times.
 * [shy2008how](https://www.cambridge.org/core/books/how-to-price/27B182881BC668B688F8DA949DF52554) How to price: a guide to pricing techniques and yield management.
