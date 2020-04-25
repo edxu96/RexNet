@@ -47,7 +47,7 @@ The most important function of Rex is the __quantity discovery__, which is simil
 
 In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. The market is __spatially fragmented__ by transmission networks when relevant edges are congested, so stakeholders in control of transmission networks can participate in RexNet as spatial arbitragers. Moreover, RexNet can be established __hierarchically__. Representatives of prosumers in lower levels can serve as retailers, which makes the experiments in subsection 4-4 plausible.
 
-Though the structure of Rex is similar to that composed of day-ahead market and intraday market in the power industry, the main difference is that there is no one responsible for satisfying uninformed demand of prosumers in Rex. For example, utility companies are not obliged to satisfy demand in peak hours. If someone does not have the __reservation__ to consume or supply, he/she has to be responsible himself/herself. Trading volumes in intraday markets are insignificant compared to those in day-ahead markets and balancing markets [weber2010adequate](#reference), so most of current researches focus on periodic double auctions used in day-ahead markets. Approaches to Rex deviate from the majority of current researches. The way prosumers in Rex make decisions is different as well.
+Though the structure of Rex is similar to that composed of day-ahead market and intraday market in the power industry, the main difference is that there is no one responsible for satisfying uninformed demand of prosumers in Rex. For example, utility companies are not obliged to satisfy demand in peak hours. There is no need for centralized managers to maintain system safety. If someone does not have the __reservation__ to consume or supply, he/she has to be responsible himself/herself. Trading volumes in intraday markets are insignificant compared to those in day-ahead markets and balancing markets [weber2010adequate](#reference), so most of current researches focus on periodic double auctions used in day-ahead markets. Approaches to Rex deviate from the majority of current researches. The way prosumers in Rex make decisions is different as well.
 
 With only one type of agents (prosumers) providing and consuming liquidity, Rex is an __order-driven continuous double auction market__ in essence. [gould2013limit](#reference) There are many variations like quote-driven markets, where market makers are the primary source of liquidity. Besides, the periodic double auction is an alternative. As discussed in section 2, it may be hard for small-scale prosumers to participate if the market is not the most simple and flexible one, making Rex the focus in the simulation stage. With adequate data and assumptions validated in the second stage, it may be possible that better options are identified.
 
@@ -77,7 +77,7 @@ Specifically, there are some stochastic simulation programs used in this project
 * CPPs may correlate with each other so they must be modelled by an aggregated CPPs controlled by one coordinator to satisfy several clients. For example, the space heating system for multi-dwelling buildings must be modelled by multi-input-multi-output control systems. [siroky2011experimental](#reference) Thus hierarchical Rex can be introduced.
 * Grey-box modelling techniques, which combines statistical methods and physical knowledge, can be used to calibrate CPP models. [bacher2011identifying](#reference)
 
-### 4-3. The Second Stage: a Dynamic Pricing & Procurement Problem
+### 4-3. Three Ways to Analyze Rex
 
 There are three angles on how to analyze this multi-agent system, which can be illustrated using the following figure.
 
@@ -87,15 +87,27 @@ There are three angles on how to analyze this multi-agent system, which can be i
 
 ![](../../images/4-10.png)
 
-Some real-world experiments regarding key assumptions can be conducted. As discussed in section 3, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a dynamic pricing and procurement problem. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference) and inventory management for perishable products [nahmias2011perishable](#reference). There is similar literature like [nair2014energy](#reference) and [secomandi2014optimal](#reference), but their situations are not as complicated.
+### 4-4. The Second Stage: a Dynamic Pricing & Procurement Problem
+
+
+A new business as a retailer in incumbent power systems can be tested in the second stage. As discussed in section 3, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a __dynamic pricing & procurement problem__. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference) and inventory management for perishable products [nahmias2011perishable](#reference). There is similar literature like [nair2014energy](#reference) and [secomandi2014optimal](#reference), but their situations are not as complicated.
 
 ![](../../images/4-11.png)
 
-It is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard analytical tools for forecasting [madsen2005standardizing](#reference) and compared to results from state-of-art forecast techniques.
+Some real-world experiments regarding key assumptions can be conducted. reservation. [] It is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard analytical tools for forecasting [madsen2005standardizing](#reference) and compared to results from state-of-art forecast techniques.
 
 ## 5. Expected Contributions
 
-The assumption of time invariance can be relaxed once short-term models are mature. The existence of investments, ageing and accidents bring about more randomness and flexibility. [spyrou2019planning](#reference) The ultimate goal of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems.
+Two stages in this project are summarized in the following table.
+
+| Stage  | Standpoint      | Respondent                      | Experiment |
+| ------ | --------------- | ------------------------------- | ---------- |
+| first  | market designer | agent-based models of prosumers | computer   |
+| second | retailer        | real-world prosumers            | real-world |
+
+I have not given too much thought to details about computer experiments in the first stage.
+
+The assumption of time invariance can be relaxed once short-term models are mature. The existence of investments, ageing and accidents bring about more randomness and flexibility. [spyrou2019planning](#reference) The ultimate goal of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems based on Rex.
 
 Once simulation methods validated, reservation-based exchange markets can be applied in other industries like food supply chains, retailing, banking, etc. For example, similar assets can still be pooled, when personalized limit order books are introduced to make matches satisfy requirements from both sides. The process is similar to that in Peer-to-Peer markets with bilateral trade agreements. [sousa2019peer](#reference)
 
