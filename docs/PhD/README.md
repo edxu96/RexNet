@@ -15,9 +15,11 @@ date: April 23, 2020
 - Simulations can provide statistics for long-term investments, and a new structure for power systems can be utilized, especially for underdeveloped areas.
 - The market can be applied in other industries, like food supply chains, the retailing and the banking.
 
-## 1. Summary
+## 1. Introduction
 
-In addition, it is compared with incumbent electricity market families. Why and how simulations are used will be briefed in section 3. Accordingly, prosumers in the market need to optimize their decisions based on a new framework, which will be introduced in section 4. Then, three perspectives on how to conduct researches are discussed in section 5, and how the project contributes is discussed in the last section.
+In the power industry, it is urgent to reduce the carbon emission from power generations, avoid backup generators and penetrate modern power systems. Other industries, like food supply chains, face similar challenges. The lack of direct participation from the demand side is the central question, which may be solved by the market designed in the project. Because of the complexity, simulations instead of analysis are used primarily to demonstrate how the market operates under different settings. To facilitate the simulation of participants in the market, a new decision making framework is defined. Moreover, a new type of retailing business with similar elements can be design, making it possible for field experiment to be conducted in incumbent power systems. Key assumptions can be examined using data obtained in this way.
+
+The reasons behind the new market design are discussed in section 2, followed by the description of the market in section 3. The methodology is discussed in four parts of section 4. The first part introduces the simulation schemes used, and the second part discuss the core simulation programs. The project can be researched into from three perspectives, which are listed in the third, and the most important one is elaborated in the last part. Expected contributions are summarized in the last section.
 
 ## 2. Background and Motivation
 
@@ -34,7 +36,7 @@ Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference
 
 Till now, all market designs fail to fulfill these requirements, while in this project, at least one capable market is designed. Some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially. [varian2014intermediate](#reference) The potential candidate so far is a reservation-based exchange market, which will be introduced in the next section, following discussions about its primary function and two features.
 
-## 2. Solution: Reservation-Based Exchange Market
+## 3. Solution: Reservation-Based Exchange Market
 
 Reservation-based exchange market is a __continuous double auction__ market with __3-dimensional limit order books__, where prosumers can bid/offer continuously and get transacted once matched with another order. It allows immediate transactions and standby orders at the same time. More specific settings vary according to different features in different industries. Similar to computerized reservation systems in airline industries, prosumers have to book before the delivery, and markets are segmented according to when bookings are made. [shy2008how](#reference) Therefore the market is named __reservation exchange (Rex)__. With delivery networks integrated, the whole system is named __RexNet__. For power industries, RexNet can be used to replace the market families including the day-ahead market, the intra-day market, the balancing market, the capacity market and other ancillary markets, so prosumers can focus on just one market.
 
@@ -46,11 +48,11 @@ In this project, all kinds of delivery networks can be divided into two levels: 
 
 Though the structure of Rex is similar to that composed of day-ahead market and intraday market in the power industry, the main difference is that there is no one responsible for satisfying uninformed demand of prosumers in Rex. For example, utility companies are not obliged to satisfy demand in peak hours. If someone does not have the reservation to consume or supply, he/she has to be responsible himself/herself. Trading volumes in intraday markets are insignificant compared to those in day-ahead markets and balancing markets [weber2010adequate](#reference), so most of current researches focus on periodic double auctions used in day-ahead markets. Approaches to Rex deviate from the majority of current researches. The way prosumers in Rex make decisions is different as well.
 
-## 3. Methodology
+## 4. Methodology
 
 Models and methods for the simulation of RexNet will be elaborated first in subsection 3-1, then the decision making framework of prosumers is introduced in subsection 3-2. Some specific simulation programs are presented as well. Three different ways to analyze RexNet are discussed in subsection 3-3, followed by the most important experiment design in the last subsection.
 
-### 3-1. Discrete Event Simulation of Multi-Agent Systems
+### 4-1. Discrete Event Simulation of Multi-Agent Systems
 
 Take energy systems, especially power systems, for example, they can be represented by the following figure `a`, summarizing the supply chain from extractions to end-uses, where the key stage is the distribution from the supply side to the demand side. [blok2017introduction](#reference) Alternatively, the system can be restructured using figure `b` by introducing RexNet. Prosumers can be modelled as three parts. __Clients__ are used to simulate the ultimate needs of the prosumer like the minimum requirements of room temperature in winter. __Continuous provision plants (CPPs)__ are underlying physical and economical systems with inputs being energy mainly and outputs to meet the needs of clients. For example, it can be an electricity-driven heat pump and pipes for space heating. Usually, there is inter-temporal dynamics within these systems. It is __coordinators__ who control CPPs and participate in Rex, and their objectives are to make more profit (or lower costs), satisfy needs and respect constraints at the same time. The direct participation of small-scale prosumers discussed in section 1 is a critical premise for this structure so that there is no friction between these three parts because they refer to the same prosumer.
 
@@ -58,7 +60,7 @@ Take energy systems, especially power systems, for example, they can be represen
 
 In this project, we are interested in both the market and prosumers, which therefore have to be modelled as __multi-agent systems__, because prosumers have diverging information and interests. [shoham2009multiagent](#reference) There is no centralized manager knowing all variable outcomes and controlling everything, so the market clearing process needs to be optimized in a distributed manner. It is hard to obtain analytical solutions directly compared to the literature on market microstructure, so __agent-based models__ are used to represent heterogeneous prosumers [iori2012agent](#reference), [lebaron2001builder](#reference), and their interactions through RexNet are demonstrated by __discrete event simulations__.
 
-### 3-2. Decision Making Framework for Prosumers
+### 4-2. Decision Making Framework for Prosumers
 
 Some clients, like wind turbines in power systems, are endowed with prosumptions, the quantity of which are simulated with similar patterns to historical data. Because they don't know the precise quantity in advance, they will forecast based on their private up-to-date information, the processes of which are simulated as well. Once their forecasts update, they will convey differences to coordinators, who are obliged to react to it before gate closures. For the sake of privacy protections, high-resolution models of CPPs are known to corresponding coordinators only. Future outputs can be predicted from CPP models and planned inputs. Then, coordinators modify plans, participate in Rex and cooperate with clients.
 
@@ -72,7 +74,7 @@ Specifically, there are some stochastic simulation programs used in this project
 * CPPs may correlate with each other so they must be modelled by an aggregated CPPs controlled by one coordinator to satisfy several clients. For example, the space heating system for multi-dwelling buildings must be modelled by multi-input-multi-output control systems. [siroky2011experimental](#reference) Thus hierarchical Rex can be introduced.
 * Grey-box modelling techniques, which combines statistical methods and physical knowledge, can be used to calibrate CPP models. [bacher2011identifying](#reference)
 
-### 3-3. Three Ways to Analyze
+### 4-3. Three Ways to Analyze
 
 There are three angles on how to analyze this multi-agent system, which can be illustrated using the following figure.
 
@@ -82,7 +84,7 @@ There are three angles on how to analyze this multi-agent system, which can be i
 
 ![](../../images/4-10.png)
 
-### 3-4. Dynamic Pricing and Procurement Problem
+### 4-4. Dynamic Pricing and Procurement Problem
 
 Some real-world experiments regarding key assumptions can be conducted. As discussed before, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a dynamic pricing and procurement problem. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference) and inventory management for perishable products [nahmias2011perishable](#reference).
 
@@ -90,7 +92,7 @@ Some real-world experiments regarding key assumptions can be conducted. As discu
 
 It is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard analytical tools for forecasting [madsen2005standardizing](#reference) and compared to results from state-of-art forecast techniques.
 
-## 4. Expected Contributions
+## 5. Expected Contributions
 
 The assumption of time invariance can be relaxed once short-term models are mature. The existence of investments, ageing and accidents bring about more randomness and flexibility. [spyrou2019planning](#reference) The ultimate goal of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems.
 
