@@ -8,11 +8,11 @@ date: April 23, 2020
 
 ## Highlights
 
-- A continuous double auction market with a new type of limit order books is proposed to replace incumber electricity families.
+- A continuous double auction market with a new type of limit order books is proposed to replace incumber electricity families, making it possible for small-scale prosumers to directly participate.
 - Discrete event simulations of multi-agent systems are used as the main research tools.
-- A new decision making framework based on model prediction controls is introduced.
-- The core idea can be concentrated on a new type of retailer in the power industry, and a series of real-world experiments can be conducted. The problem is simplified to a rolling vendor problem with dynamic pricing and procurement of perishable products. Spot demands and replenishment costs are uncertain.
-- Simulations can provide statistics for long-term investments, and a new structure for power systems can be utilized, especially for underdeveloped areas.
+- A new decision making framework based on model prediction control is introduced to facilitate procurement, control and response of participants.
+- The core idea can be borrow by a new type of retailer in the power industry, and a series of real-world applications can be conducted. The problem can be simplified, being a vendor facing dynamic pricing and procurement of perishable products with uncertain spot demands and replenishment costs.
+- Simulations can provide statistics for long-term investments, and a new structure for power systems can emerge, especially in underdeveloped areas.
 - The market can be applied in other industries, like food supply chains, the retailing and the banking.
 
 ## 1. Introduction
@@ -86,7 +86,7 @@ There are three angles on how to analyze this multi-agent system, which can be i
 
 ### 4-4. Dynamic Pricing and Procurement Problem
 
-Some real-world experiments regarding key assumptions can be conducted. As discussed before, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a dynamic pricing and procurement problem. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference) and inventory management for perishable products [nahmias2011perishable](#reference).
+Some real-world experiments regarding key assumptions can be conducted. As discussed before, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a dynamic pricing and procurement problem. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference) and inventory management for perishable products [nahmias2011perishable](#reference). There is similar literature like [nair2014energy](#reference) and [secomandi2014optimal](#reference), but their situations are not as complicated.
 
 ![](../../images/4-11.png)
 
@@ -136,10 +136,12 @@ The expected outputs are listed:
 * [maloney2003complexity](https://www.sciencedirect.com/science/article/pii/S092911990200055X) The complexity of price discovery in an efficient market: the stock market reaction to the Challenger crash. An empirical event study on how the new knowledge and its associated equilibrium price is discovered.
 * [monahan2004dynamic](https://pubsonline.informs.org/doi/abs/10.1287/msom.1030.0026) The dynamic pricing problem from a newsvendor’s perspective. There is only one chance to procure stocks, and "the randomness in demand is price independent and multiplicative in nature, and the parameter b denotes the price elasticity of demand."
 * [nahmias2011perishable](https://www.springer.com/gp/book/9781441979988) Perishable inventory systems.
+* [nair2014energy](https://dl.acm.org/doi/10.1145/2591971.2591982) Energy procurement strategies in the presence of intermittent sources.
 * [page2008generalised](https://www.sciencedirect.com/science/article/pii/S037877880700031X) A generalised stochastic model for the simulation of occupant presence.
 * [parag2016electricity](https://www.nature.com/articles/nenergy201632) Electricity market design for the prosumer era
 * [rawlings2019model](https://sites.engineering.ucsb.edu/~jbraw/mpc/) Model predictive control: theory, computation, and design. MPC regulators are introduced in chapter 1.
 * [ross2012simulation](https://www.elsevier.com/books/simulation/ross/978-0-12-415825-2) Simulation.
+* [secomandi2014optimal](https://pubsonline.informs.org/doi/10.1287/msom.2013.0473) Optimal energy procurement in spot and forward markets
 * [shoham2009multiagent](https://www.cambridge.org/core/books/multiagent-systems/B11B69E0CB9032D6EC0A254F59922360) Multiagent systems: algorithmic, game-theoretic, and logical foundations. MASs with continuous double auctions are discussed in section 11-4.
 * [shugan2000advance](https://journals.sagepub.com/doi/abs/10.1177/109467050023001?casa_token=nHdK2gtk0ZUAAAAA:JZm0jvC2O9C0qr7WPZZphEZINBT2hpYCLNSB5hykwAO1buCHLim0JzlleOeUOwCv0uIZWbmfE8vI) Advance pricing of services and other implications of separating purchase and consumption. Elasticities are different regarding purchasing for the same asset at different times.
 * [shy2008how](https://www.cambridge.org/core/books/how-to-price/27B182881BC668B688F8DA949DF52554) How to price: a guide to pricing techniques and yield management.
