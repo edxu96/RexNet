@@ -92,7 +92,7 @@ There are three angles on how to analyze this multi-agent system, which can be i
 
 ![](../../images/4-10.png)
 
-Besides comparison with relevant literature above, there are following major difference that must be listed:
+Besides comparison with relevant literature above, there are following major difference that must be emphasized:
 
 - Compared to the literature on market microstructure, it is hard to obtain analytical solutions directly in this project, because the welfare of participants is considered. []
 - Regarding demand, the standard approach is to assume that it is either satisfied (leading to sales) or lost forever, and there is only one products in the market. [shen2007customer](#reference) Instead, a continuous manner is adopted in this project, and RHPOs are used to handle inter-temporal decision making processes.
@@ -101,7 +101,11 @@ Besides comparison with relevant literature above, there are following major dif
 
 ### 4-4. The Second Stage: a Dynamic Pricing & Procurement Problem
 
-A new business as retailers in incumbent power systems can be field-tested in the second stage. As discussed in section 3, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a __dynamic pricing & procurement problem__. There is much relevant literature, like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference), dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference) and inventory management for perishable products [nahmias2011perishable](#reference). There is similar literature like [nair2014energy](#reference) and [secomandi2014optimal](#reference), but their situations are not as complicated.
+A new business as retailers in incumbent power systems can be field-tested in the second stage. As discussed in section 3, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a __dynamic pricing & procurement problem__. There is much relevant literature:
+
+- like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference),
+- dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference), inventory management for perishable products [nahmias2011perishable](#reference), ticket pricing [courty2003ticket](#reference).
+- There is similar literature like [nair2014energy](#reference) and [secomandi2014optimal](#reference), but their situations are not as complicated.
 
 ![](../../images/4-11.png)
 
@@ -170,7 +174,7 @@ Based on the simulation results, field experiments can be conducted in the secon
 * [woods2013simulation](https://ieeexplore.ieee.org/document/6262462) Simulation of wind power at several locations.
 * [su2010optimal](https://pubsonline.informs.org/doi/10.1287/mnsc.1090.1075) Optimal pricing with speculators and strategic consumers. There are four different types of consumers coming and going described in section 3. Their welfare is not analyzed. Besides, there are only two types of consumer valuations. Though there are random variables, the outcomes are always assumed to be known to everyone immediately.
 * [shen2007customer](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1937-5956.2007.tb00291.x) Customer behavior modeling in revenue management and auctions: a review and new research opportunities
-
+* [courty2003ticket](https://www.journals.uchicago.edu/doi/abs/10.1086/377117?journalCode=jle) Ticket pricing under demand uncertainty.
 
 ## Appendix
 

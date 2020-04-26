@@ -3,7 +3,8 @@
 
 * [RexNet-Docs](./main.md)
 * [Nomenclature](./Nomenclature.md)
-* [Introduction](./Introduction.md)
+* [Introduction](./intro.md)
+* [Literature Review](./literature.md)
 
 ## Modelling
 
