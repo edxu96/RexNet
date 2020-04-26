@@ -98,18 +98,17 @@ A new business as retailers in incumbent power systems can be field-tested in th
 
 ![](../../images/4-11.png)
 
-The majority of the vast amount of relevant literature can be summarized:
+The most similar researches are [nair2014energy](#reference) and [secomandi2014optimal](#reference). The majority of the vast amount of relevant literature can be summarized:
 
-- Newsvendor's procurement of TDP. Dynamic procurement can be utlized when there are multiple decision epochs [wang2012multiordering](#reference).
-- Forward dynamic pricing of TDP. techniques for capacity-constrained services [monahan2004dynamic](#reference),
-- Inventory management of perishable products. [nahmias2011perishable](#reference)
+- Newsvendor's procurement of TDP. [qin2011newsvendor](#reference) Dynamic procurement can be utlized when there are multiple decision epochs. [wang2012multiordering](#reference)
+- Forward dynamic pricing of TDP. The initial inventory is endowed without cost considered in contrast to that in the previous category. Most of techniques are from revenue management. [gallego2019revenue](#reference)
+- Inventory management of perishables. [nahmias2011perishable](#reference)
 - Dynamic pricing of durables. [ahn2007pricing](#reference)
+- Reservation (booking) from the perspective of customers.
 
-There is similar literature like [nair2014energy](#reference) and [secomandi2014optimal](#reference), but their situations are not as complicated.
+Essential terminologies from the above literature are illustrated using the following figure:
 
 ![](../../images/4-12.png)
-
-- Reservation (booking) from the perspective of customers.
 
 Besides comparison with relevant literature above, there are following major difference that must be emphasized:
 
@@ -163,7 +162,6 @@ Based on the simulation results, field experiments can be conducted in the secon
 * [lebaron2001builder](https://www.tandfonline.com/doi/abs/10.1088/1469-7688/1/2/307) A builder’s guide to agent-based financial markets. "It is not really a survey, but a kind of view from the trenches in terms of building artificial markets."
 * [madsen2005standardizing](https://journals.sagepub.com/doi/abs/10.1260/030952405776234599) Standardizing the performance evaluation of short-term wind power prediction models.
 * [maloney2003complexity](https://www.sciencedirect.com/science/article/pii/S092911990200055X) The complexity of price discovery in an efficient market: the stock market reaction to the Challenger crash. An empirical event study on how the new knowledge and its associated equilibrium price is discovered.
-* [monahan2004dynamic](https://pubsonline.informs.org/doi/abs/10.1287/msom.1030.0026) The dynamic pricing problem from a newsvendor’s perspective. There is only one chance to procure stocks, and "the randomness in demand is price independent and multiplicative in nature, and the parameter b denotes the price elasticity of demand."
 * [nahmias2011perishable](https://www.springer.com/gp/book/9781441979988) Perishable inventory systems.
 * [nair2014energy](https://dl.acm.org/doi/10.1145/2591971.2591982) Energy procurement strategies in the presence of intermittent sources.
 * [page2008generalised](https://www.sciencedirect.com/science/article/pii/S037877880700031X) A generalised stochastic model for the simulation of occupant presence.
@@ -184,6 +182,8 @@ Based on the simulation results, field experiments can be conducted in the secon
 * [su2010optimal](https://pubsonline.informs.org/doi/10.1287/mnsc.1090.1075) Optimal pricing with speculators and strategic consumers. There are four different types of consumers coming and going described in section 3. Their welfare is not analyzed. Besides, there are only two types of consumer valuations. Though there are random variables, the outcomes are always assumed to be known to everyone immediately.
 * [shen2007customer](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1937-5956.2007.tb00291.x) Customer behavior modeling in revenue management and auctions: a review and new research opportunities
 * [courty2003ticket](https://www.journals.uchicago.edu/doi/abs/10.1086/377117?journalCode=jle) Ticket pricing under demand uncertainty.
+* [qin2011newsvendor](https://www.sciencedirect.com/science/article/pii/S0377221710008040) The newsvendor problem: Review and directions for future research
+* [gallego2019revenue](https://link.springer.com/book/10.1007/978-1-4939-9606-3) Revenue management and pricing analysis
 
 ## Appendix
 
