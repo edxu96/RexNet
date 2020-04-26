@@ -1,32 +1,32 @@
-<!-- ---
+---
 for: GitHub/edxu96/RexNet/docs/PhD
 author: Edward J. Xu
 date: April 23, 2020
---- -->
+---
 
 # `PhD Proposal` Reservation-Based Exchange Market & Dynamic Pricing and Procurement Problems
 
 ## Highlights
 
 - A continuous double auction market with a new type of limit order books is proposed to replace incumber electricity families, making it possible for small-scale prosumers to directly participate.
-- Discrete event simulations of multi-agent systems are used as the main research tools.
+- Discrete event simulations of multi-agent systems are used as the main research tools to demonstrate market operations and decision making processes.
 - A new decision making framework based on model prediction control is introduced to facilitate procurement, control and response of participants.
-- The core idea can be borrow by a new type of retailer in the power industry, and a series of real-world experiments can be conducted. The problem can be simplified, being a vendor facing dynamic pricing and procurement of perishable products with uncertain spot demands and replenishment costs.
+- Based on the same idea, a business as retailers can be started up in incumbent power industries as real-world experiments. Existing literature in revenue management, inventory management, supply chain management, etc can be put into use.
 - Simulations can provide statistics for long-term investments, and a new structure for power systems can emerge, especially in underdeveloped areas.
 - The market can be applied in other industries, like food supply chains, the retailing and the banking.
 
-## 1. Introduction
+## 1. Aim and Novelty
 
-In the power industry, it is urgent to reduce the carbon emission from power generations, avoid backup generators and penetrate modern power systems. Other industries, like food supply chains, face similar challenges. The lack of direct participation from the demand side is the central question, which may be solved by the market designed in the project. Arguments for the new market can be established in two stages:
+In the power industry, it is urgent to reduce the carbon emission from power generations, avoid backup generators and penetrate modern power systems. Other industries, like food supply chains, face similar challenges. The lack of direct participation from the demand side is the central question, which may be solved by the market designed in the project. Arguments for these designs can be established in two stages:
 
-- Because of the complexity, in the first stage, simulations instead of analysis are used primarily to demonstrate how the market operates and prosumers make decisions under different settings. To facilitate the simulation of participants in the market, a new decision making framework is defined. The objective is establish the most realistic simulation toolbox by trying more candidate models and computer experiments.
-- In the second stage, a new retailing business with similar features can be set up and field-tested in incumbent power systems. Experiment results can be used to examine key assumptions and calibrate simulation models.
+- Because of the complexity, in the first stage, simulations instead of analysis are primarily used to demonstrate how the market operates and prosumers make decisions under different settings. To facilitate the simulation of participants in the market, a new decision making framework is defined. The objective is establish the most realistic simulation toolbox by trying more candidate models and computer experiments.
+- In the second stage, a new retailing business with similar features can be set up and field-tested in incumbent power systems. Experiment results can be used to examine key assumptions and calibrate simulation models. With validated simulation models, new structures for power systems can be proposed.
 
-The necessity for the new market is discussed in section 2, followed by the description of the market in section 3. The methodology is discussed in four parts of section 4. The first part introduces the simulation schemes used, and the second part discuss the core simulation programs. The project can be researched into from three perspectives, which are listed in the third, and the most important one is elaborated in the last part. Expected contributions are summarized in the last section.
+The necessity for the new market is discussed in section 2, followed by the description of the market in section 3. The methodology is discussed in four parts of section 4. The first part introduces the simulation schemes used, and the second part discuss the core simulation programs. The project can be researched into from three perspectives, which are listed in the third part, and the most important one is elaborated in the last part. Expected contributions are summarized in the last section.
 
 ## 2. Background and Motivation
 
-Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference) prefer entering into contracts to isolate themselves from the vagaries of wholesale markets, so their participation is mediated by retailers, who take the risk and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and time-dependence. Retailers must face price spikes from time to time because they are obliged to satisfy the needs of their customers. [kirschen2003demand](#reference) Instead, mechanisms satisfying the following requirements should be applied:
+Small-scale producers/consumers (__prosumers__) [parag2016electricity](#reference) prefer entering into contracts to isolate themselves from the vagaries of wholesale markets, so their participation is mediated by retailers, who take the risk and profit from premiums. This strategy is widely applied in industries with durables, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and time-dependence. Retailers must face price spikes from time to time because they are obliged to satisfy the needs of their customers. [kirschen2003demand](#reference) Instead, mechanisms satisfying the following requirements should be applied:
 
 * Adaptive to external factors temporally and spatially. For example, time-varying peak loads resulted from penetration of renewable generations exclude applications of traditional load shifting or shedding. [connell2014benefits](#reference)
 * The market should be as transparent as possible, while private information is tightly protected. So centralized command-and-control nor retailing is efficient in such settings because of the conflict between better market clearings and information protection. [kirschen2018fundamentals](#reference) It is prosumers who anticipate their future states, formulate trading strategies and act accordingly.
@@ -37,13 +37,15 @@ Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference
 * The number of statistics for decision making is as low as possible but different assets can be distinguished based on those statistics.
 * The imbalance within trading units can be maintained without centralized system operators [kirschen2018fundamentals](#reference), because it may be hard to establish trustworthy regulatory authorities and operators responsible for the system safety.
 
-Till now, all market designs fail to fulfill these requirements, while in this project, at least one capable market is designed. Above all, some settings have been introduced to convert electricity into tradable assets and differentiate them temporally and spatially, and they vary in different industries. The most promising candidate so far is introduced in the next section, following discussions about its primary function, two features, and superiority over others.
+Till now, all market designs fail to fulfill these requirements, while in this project, at least one capable market is brought up. The most promising candidate so far is introduced in the next section, following discussions about its primary function, two features, and superiority over others.
 
 ## 3. Solution: Reservation-Based Exchange Market
 
 Reservation-based exchange market is a __continuous double auction__ market with __3-dimensional limit order books__, where prosumers can bid/offer continuously and get transacted once matched with another order. It allows immediate transactions and standby orders at the same time. Similar to computerized reservation systems in airline industries, prosumers have to book before the delivery, and markets are segmented according to when bookings are made. [shy2008how](#reference) Therefore the market is named __reservation exchange (Rex)__. With delivery networks integrated, the whole system is named __RexNet__. For power industries, RexNet can be used to replace the market families including the day-ahead market, the intra-day market, the balancing market, the capacity market and other ancillary markets.
 
-The most important function of Rex is the __quantity discovery__ of __time-dependent products (TDP)__, which is similar to the concept of price discovery in limit order markets for financial assets when markets motivate participants to reveal their private valuation. [maloney2003complexity](#reference) Two kinds of discoveries can be generalized as the dynamic equilibrium discovery, which creates knowledge by incorporating dispersed information at high speed. [birchler2007information](#reference) Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet, so mismatches can be eliminated in high speed without the necessity for centralized monitoring. Different kinds of service always involves producers and consumers at the same time, making it the majority of TDP.
+The most important function of Rex is the __quantity discovery__, which is similar to the concept of price discovery in limit order markets for financial assets when markets motivate participants to reveal their private valuation. [maloney2003complexity](#reference) Two kinds of discoveries can be generalized as the dynamic equilibrium discovery, which creates knowledge by incorporating dispersed information at high speed. [birchler2007information](#reference) Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet, so mismatches can be eliminated in high speed without the necessity for centralized monitoring.
+
+Traded assets in Rex belong to __time-dependent products (TDP)__. Different kinds of service always involves producers and consumers at the same time, making it the majority of TDP. Some settings have been introduced to convert electricity into tradable TDP and differentiate them temporally and spatially. 
 
 In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. The market is __spatially fragmented__ by transmission networks when relevant edges are congested, so stakeholders in control of transmission networks can participate in RexNet as spatial arbitragers. Moreover, RexNet can be established __hierarchically__. Representatives of prosumers in lower levels can serve as retailers, which makes the experiments in subsection 4-4 plausible.
 
