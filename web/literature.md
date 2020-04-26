@@ -2,10 +2,9 @@
 description: Relevant literature is summarized here.
 ---
 
-1. Procurement for one Target Unit
-2. Dynamic Pricing for one Target Unit
-3. Reservation and Realization. From the perspective of customers.
-4. Continuous Procurement
-5. Continuous Dynamic Pricing
-6. Vendor
-7. Continuous Vendor ?
+1. [retailer] Newsvendor's Procurement Problem
+2. [retailer] Forward Dynamic Pricing / Ration of Time-Dependent Products
+3. [customer] Reservation
+4. [retailer] Inventory Management
+5. [customer] Stockpile
+6. [retailer] DPP

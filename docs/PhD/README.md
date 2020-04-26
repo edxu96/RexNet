@@ -26,7 +26,7 @@ The necessity for the new market is discussed in section 2, followed by the desc
 
 ## 2. Background and Motivation
 
-Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference) prefer entering into contracts to isolate themselves from the vagaries of wholesale markets, so their participation is mediated by retailers, who take the risk and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and perishability. Retailers must face price spikes from time to time because they are obliged to satisfy the needs of their customers. [kirschen2003demand](#reference) Instead, mechanisms satisfying the following requirements should be applied:
+Small-scale producers/consumers (__prosumer__) [parag2016electricity](#reference) prefer entering into contracts to isolate themselves from the vagaries of wholesale markets, so their participation is mediated by retailers, who take the risk and profit from premiums. This strategy is widely applied in industries with durable goods, while is impractical for fresh foods and electricity because of their continuous generation/consumption, reliance on __delivery networks__, and time-dependence. Retailers must face price spikes from time to time because they are obliged to satisfy the needs of their customers. [kirschen2003demand](#reference) Instead, mechanisms satisfying the following requirements should be applied:
 
 * Adaptive to external factors temporally and spatially. For example, time-varying peak loads resulted from penetration of renewable generations exclude applications of traditional load shifting or shedding. [connell2014benefits](#reference)
 * The market should be as transparent as possible, while private information is tightly protected. So centralized command-and-control nor retailing is efficient in such settings because of the conflict between better market clearings and information protection. [kirschen2018fundamentals](#reference) It is prosumers who anticipate their future states, formulate trading strategies and act accordingly.
@@ -43,7 +43,7 @@ Till now, all market designs fail to fulfill these requirements, while in this p
 
 Reservation-based exchange market is a __continuous double auction__ market with __3-dimensional limit order books__, where prosumers can bid/offer continuously and get transacted once matched with another order. It allows immediate transactions and standby orders at the same time. Similar to computerized reservation systems in airline industries, prosumers have to book before the delivery, and markets are segmented according to when bookings are made. [shy2008how](#reference) Therefore the market is named __reservation exchange (Rex)__. With delivery networks integrated, the whole system is named __RexNet__. For power industries, RexNet can be used to replace the market families including the day-ahead market, the intra-day market, the balancing market, the capacity market and other ancillary markets.
 
-The most important function of Rex is the __quantity discovery__, which is similar to the concept of price discovery in limit order markets for financial assets when markets motivate participants to reveal their private valuation. [maloney2003complexity](#reference) Both of them can be generalized as the dynamic equilibrium discovery, which creates knowledge by incorporating dispersed information at high speed. [birchler2007information](#reference) Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet, so mismatches can be eliminated in high speed without the necessity for centralized monitoring.
+The most important function of Rex is the __quantity discovery__ of __time-dependent products (TDP)__, which is similar to the concept of price discovery in limit order markets for financial assets when markets motivate participants to reveal their private valuation. [maloney2003complexity](#reference) Two kinds of discoveries can be generalized as the dynamic equilibrium discovery, which creates knowledge by incorporating dispersed information at high speed. [birchler2007information](#reference) Likewise, prosumers are encouraged to take advantage of their information about the aggregated prosumptions in RexNet, so mismatches can be eliminated in high speed without the necessity for centralized monitoring. Different kinds of service always involves producers and consumers at the same time, making it the majority of TDP.
 
 In this project, all kinds of delivery networks can be divided into two levels: distribution networks (whose constraints can be ignored) and transmission networks. The market is __spatially fragmented__ by transmission networks when relevant edges are congested, so stakeholders in control of transmission networks can participate in RexNet as spatial arbitragers. Moreover, RexNet can be established __hierarchically__. Representatives of prosumers in lower levels can serve as retailers, which makes the experiments in subsection 4-4 plausible.
 
@@ -92,6 +92,25 @@ There are three angles on how to analyze this multi-agent system, which can be i
 
 ![](../../images/4-10.png)
 
+### 4-4. The Second Stage: Continuous Forward Dynamic Pricing & Procurement
+
+A new business as retailers in incumbent power systems can be field-tested in the second stage. As discussed in section 3, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a __continuous forward dynamic pricing & procurement__ problem. The traded assets are time-dependent products defined in section 3.
+
+![](../../images/4-11.png)
+
+The majority of the vast amount of relevant literature can be summarized:
+
+- Newsvendor's procurement of TDP. Dynamic procurement can be utlized when there are multiple decision epochs [wang2012multiordering](#reference).
+- Forward dynamic pricing of TDP. techniques for capacity-constrained services [monahan2004dynamic](#reference),
+- Inventory management of perishable products. [nahmias2011perishable](#reference)
+- Dynamic pricing of durables. [ahn2007pricing](#reference)
+
+There is similar literature like [nair2014energy](#reference) and [secomandi2014optimal](#reference), but their situations are not as complicated.
+
+![](../../images/4-12.png)
+
+- Reservation (booking) from the perspective of customers.
+
 Besides comparison with relevant literature above, there are following major difference that must be emphasized:
 
 - Compared to the literature on market microstructure, it is hard to obtain analytical solutions directly in this project, because the welfare of participants is considered. []
@@ -99,17 +118,7 @@ Besides comparison with relevant literature above, there are following major dif
 - Most of literature analyzes similar problems from this perspective [su2010optimal](#reference), but outcomes of random variables are always assumed to be known to everyone immediately, ignoring discovery processes.
 - Again, the objective of this project is to identify most realistic simulation programs for a special kind of markets, based on small-scale field experiments.
 
-### 4-4. The Second Stage: a Dynamic Pricing & Procurement Problem
-
-A new business as retailers in incumbent power systems can be field-tested in the second stage. As discussed in section 3, RexNet can be established in a hierarchical structure, so retailers can be introduced to represent a group of prosumers, which can be applied in incumbent power systems. Retailers act as market makers with one side being electricity market families and the other side being prosumers. Thus, retailers face a __dynamic pricing & procurement problem__. There is much relevant literature:
-
-- like the newsvendor problem with multiple procurements in supply chains [wang2012multiordering](#reference),
-- dynamic pricing techniques for capacity-constrained services [monahan2004dynamic](#reference), inventory management for perishable products [nahmias2011perishable](#reference), ticket pricing [courty2003ticket](#reference).
-- There is similar literature like [nair2014energy](#reference) and [secomandi2014optimal](#reference), but their situations are not as complicated.
-
-![](../../images/4-11.png)
-
-Some real-world experiments regarding key assumptions can be conducted. reservation. [] It is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard analytical tools for forecasting [madsen2005standardizing](#reference) and compared to results from state-of-art forecast techniques.
+Some real-world experiments regarding key assumptions can be conducted. It is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard analytical tools for forecasting [madsen2005standardizing](#reference) and compared to results from state-of-art forecast techniques.
 
 ## 5. Expected Contributions
 
