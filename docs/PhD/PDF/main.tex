@@ -20,18 +20,18 @@
 
 
 
-\title{PhD Proposal: Reservation-Based Exchange Market and Dynamic
-Pricing \& Procurement Problems}
+\title{PhD Proposal: Reservation Exchange and Dynamic Pricing \&
+Procurement}
 
 \author[a]{Edward Jie Xu}
 
   \affil[a]{Department of Technology, Management and Economics,
 Technical Univeristy of Denmark, Denmark}
 
-\setcounter{secnumdepth}{3}
+\setcounter{secnumdepth}{5}
 
 % Please give the surname of the lead author for the running footer
-\leadauthor{PhD Proposal}
+\leadauthor{}
 
 % Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
  
@@ -58,9 +58,7 @@ and the banking.
 
 % initially we use doi so keep for backwards compatibility
 % new name is doi_footer
-\doifooter{\url{https://github.com/edxu96/RexNet/tree/master/docs/PhD}}
 
-\pinpfootercontents{PhD Proposal}
 
 \begin{document}
 
@@ -93,27 +91,29 @@ project. Arguments for these designs can be established in two stages:
   prosumers make decisions under different settings. To facilitate the
   simulation of participants in the market, a new decision-making
   framework is defined. The objective is to establish the most realistic
-  simulation toolbox by trying more candidate models and computer
+  simulation toolbox by trying candidate models and conducting computer
   experiments.
 \item
   In the second stage, a new retailing business with similar features
-  can be set up and field-tested in incumbent power systems. Experiment
-  results can be used to examine key assumptions and calibrate
+  can be set up and field-tested in incumbent power systems, of which
+  the results can be used to examine key assumptions and calibrate
   simulation models. With validated simulation models, new structures
   for power systems can be proposed.
 \end{itemize}
 
-The necessity for the new market is discussed in section 2, followed by
-the description of the market in section 3. The methodology is discussed
-in four parts of section 4. The first part introduces the simulation
-schemes used, and the second part discusses the core simulation
-programs. The project can be researched from three perspectives, which
-are listed in the third part, and the most important one is elaborated
-in the last part. Expected contributions are summarized in the last
-section.
+The necessity for the new market is discussed in section
+\ref{motivation}, followed by the description of the market in section
+\ref{Rex}. The methodology is discussed in four parts of section
+\ref{method}. The first part introduces the simulation schemes used, and
+the second part discusses the core simulation programs. The project can
+be researched from three perspectives, which are listed in the third
+part, and the most important one is elaborated in the last part.
+Expected contributions are summarized in the last section.
 
 \hypertarget{background-and-motivation}{%
 \section{Background and Motivation}\label{background-and-motivation}}
+
+\label{motivation}
 
 Small-scale producers/consumers (\textbf{prosumers})
 \protect\hyperlink{reference}{parag2016electricity} prefer entering into
@@ -121,11 +121,14 @@ contracts to isolate themselves from the vagaries of wholesale markets,
 so their participation is mediated by retailers, who take the risk and
 profit from premiums. This strategy is widely applied in industries with
 durables, while is impractical for fresh foods and electricity because
-of their continuous generation/consumption, reliance on \textbf{delivery
-networks}, and time-dependence. Retailers must face price spikes from
-time to time because they are obliged to satisfy the needs of their
-customers. \protect\hyperlink{reference}{kirschen2003demand} Instead,
-mechanisms satisfying the following requirements should be applied:
+of their continuous generations/consumptions, reliance on
+\textbf{delivery networks}, and time-dependence. Retailers must face
+price spikes from time to time because they are obliged to satisfy the
+needs of their customers.
+\protect\hyperlink{reference}{kirschen2003demand}
+
+Instead, mechanisms satisfying the following requirements should be
+applied:
 
 \begin{itemize}
 \tightlist
@@ -136,9 +139,10 @@ mechanisms satisfying the following requirements should be applied:
   shedding. \protect\hyperlink{reference}{connell2014benefits}
 \item
   The market should be as transparent as possible, while private
-  information is tightly protected. So centralized command-and-control
-  nor retailing is efficient in such settings because of the conflict
-  between better market clearings and information protection.
+  information is tightly protected. Neither centralized
+  command-and-control nor retailing is efficient in such settings
+  because of the conflict between better market clearings and
+  information protection.
   \protect\hyperlink{reference}{kirschen2018fundamentals} It is
   prosumers who anticipate their future states, formulate trading
   strategies and act accordingly.
@@ -180,39 +184,42 @@ mechanisms satisfying the following requirements should be applied:
 
 Till now, all market designs fail to fulfil these requirements, while in
 this project, at least one capable market is brought up. The most
-promising candidate so far is introduced in the next section, following
+promising candidate so far is introduced in section \ref{Rex}, following
 discussions about its primary function, traded assets, two features, and
 superiority over others.
 
-\hypertarget{solution-reservation-based-exchange-market}{%
-\section{Solution: Reservation-Based Exchange
-Market}\label{solution-reservation-based-exchange-market}}
+\hypertarget{proposed-solution-reservation-exchange}{%
+\section{Proposed Solution: Reservation
+Exchange}\label{proposed-solution-reservation-exchange}}
 
-The reservation-based exchange market is a \textbf{continuous double
-auction} market with \textbf{3-dimensional limit order books}, where
-prosumers can bid/offer continuously and get transacted once matched
-with another order. It allows immediate transactions and standby orders
-at the same time. Similar to computerized reservation systems in airline
-industries, prosumers have to book before the delivery, and markets are
-segmented according to when bookings are made.
+\label{Rex}
+
+The proposed solution is a \textbf{continuous double auction} market
+with \textbf{3-dimensional limit order books}, where prosumers can
+bid/offer continuously and get transacted once matched with another
+order. It allows immediate transactions and standby orders at the same
+time. Similar to computerized reservation systems in airline industries,
+prosumers have to book before the delivery, and markets are segmented
+according to when bookings are made.
 \protect\hyperlink{reference}{shy2008how} Therefore the market is named
 \textbf{reservation exchange (Rex)}. With delivery networks integrated,
-the whole system is named \textbf{RexNet}. For power industries, RexNet
-can be used to replace the market families including the day-ahead
-market, the intra-day market, the balancing market, the capacity market
-and other ancillary markets.
+the whole system is named \textbf{RexNet}.
+\footnote{Two names are used interchangeably.} For power industries, Rex
+can be used to replace the market families including day-ahead market,
+intra-day market, balancing market, capacity market and other ancillary
+markets.
 
-The most important function of Rex is the \textbf{quantity discovery},
-which is similar to the concept of price discovery in limit order
-markets for financial assets when markets motivate participants to
-reveal their private valuation.
-\protect\hyperlink{reference}{maloney2003complexity} Two kinds of
-discoveries can be generalized as the dynamic equilibrium discovery,
-which creates knowledge by incorporating dispersed information at high
-speed. \protect\hyperlink{reference}{birchler2007information} Likewise,
+The most important function of Rex is \textbf{quantity discovery}, which
+is similar to price discovery in limit order markets for financial
+assets when markets motivate participants to reveal their private
+valuations. \protect\hyperlink{reference}{maloney2003complexity} Two
+kinds of discoveries can be generalized as dynamic equilibrium
+discovery, which creates knowledge by incorporating dispersed
+information at high speed.
+\protect\hyperlink{reference}{birchler2007information} Likewise,
 prosumers are encouraged to take advantage of their information about
-the aggregated prosumptions in RexNet, so mismatches can be eliminated
-in high speed without the necessity for centralized monitoring.
+the aggregated prosumptions in Rex, so mismatches can be eliminated in
+high speed without the necessity for centralized monitoring.
 
 Traded assets in Rex belong to \textbf{time-dependent products (TDP)}.
 Different kinds of service always involve producers and consumers at the
@@ -224,21 +231,19 @@ In this project, all kinds of delivery networks can be divided into two
 levels: distribution networks (whose constraints can be ignored) and
 transmission networks. The market is \textbf{spatially fragmented} by
 transmission networks when relevant edges are congested, so stakeholders
-in control of transmission networks can participate in RexNet as spatial
-arbitragers. Moreover, RexNet can be established
-\textbf{hierarchically}. Representatives of prosumers in lower levels
-can serve as retailers, which makes the experiments in subsection 4-4
-plausible.
+in control of transmission networks can participate in Rex as spatial
+arbitragers. Moreover, Rex can be established \textbf{hierarchically}.
+Representatives of prosumers in lower levels can serve as retailers,
+which makes the experiments in subsection \ref{EXP} plausible.
 
 Though the structure of Rex is similar to that composed of day-ahead
-market and intraday market in the power industry, the main difference is
-that there is no one responsible for satisfying uninformed demand of
-prosumers in Rex. For example, utility companies are not obliged to
-satisfy demand in peak hours. There is no need for centralized managers
-to maintain system safety. If the \textbf{reservation} and the
-\textbf{realization} does not match, he/she has to take the consequence.
-So despite the similarity, methods in
-\protect\hyperlink{reference}{nair2014energy} and
+markets and intraday markets, the main difference is that there is no
+one responsible for satisfying uninformed demand of prosumers in Rex.
+For example, utility companies are not obliged to satisfy demand in peak
+hours. If \textbf{reservation} and \textbf{realization} does not match,
+he/she has to take the consequence. Thus, there is no need for
+centralized managers to maintain system safety. So despite the
+similarity, methods in \protect\hyperlink{reference}{nair2014energy} and
 \protect\hyperlink{reference}{secomandi2014optimal} are fundamentally
 different from those in this project.
 
@@ -246,48 +251,53 @@ Also, trading volumes in intraday markets are insignificant compared to
 those in day-ahead markets and balancing markets
 \protect\hyperlink{reference}{weber2010adequate}, so most of the current
 researches focus on periodic double auctions used in day-ahead markets.
-Approaches to Rex deviate from these researches, and the way prosumers
-in Rex make decisions is different as well.
+Approaches to Rex deviate from these researches, and decision-making
+processes are different as well.
 
 With only one type of agents (prosumers) providing and consuming
 liquidity, Rex is an \textbf{order-driven continuous double auction
 market} in essence. \protect\hyperlink{reference}{gould2013limit} There
 are many variations like quote-driven markets, where market makers are
-the primary source of liquidity. As discussed in section 2, it may be
-hard for small-scale prosumers to participate if the market is not the
-most simple and flexible one, making Rex the focus in the simulation
-stage. With adequate data and assumptions validated in the second stage,
-better options may be identified.
+the primary source of liquidity. As discussed in section
+\ref{motivation}, it may be hard for small-scale prosumers to
+participate if the market is not the most simple and flexible one,
+making Rex the focus in the simulation stage. With adequate data and
+assumptions validated in the second stage, better options may be
+identified.
 
 \hypertarget{methodology}{%
 \section{Methodology}\label{methodology}}
 
-Models and methods in the simulation stage will be elaborated first in
-subsection 3-1, then the decision making framework of prosumers is
-introduced in subsection 3-2. Some specific simulation programs are
-presented as well. In subsection 3-3, three different ways to analyze
-RexNet are discussed. Finally, field experiments in the second stage are
-outlined, and some key differences from models in the literature are
-emphasized.
+\label{method}
 
-\hypertarget{discrete-event-simulation-of-multi-agent-systems}{%
-\subsection{Discrete Event Simulation of Multi-Agent
-Systems}\label{discrete-event-simulation-of-multi-agent-systems}}
+Models and methods in the simulation stage will be elaborated first in
+subsection \ref{DES}, then the decision making framework of prosumers is
+introduced in subsection \ref{RHPO}. Some specific simulation programs
+are presented as well. In subsection \ref{three}, three different ways
+to analyze Rex are discussed. Finally, field experiments in the second
+stage are outlined in subsection \ref{EXP}, and some key differences
+from models in the literature are emphasized.
+
+\hypertarget{first-stage-discrete-event-simulation-of-multi-agent-systems}{%
+\subsection{First Stage: Discrete Event Simulation of Multi-Agent
+Systems}\label{first-stage-discrete-event-simulation-of-multi-agent-systems}}
+
+\label{DES}
 
 Take energy systems, especially power systems, for example, they can be
 represented by the figure \ref{1}-a, summarizing the supply chain from
-extractions to end-uses, where the key stage is the distribution from
+extractions to end-uses, of which the key stage is the distribution from
 the supply side to the demand side.
 \protect\hyperlink{reference}{blok2017introduction} Alternatively, the
-system can be restructured by figure \ref{1}-b by introducing RexNet.
+system can be restructured by figure \ref{1}-b by introducing Rex.
 Prosumers can be modelled as three parts.
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{Clients} are used to simulate the ultimate needs of the
-  prosumer like the minimum requirements of room temperature in winter.
-  They are assumed to report their forecasts unreservedly, despite the
+  prosumer like minimum requirements of room temperature in winter. They
+  are assumed to report their forecasts unreservedly, despite
   imprecision before the realization.
 \item
   \textbf{Continuous provision plants (CPPs)} are underlying physical
@@ -295,20 +305,21 @@ Prosumers can be modelled as three parts.
   etc) and outputs to meet the needs of clients. For example, it can be
   an electricity-driven heat pump and pipes for space heating. Usually,
   there is inter-temporal dynamics within these systems, so the
-  framework in subsection 4-2 is required.
+  framework in subsection \ref{RHPO} is required.
 \item
   It is \textbf{coordinators} who control CPPs and participate in Rex,
   and their objectives are to make more profit (or lower costs), satisfy
   needs and respect constraints at the same time. The direct
-  participation of small-scale prosumers discussed in section 1 is a
-  critical premise for this structure so that there is no friction
-  between these three parts because they refer to the same prosumer.
+  participation of small-scale prosumers discussed in section
+  \ref{motivation} is a critical premise for this structure so that
+  there is no friction between these three parts because they refer to
+  the same prosumer.
 \end{itemize}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.48\textwidth]{../../../images/1-3.png} 
-\caption{Two ways to represent energy supply chains}
+\includegraphics[width=0.48\textwidth]{../../../images/1-3.png}
+\caption{Two ways to represent energy supply chains. (a) Illustration of energy supply chains. (b) Restructuring of the chains based on Rex.}
 \label{1}
 \end{figure}
 
@@ -316,29 +327,30 @@ In this project, we are interested in both the market and prosumers,
 which therefore have to be modelled as \textbf{multi-agent systems},
 because prosumers have diverging information and interests.
 \protect\hyperlink{reference}{shoham2009multiagent} No centralized
-manager is knowing all variable outcomes and controlling everything, so
-the market clearing process needs to be optimized in a distributed
-manner. This structure distinguishes this project from most of the
-current literature because researchers must design the market and model
-every prosumer instead of formulating a management strategy.
+manager knows all variable outcomes and controls everything, so the
+market clearing process needs to be optimized in a distributed manner.
+This structure distinguishes this project because researchers must model
+heterogeneous prosumer instead of formulating a management strategy.
 
-Hence, \textbf{agent-based models} are used to represent heterogeneous
-prosumers \protect\hyperlink{reference}{iori2012agent},
+Hence, \textbf{agent-based models} are used
+\protect\hyperlink{reference}{iori2012agent},
 \protect\hyperlink{reference}{lebaron2001builder}, and their
-interactions through RexNet are demonstrated by \textbf{discrete event
+interactions through Rex are demonstrated by \textbf{discrete event
 simulations}.
 
 \hypertarget{decision-making-framework-for-prosumers}{%
 \subsection{Decision Making Framework for
 Prosumers}\label{decision-making-framework-for-prosumers}}
 
+\label{RHPO}
+
 The simulation timeline can be summarized as follows. Some clients, like
 wind turbines in power systems, are endowed with prosumptions, the
 quantity of which are simulated with similar patterns to historical
 data. Because they don't know the precise quantity in advance, they will
-forecast based on their private up-to-date information, the processes of
+forecast based on their private up-to-date information, the outcomes of
 which are simulated as well. Once their forecasts update, they will
-convey differences to coordinators, who are obliged to react to it
+convey the differences to coordinators, who are obliged to react to it
 before gate closures. For the sake of privacy protections,
 high-resolution models of CPPs are known to corresponding coordinators
 only. Future outputs can be predicted from CPP models and planned
@@ -352,13 +364,13 @@ deciding trading volumes, coordinators have to manage \textbf{make-take
 decisions} according to order flows, states of limit order books,
 \protect\hyperlink{reference}{foucault2013market} and their private
 evaluations of their positions. \textbf{Position} is the difference
-between the market total volumes and fundamental volumes. The precision
-of evaluations differs among prosumer. Quantities are discovered because
-informed prosumers communicate their high-value information by trading
-aggressively. Overall, the states of RexNet are changed instantaneously
-at separate time points when some coordinator submits order according to
-its RHPO instructions, making the discrete event simulation a reliable
-method.
+between the market total volume and fundamental volume. The precision of
+evaluations differs among prosumer., so quantities are discovered
+because informed prosumers communicate their high-value information by
+trading aggressively. Overall, the states of Rex are changed
+instantaneously at separate time points when some coordinator submits
+order according to its RHPO instructions, making the discrete event
+simulation a reliable method.
 
 Here are some prototypical stochastic simulation programs used in this
 project:
@@ -380,8 +392,7 @@ project:
 \item
   Martingale models of forecast evolution can be used to simulate
   requests sent to coordinators.
-  \protect\hyperlink{reference}{heath1994modeling} It is not a
-  forecasting technique, but a program to simulate the forecast results.
+  \protect\hyperlink{reference}{heath1994modeling}
 \item
   CPPs may correlate with each other so they must be modelled by an
   aggregated CPPs controlled by one coordinator to satisfy several
@@ -389,15 +400,17 @@ project:
   buildings must be modelled by multi-input-multi-output control
   systems. \protect\hyperlink{reference}{siroky2011experimental}
   Moreover, retailers can be introduced to form a hierarchical Rex,
-  which will be discussed in subsection 4-4.
+  which will be discussed in subsection \ref{EXP}.
 \item
-  Grey-box modelling techniques, which combines statistical methods and
+  Grey-box modelling techniques, which combine statistical methods and
   physical knowledge, can be used to identify CPP models.
   \protect\hyperlink{reference}{bacher2011identifying}
 \end{itemize}
 
 \hypertarget{three-ways-to-analyze-rex}{%
 \subsection{Three Ways to Analyze Rex}\label{three-ways-to-analyze-rex}}
+
+\label{three}
 
 There are three angles to this multi-agent system, which are illustrated
 by figure \ref{2}.
@@ -411,7 +424,7 @@ by figure \ref{2}.
   The second one is to focus on the evolution of Rex and it includes
   coordinators only, which is shown by the dashed red box. The induction
   of stylized facts of Rex is the primary task, which makes it possible
-  to construct the market directly.
+  to simulate the market directly.
   \protect\hyperlink{reference}{buchanan2011it} Then the effect of
   different resolution parameters, introductions of market makers,
   replacement with periodic double auctions, etc may be explored. It
@@ -419,7 +432,7 @@ by figure \ref{2}.
   to tune parameters.
 \item
   Last but not least, a holistic view including all models is necessary,
-  because lots of features of Rex, like the shift from quantity-based to
+  because key features of Rex, like the shift from quantity-based to
   power-time-based cost allocation
   \protect\hyperlink{reference}{hougaard2009introduction}, must be
   examined this way. The quantity discovery function must be
@@ -428,35 +441,38 @@ by figure \ref{2}.
 
 \begin{figure}
 \begin{center}
-  \includegraphics[width=0.48\textwidth]{../../../images/4-10.png} 
+  \includegraphics[width=0.48\textwidth]{../../../images/4-10.png}
 \end{center}
 \caption{Illustration of three ways to analyze Rex}
 \label{2}
 \end{figure}
 
-\hypertarget{the-second-stage-continuous-forward-dynamic-pricing-procurement}{%
-\subsection{The Second Stage: Continuous Forward Dynamic Pricing \&
-Procurement}\label{the-second-stage-continuous-forward-dynamic-pricing-procurement}}
+\hypertarget{second-stage-dynamic-pricing-procurement}{%
+\subsection{Second Stage: Dynamic Pricing \&
+Procurement}\label{second-stage-dynamic-pricing-procurement}}
+
+\label{EXP}
 
 New business as retailers in incumbent power systems can be field-tested
-in the second stage. As discussed in section 3, RexNet can be
+in the second stage. As discussed in section \ref{Rex}, Rex can be
 established in a hierarchical structure, so retailers can be introduced
 to as another layer between prosumers and the market, which is
 illustrated by figure \ref{3}. Prosumers still need to reserve via the
 retailer instead of Rex. In this setting, retailers face a
 \textbf{continuous forward dynamic pricing \& procurement (CFDPP)}
-problem. That way, the pressure to establish the whole market is
-relieved.
+problem. The implementation of the retailing business and the analysis
+of customer behaviours are the primary concern, so there is no need to
+establish the whole market.
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.48\textwidth]{../../../images/4-11.png} 
+    \includegraphics[width=0.46\textwidth]{../../../images/4-11.png}
   \end{center}
   \caption{Illustration of new businesss as retailers incumbent power systems}
   \label{3}
 \end{figure}
 
-Lots of existing literature can provide some insights into CFDPP:
+Lots of existing literature can provide insights into CFDPP:
 
 \begin{itemize}
 \tightlist
@@ -482,8 +498,8 @@ Lots of existing literature can provide some insights into CFDPP:
   Advance selling from the perspective of retailers and reservation
   (booking) from the perspective of customers.
   \protect\hyperlink{reference}{shugan2000advance} Much literature
-  analyze the strategic behaviours of customers from the perspective of
-  retailers. \protect\hyperlink{reference}{prasad2011advance}
+  focuses on how to deal with strategic customers.
+  \protect\hyperlink{reference}{prasad2011advance},
   \protect\hyperlink{reference}{zhao2010pre}
 \end{itemize}
 
@@ -497,11 +513,12 @@ figure \ref{4}. There are some highlights:
   reservation decision epochs.
   \protect\hyperlink{reference}{shugan2000advance}
 \item
-  Regarding demand, the standard approach is to assume that it is either
-  satisfied (leading to sales) or lost forever, and there is only one
-  product in the market. \protect\hyperlink{reference}{shen2007customer}
-  Instead, a continuous manner must be adopted to tackle inter-temporal
-  decisions, for which RHPOs are designed.
+  Regarding demand, the conservative approach is to assume that it is
+  either satisfied (leading to sales) or lost forever, and there is only
+  one product in the market.
+  \protect\hyperlink{reference}{shen2007customer} Instead, a continuous
+  manner must be adopted to tackle inter-temporal decisions, for which
+  RHPOs are designed.
 \item
   Outcomes of random variables are always assumed to be known to
   everyone immediately in existing literature
@@ -513,9 +530,9 @@ figure \ref{4}. There are some highlights:
 
 \begin{figure}
 \begin{center}
-  \includegraphics[width=0.48\textwidth]{../../../images/4-12.png} 
+  \includegraphics[width=0.40\textwidth]{../../../images/4-12.png}
 \end{center}
-\caption{Illustration of new businesss using terminologies from current literature.}
+\caption{Illustration of the new businesss using terminologies from relevant literature.}
 \label{4}
 \end{figure}
 
@@ -532,7 +549,7 @@ results from state-of-art forecast techniques.
 \section{Expected Contributions}\label{expected-contributions}}
 
 The assumption of time invariance can be relaxed once short-term models
-are mature. The existence of investments, ageing and accidents bring
+are mature. The existence of investments, ageing and accidents brings
 about more randomness and flexibility.
 \protect\hyperlink{reference}{spyrou2019planning} Usually, massive
 long-term infrastructure investment is required in power industries.
@@ -540,15 +557,14 @@ Simulation results from Rex indicate investment opportunities. The
 ultimate goal of this project is to formulate a new structure for
 resilient, low-carbon, low-cost energy systems based on Rex.
 
-Once simulation methods validated, reservation-based exchange markets
-can be applied in other industries like food supply chains, retailing,
-banking, etc. Besides, similar assets can still be pooled, when
-personalized limit order books are introduced to find matches with
-requirements satisfied from both sides. The process is similar to that
-in peer-to-peer markets with bilateral trade agreements.
-\protect\hyperlink{reference}{sousa2019peer}
+With simulation methods validated, Rex can be applied in other
+industries like food supply chains, retailing, banking, etc. Besides,
+similar assets can still be pooled, when personalized limit order books
+are introduced to find matches with requirements satisfied from both
+sides. The process is similar to that in peer-to-peer markets with
+bilateral trade agreements. \protect\hyperlink{reference}{sousa2019peer}
 
-Some problems are expected to be solved:
+All in all, following problems are expected to be solved:
 
 \begin{itemize}
 \tightlist
@@ -569,7 +585,8 @@ Some problems are expected to be solved:
 \item
   The determination of weight matrices is the challenge faced by MPC
   researchers as well \protect\hyperlink{reference}{rawlings2019model},
-  and the tuning relies heavily on methods discussed in section 4-3.
+  and the tuning relies heavily on methods discussed in subsection
+  \ref{three}.
 \item
   How to make Rex robust to external factors.
 \end{itemize}
@@ -600,13 +617,14 @@ outputs of simulation experiments in the first stage are:
 \item
   \href{https://www.taylorfrancis.com/books/9780203946558}{birchler2007information}
   Birchler, U., \& Bütler, M. (1999). Information economics. Routledge.
-  How the market aggregates information is discussed in 5 chapters in
-  part 2. All kinds of deviations of behaviours by later self are
-  introduced briefly in chapter 17.
+  \emph{How the market aggregates information is discussed in 5 chapters
+  in part 2. All kinds of deviations of behaviours by later self are
+  introduced briefly in chapter 17.}
 \item
   \href{https://www.taylorfrancis.com/books/9781315617213}{blok2017introduction}
   Blok, K., \& Nieuwlaar, E. (2016). Introduction to energy analysis.
-  Taylor \& Francis. Figure \texttt{a} is the figure 0.1 on page xxv.
+  Taylor \& Francis. \emph{Figure \texttt{a} is the figure 0.1 on page
+  xxv.}
 \item
   \href{https://link.springer.com/article/10.1007/s11238-009-9183-x}{brocas2009dynamic}
   Brocas, I. (2011). Dynamic inconsistency and choice. Theory and
@@ -619,14 +637,15 @@ outputs of simulation experiments in the first stage are:
   \href{https://www.sciencedirect.com/science/article/pii/S1364032114005504}{connell2014benefits}
   Pinson, P., \& Madsen, H. (2014). Benefits and challenges of
   electrical demand response: A critical review. Renewable and
-  Sustainable Energy Reviews, 39, 686-699. In section, the necessity of
-  continuous demand response is discussed.
+  Sustainable Energy Reviews, 39, 686-699. \emph{In section 1-2, the
+  necessity of continuous demand response is discussed.}
 \item
   \href{https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199936243.001.0001/acprof-9780199936243}{foucault2013market}
   Foucault, T., Pagano, M., Roell, A., \& Röell, A. (2013). Market
-  liquidity: theory, evidence, and policy. Oxford University Press. How
-  real-world markets work is introduced at the beginning of chapter 1.
-  Make- and Take- decisions in LOB markets are discussed in chapter 6.
+  liquidity: theory, evidence, and policy. Oxford University Press.
+  \emph{How real-world markets work is introduced at the beginning of
+  chapter 1. Make- and Take- decisions in LOB markets are discussed in
+  chapter 6.}
 \item
   \href{https://link.springer.com/chapter/10.1007/BFb0013570}{franklin1997it}
   Franklin, S., \& Graesser, A. (1996, August). Is it an Agent, or just
@@ -635,7 +654,8 @@ outputs of simulation experiments in the first stage are:
   Springer, Berlin, Heidelberg.
 \item
   \href{https://link.springer.com/book/10.1007/978-1-4939-9606-3}{gallego2019revenue}
-  Revenue management and pricing analysis.
+  Gallego, G., \& Topaloglu, H. (2019). Revenue management and pricing
+  analysis. Springer, New York.
 \item
   \href{https://www.tandfonline.com/doi/abs/10.1080/14697688.2013.803148}{gould2013limit}
   Gould, M. D., Porter, M. A., Williams, S., McDonald, M., Fenn, D. J.,
@@ -646,6 +666,8 @@ outputs of simulation experiments in the first stage are:
   Heath, D. C., \& Jackson, P. L. (1994). Modeling the evolution of
   demand forecasts ITH application to safety stock analysis in
   production/distribution systems. IIE transactions, 26(3), 17-30.
+  \emph{MMFEs are not forecasting techniques, but programs to simulate
+  the forecast results.}
 \item
   \href{https://link.springer.com/book/10.1007/978-3-642-01828-2}{hougaard2009introduction}
   Hougaard, J. L. (2009). An introduction to allocation rules. Springer
@@ -654,17 +676,17 @@ outputs of simulation experiments in the first stage are:
   \href{https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780199844371.001.0001/oxfordhb-9780199844371-e-43}{iori2012agent}
   Iori, G., \& Porter, J. (2012). Agent-based modelling for financial
   markets. Chapter prepared for the Handbook on Computational Economics
-  and Finance. Section 4-2 is about heterogeneous agents with market
-  mediated interactions.
+  and Finance. \emph{Section 4-2 is about heterogeneous agents with
+  market mediated interactions.}
 \item
   \href{https://www.pnas.org/content/116/33/16308}{jacome2019power}
   Jacome, V., Klugman, N., Wolfram, C., Grunfeld, B., Callaway, D., \&
   Ray, I. (2019). Power quality and modern energy for all. Proceedings
-  of the National Academy of Sciences, 116(33), 16308-16313. The
+  of the National Academy of Sciences, 116(33), 16308-16313. \emph{The
   operation of power grids in less-developed areas is different from
   that in developed countries because the systems are not resilient
   enough for lack of responsive generators, large-scale connections,
-  regulations, etc.
+  regulations, etc.}
 \item
   \href{https://ieeexplore.ieee.org/document/867149}{kirschen2000factoring}
   Kirschen, D. S., Strbac, G., Cumperayot, P., \& de Paiva Mendes, D.
@@ -673,34 +695,35 @@ outputs of simulation experiments in the first stage are:
 \item
   \href{https://ieeexplore.ieee.org/document/1198281}{kirschen2003demand}
   Kirschen, D. S. (2003). Demand-side view of electricity markets. IEEE
-  Transactions on power systems, 18(2), 520-527. Price spikes in
-  electricity markets are discussed in section 2.
+  Transactions on power systems, 18(2), 520-527. \emph{Price spikes in
+  electricity markets are discussed in section 2.}
 \item
   \href{https://www.wiley.com/en-us/Fundamentals+of+Power+System+Economics\%2C+2nd+Edition-p-9781119213253}{kirschen2018fundamentals}
   Kirschen, D. S., \& Strbac, G. (2018). Fundamentals of power system
-  economics. John Wiley \& Sons. Issues associated with retailers are
-  discussed in section 4-3, and those with centralized tradings are in
-  section 3-3-3. Why and how centralized system operators in incumbent
-  electricity markets maintain safety within trading units are discussed
-  in chapter 6. However, system operators are expected to be eliminated
-  in this project.
+  economics. John Wiley \& Sons. \emph{Issues associated with retailers
+  are discussed in section 4-3, and those with centralized tradings are
+  in section 3-3-3. Why and how centralized system operators in
+  incumbent electricity markets maintain safety within trading units are
+  discussed in chapter 6. However, system operators are expected to be
+  eliminated in this project.}
 \item
   \href{https://www.tandfonline.com/doi/abs/10.1088/1469-7688/1/2/307}{lebaron2001builder}
   LeBaron, B. (2001). A builder's guide to agent-based financial
-  markets. Quantitative finance, 1(2), 254-261. ``It is not really a
-  survey, but a kind of view from the trenches in terms of building
-  artificial markets.''
+  markets. Quantitative finance, 1(2), 254-261. \emph{``It is not really
+  a survey, but a kind of view from the trenches in terms of building
+  artificial markets.''}
 \item
   \href{https://journals.sagepub.com/doi/abs/10.1260/030952405776234599}{madsen2005standardizing}
-  Standardizing the performance evaluation of short-term wind power
-  prediction models.
+  Madsen, H., Pinson, P., Kariniotakis, G., Nielsen, H. A., \& Nielsen,
+  T. S. (2005). Standardizing the Performance Evaluation of Short-Term
+  Wind Power Prediction Models. Wind Engineering, 29(6), 475--489.
 \item
   \href{https://www.sciencedirect.com/science/article/pii/S092911990200055X}{maloney2003complexity}
   Maloney, M. T., \& Mulherin, J. H. (2003). The complexity of price
   discovery in an efficient market: the stock market reaction to the
-  Challenger crash. Journal of corporate finance, 9(4), 453-479. An
-  empirical event study on how the new knowledge and its associated
-  equilibrium price is discovered.
+  Challenger crash. Journal of corporate finance, 9(4), 453-479.
+  \emph{An empirical event study on how the new knowledge and its
+  associated equilibrium price is discovered.}
 \item
   \href{https://www.springer.com/gp/book/9781441979988}{nahmias2011perishable}
   Nahmias, S. (2011). Perishable inventory systems (Vol. 160). Springer
@@ -724,7 +747,7 @@ outputs of simulation experiments in the first stage are:
   \href{https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1937-5956.2010.01133.x?casa_token=lVRyRU67RhMAAAAA:8Dj0zKFhuT8i_4hkKs0PDvKRC3RUMLWaJk_poEYL7Z9oYcOJVB4-ZsEuT18KN15fuZcrCWLtaAeNayg}{prasad2011advance}
   Prasad, A., Stecke, K. E., \& Zhao, X. (2011). Advance selling by a
   newsvendor retailer. Production and Operations Management, 20(1),
-  129-142. Behaviors of customers are discussed in subsection 3.2
+  129-142. \emph{Behaviors of customers are discussed in subsection 3.2}
 \item
   \href{https://www.sciencedirect.com/science/article/pii/S0377221710008040}{qin2011newsvendor}
   Qin, Y., Wang, R., Vakharia, A. J., Chen, Y., \& Seref, M. M. (2011).
@@ -734,10 +757,10 @@ outputs of simulation experiments in the first stage are:
   \href{https://sites.engineering.ucsb.edu/~jbraw/mpc/}{rawlings2019model}
   Rawlings, J. B., Mayne, D. Q., \& Diehl, M. (2017). Model predictive
   control: theory, computation, and design (Vol. 2). Madison, WI: Nob
-  Hill Publishing. MPC regulators are introduced in chapter 1.
+  Hill Publishing. \emph{MPC regulators are introduced in chapter 1.}
 \item
   \href{https://www.elsevier.com/books/simulation/ross/978-0-12-415825-2}{ross2012simulation}
-  Simulation.
+  Ross, S. (2012) Simulation. Academic Press.
 \item
   \href{https://pubsonline.informs.org/doi/10.1287/msom.2013.0473}{secomandi2014optimal}
   Secomandi, N., \& Kekre, S. (2014). Optimal energy procurement in spot
@@ -748,19 +771,19 @@ outputs of simulation experiments in the first stage are:
   Shen, Z. J. M., \& Su, X. (2007). Customer behavior modeling in
   revenue management and auctions: A review and new research
   opportunities. Production and operations management, 16(6), 713-728.
-  Inter-temporal substitutions are discussed in section 2-1.
+  \emph{Inter-temporal substitutions are discussed in section 2-1.}
 \item
   \href{https://www.cambridge.org/core/books/multiagent-systems/B11B69E0CB9032D6EC0A254F59922360}{shoham2009multiagent}
   Shoham, Y., \& Leyton-Brown, K. (2008). Multiagent systems:
   Algorithmic, game-theoretic, and logical foundations. Cambridge
-  University Press. MASs with continuous double auctions are discussed
-  in section 11-4.
+  University Press. \emph{MASs with continuous double auctions are
+  discussed in section 11-4.}
 \item
   \href{https://journals.sagepub.com/doi/abs/10.1177/109467050023001?casa_token=nHdK2gtk0ZUAAAAA:JZm0jvC2O9C0qr7WPZZphEZINBT2hpYCLNSB5hykwAO1buCHLim0JzlleOeUOwCv0uIZWbmfE8vI}{shugan2000advance}
   Shugan, S. M., \& Xie, J. (2000). Advance pricing of services and
   other implications of separating purchase and consumption. Journal of
-  Service Research, 2(3), 227-239. Elasticities are different regarding
-  purchasing for the same asset at different times.
+  Service Research, 2(3), 227-239. \emph{Elasticities are different
+  regarding purchasing for the same asset at different times.}
 \item
   \href{https://www.cambridge.org/core/books/how-to-price/27B182881BC668B688F8DA949DF52554}{shy2008how}
   Shy, O. (2008). How to price: a guide to pricing techniques and yield
@@ -770,7 +793,7 @@ outputs of simulation experiments in the first stage are:
   Široký, J., Oldewurtel, F., Cigler, J., \& Prívara, S. (2011).
   Experimental analysis of model predictive control for an energy
   efficient building heating system. Applied energy, 88(9), 3079-3087.
-  There are two outputs and inputs in the model.
+  \emph{There are two outputs and inputs in the model.}
 \item
   \href{https://www.sciencedirect.com/science/article/pii/S1364032119300462}{sousa2019peer}
   Sousa, T., Soares, T., Pinson, P., Moret, F., Baroche, T., \& Sorin,
@@ -784,41 +807,41 @@ outputs of simulation experiments in the first stage are:
 \item
   \href{https://pubsonline.informs.org/doi/abs/10.1287/opre.1090.0797?casa_token=ToDJ8Q4lVrwAAAAA:PMHqig45Pa7ai5FpOPhTgs-4U8cI_dbkkScDXU9gZBcPngxvOQnVoEJ_qENYKTfUHjLoVAGiwg}{su2010intertemporal}
   Su, X. (2010). Intertemporal pricing and consumer stockpiling.
-  Operations research, 58(4-part-2), 1133-1147. The rational
+  Operations research, 58(4-part-2), 1133-1147. \emph{The rational
   expectations equilibrium is solved with the assumption that all
   players make optimal dynamic decisions given correct beliefs about
-  others' behavior, while the communication of information is omitted.
+  others' behavior, while the communication of information is omitted.}
 \item
   \href{https://pubsonline.informs.org/doi/10.1287/mnsc.1090.1075}{su2010optimal}
   Su, X. (2010). Optimal pricing with speculators and strategic
-  consumers. Management Science, 56(1), 25-40. There are four different
-  types of consumers coming and going described in section 3. Their
-  welfare is not analyzed. Besides, there are only two types of consumer
-  valuations. Though there are random variables, the outcomes are always
-  assumed to be known to everyone immediately.
+  consumers. Management Science, 56(1), 25-40. \emph{There are four
+  different types of consumers coming and going described in section 3.
+  Their welfare is not analyzed. Besides, there are only two types of
+  consumer valuations. Though there are random variables, the outcomes
+  are always assumed to be known to everyone immediately.}
 \item
   \href{https://wwnorton.com/books/9780393689983/about-the-book/product-details}{varian2017intermediate}
   Varian, H. R. (2014). Intermediate microeconomics with calculus: a
-  modern approach. WW Norton \& Company. Chapter 3 writes ``it is often
-  useful to think of the `same' good available in different locations or
-  circumstances as a different good, since the consumer may value the
-  good differently in those situations.'' So preferences for assets with
-  different leads time are different, and the short-term elasticity is
-  expected to decrease as the gate closure approaches.
+  modern approach. WW Norton \& Company. \emph{Chapter 3 writes ``it is
+  often useful to think of the `same' good available in different
+  locations or circumstances as a different good, since the consumer may
+  value the good differently in those situations.'' So preferences for
+  assets with different leads time are different, and the short-term
+  elasticity is expected to decrease as the gate closure approaches.}
 \item
   \href{https://pubsonline.informs.org/doi/pdf/10.1287/msom.1120.0387}{wang2012multiordering}
   Wang, T., Atasu, A., \& Kurtuluş, M. (2012). A multiordering
   newsvendor model with dynamic forecast evolution. Manufacturing \&
-  Service Operations Management, 14(3), 472-484. Discrete forecast
+  Service Operations Management, 14(3), 472-484. \emph{Discrete forecast
   evolutions are used, and there is only one target selling season.
   Instead, continuous updates are required in the CDA market and the
-  provision process is discrete over time.
+  provision process is discrete over time.}
 \item
   \href{https://www.sciencedirect.com/science/article/pii/S0301421509005564}{weber2010adequate}
   Weber, C. (2010). Adequate intraday market design to enable the
   integration of wind energy into the European power systems. Energy
-  policy, 38(7), 3155-3163. Trading volumes in intra-day markets in
-  Europe 10 years ago are shown in table 3.
+  policy, 38(7), 3155-3163. \emph{Trading volumes in intra-day markets
+  in Europe 10 years ago are shown in table 3.}
 \item
   \href{https://ieeexplore.ieee.org/document/6262462}{woods2013simulation}
   Woods, M. J., Russell, C. J., Davy, R. J., \& Coppin, P. A. (2012).
@@ -829,8 +852,8 @@ outputs of simulation experiments in the first stage are:
   \href{https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1937-5956.2009.01092.x?casa_token=OFXPwPdWLU0AAAAA:5l-61h0Fl19UbgKSXoJEyS85zUGGyqK8-G6A4TImpG4StMJtsJKjokbC6r4jwvezceSVpybsbpqsZ8A}{zhao2010pre}
   Zhao, X., \& Stecke, K. E. (2010). Pre‐orders for new to‐be‐released
   products considering consumer loss aversion. Production and Operations
-  Management, 19(2), 198-215. Behaviors of customers are discussed in
-  subsection 2.2
+  Management, 19(2), 198-215. \emph{Behaviors of customers are discussed
+  in subsection 2.2}
 \end{itemize}
 
 %\showmatmethods

@@ -1,7 +1,7 @@
 ---
 for: GitHub/edxu96/RexNet/docs/PhD
 author: Edward J. Xu
-date: April 23, 2020
+date: April 27, 2020
 ---
 
 # `PhD Proposal` Reservation-Based Exchange Market and Dynamic Pricing & Procurement Problems
