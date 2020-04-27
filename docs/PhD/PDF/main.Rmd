@@ -68,7 +68,7 @@ skip_final_break: true
 # watermark: true
 
 # Customize footer, eg by referencing the vignette
-footer_contents: " "
+footer_contents: "Proposal: Rex and DPP"
 
 # Produce a pinp document
 output: pinp::pinp
@@ -189,7 +189,7 @@ New business as retailers in incumbent power systems can be field-tested in the 
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.46\textwidth]{../../../images/4-11.png}
+    \includegraphics[width=0.44\textwidth]{../../../images/4-11.png}
   \end{center}
   \caption{Illustration of new businesss as retailers incumbent power systems}
   \label{3}
@@ -212,7 +212,7 @@ Essential terminologies from the above literature are illustrated using figure \
 
 \begin{figure}
 \begin{center}
-  \includegraphics[width=0.40\textwidth]{../../../images/4-12.png}
+  \includegraphics[width=0.36\textwidth]{../../../images/4-12.png}
 \end{center}
 \caption{Illustration of the new businesss using terminologies from relevant literature.}
 \label{4}
