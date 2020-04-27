@@ -31,7 +31,7 @@ Small-scale producers/consumers (__prosumers__) [parag2016electricity](#referenc
 * Adaptive to external factors temporally and spatially. For example, time-varying peak loads resulted from penetration of renewable generations exclude applications of traditional load shifting or shedding. [connell2014benefits](#reference)
 * The market should be as transparent as possible, while private information is tightly protected. So centralized command-and-control nor retailing is efficient in such settings because of the conflict between better market clearings and information protection. [kirschen2018fundamentals](#reference) It is prosumers who anticipate their future states, formulate trading strategies and act accordingly.
 * Low-cost. Coordinated demand response is essential to ensure the quality of energy supply when none of the advanced technologies, like large-scale storage, hydropower, nuclear power, can be relied on to balance power systems in underdeveloped areas. [jacome2019power](#reference)
-* Purchases should be ahead of prosumptions. [shugan2000advance](#reference) The real-time incentives from spot markets are hard to catch, because not only the current signals can hardly reveal any information about future, but also prosumers need time to adapt their activities to fit traded quantities. [kirschen2000factoring](#reference)
+* Purchases should be ahead of deliveries [prasad2011advance](#reference), because the spot selling season is infinitely small. The real-time incentives from spot markets are hard to catch, because not only the current signals can hardly reveal any information about future, but also prosumers need time to adapt their activities to fit traded quantities. [kirschen2000factoring](#reference)
 * Transactions can be instantaneous because some prosumers arrive randomly and may demand liquidity. [foucault2013market](#reference) Also, some would like to trade for long periods covering many trading units to save the trouble from making decisions regarding few units but in high frequency.
 * The market is thick enough but not congested, so prosumers do not have to search or bargain. In other words, the market is liquid enough for prosumers to lower transaction costs.
 * The number of statistics for decision making is as low as possible but different assets can be distinguished based on those statistics.
@@ -81,20 +81,20 @@ The simulation time line can be summarized as follows. Some clients, like wind t
 
 The decisions can be optimized by __receding horizon plan & order management (RHPO)__, which has similar structures to model predictive control problems. [rawlings2019model](#reference) After deciding trading volumes, coordinators have to manage __make-take decisions__ according to order flows, states of limit order books, [foucault2013market](#reference) and their private evaluations of their positions. __Position__ is the difference between the market total volumes and fundamental volumes. The precision of evaluations differs among prosumer. Quantities are discovered because informed prosumers communicate their high-value information by trading aggressively. Overall, the states of RexNet are changed instantaneously at separate time points when some coordinator submits order according to its RHPO instructions, making the discrete event simulation a reliable method.
 
-Specifically, following stochastic simulation programs are used in this project:
+Here are some prototypical stochastic simulation programs used in this project:
 
-* To simulate stochastic outputs, like those from wind turbines, at new locations according to historical data, statistical methods in the frequency domain can be utilized to exhibit the spatial diversity and make use of available information as much as possible. [woods2013simulation](#reference)
+* To simulate realizations, like those from wind turbines, at new locations according to historical data, statistical methods in the frequency domain can be utilized to exhibit the spatial diversity and make use of available information as much as possible. [woods2013simulation](#reference)
 * To simulate evolutions of discrete states in a bottom-up way, inhomogeneous Markov chains can be constructed using detailed survey data. [page2008generalised](#reference) For example, electricity consumptions of residents associated with their occupant presences can be obtained.
-* Martingale models of forecast evolution can be used to simulate requests sent to coordinators. [heath1994modeling](#reference)
-* CPPs may correlate with each other so they must be modelled by an aggregated CPPs controlled by one coordinator to satisfy several clients. For example, the space heating system for multi-dwelling buildings must be modelled by multi-input-multi-output control systems. [siroky2011experimental](#reference) Thus hierarchical Rex can be introduced.
-* Grey-box modelling techniques, which combines statistical methods and physical knowledge, can be used to calibrate CPP models. [bacher2011identifying](#reference)
-* Distributions of errors in private evaluations of prosumers.
+* Martingale models of forecast evolution can be used to simulate requests sent to coordinators. [heath1994modeling](#reference) It is not a forecast technique, but a program to simulate the forecast results.
+* CPPs may correlate with each other so they must be modelled by an aggregated CPPs controlled by one coordinator to satisfy several clients. For example, the space heating system for multi-dwelling buildings must be modelled by multi-input-multi-output control systems. [siroky2011experimental](#reference) Moreover, retailers can be introduced to form a hierarchical Rex, which will be discussed in subsection 4-4.
+* Grey-box modelling techniques, which combines statistical methods and physical knowledge, can be used to identify CPP models. [bacher2011identifying](#reference)
+<!-- * Distributions of errors in private evaluations of prosumers. -->
 
 ### 4-3. Three Ways to Analyze Rex
 
-There are three angles on how to analyze this multi-agent system, which can be illustrated using the following figure.
+There are three angles to this multi-agent system, which are illustrated using the following figure.
 
-- The first one is from coordinators, and it includes three elements for prosumers like those in two solid blue boxes. It is the perspective for real-world experiments discussed in this section.
+- The first one is from coordinators, and it includes three elements for prosumers like those in two solid blue boxes.
 - The second one is to focus on the evolution of Rex and it includes coordinators only, which is shown by the dashed red box. The induction of stylized facts of Rex is the primary task, which makes it possible to construct the market directly. [buchanan2011it](#reference) Then the effect of different resolution parameters, introductions of market makers, replacement with periodic double auctions, etc may be explored. It also provides opportunities for researchers with the first perspective to tune parameters.
 - Last but not least, a holistic view including all models is necessary, because lots of features of Rex, like the shift from quantity-based to power-time-based cost allocation [hougaard2009introduction](#reference), must be examined this way. The quantity discovery function must be demonstrated in this way as well.
 
@@ -102,7 +102,7 @@ There are three angles on how to analyze this multi-agent system, which can be i
 
 ### 4-4. The Second Stage: Continuous Forward Dynamic Pricing & Procurement
 
-A new business as retailers in incumbent power systems can be field-tested in the second stage. As discussed in section 3, RexNet can be established in a hierarchical structure, so retailers can be introduced to as another layer between prosumers and the market, which is illustrated by the following figure. Prosumers still need to reserve before the delivery. In this setting, retailers face a __continuous forward dynamic pricing & procurement (CFDPP)__ problem. That way, the pressure to establish the whole market is relieved.
+A new business as retailers in incumbent power systems can be field-tested in the second stage. As discussed in section 3, RexNet can be established in a hierarchical structure, so retailers can be introduced to as another layer between prosumers and the market, which is illustrated by the following figure. Prosumers still need to reserve via the retailer instead Rex. In this setting, retailers face a __continuous forward dynamic pricing & procurement (CFDPP)__ problem. That way, the pressure to establish the whole market is relieved.
 
 ![](../../images/4-11.png)
 
@@ -111,10 +111,10 @@ Lots of existing literature can provide some insights into CFDPP:
 - Newsvendor's procurement. [qin2011newsvendor](#reference) Dynamic procurement can be utlized when there are multiple decision epochs. [wang2012multiordering](#reference)
 - Forward dynamic pricing of TDP. The initial inventory is endowed without cost considered in contrast to that in the previous category. Most of techniques are from revenue management. [gallego2019revenue](#reference)
 - Inventory management of perishables. [nahmias2011perishable](#reference)
-- Dynamic pricing of durables. [ahn2007pricing](#reference)
-- Reservation (booking) from the perspective of customers. [shugan2000advance](#reference)
+- Dynamic pricing of durables. [ahn2007pricing](#reference) When strategic behaviors of customers are endogenous, game theoretical models should be used. [su2010intertemporal](#reference)
+- Advance selling from the perspective of retailers and reservation (booking) from the perspective of customers. [shugan2000advance](#reference) Much literature analyze the strategic behaviors of customers from the perspective of retailers. [prasad2011advance](#reference) [zhao2010pre](#reference)
 
-Essential terminologies from the above literature are illustrated using the following figure. Following major difference must be emphasized:
+Essential terminologies from the above literature are illustrated using the following figure. Following major difference between literature and this project must be emphasized:
 
 <!-- - Compared to the literature on market microstructure, it is hard to obtain analytical solutions directly in this project, because the welfare of participants is considered. [] -->
 - Regarding demand, the standard approach is to assume that it is either satisfied (leading to sales) or lost forever, and there is only one products in the market. [shen2007customer](#reference) Instead, a continuous manner must be adopted to tackle inter-temporal decisions, for which RHPOs are designed.
@@ -122,30 +122,29 @@ Essential terminologies from the above literature are illustrated using the foll
 
 ![](../../images/4-12.png)
 
-Key assumptions in simulation programs can be evaluated. Besides, it is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard analytical tools for forecasting [madsen2005standardizing](#reference) and compared to results from state-of-art forecast techniques. Furthermore, different rules and market design, like the introduction of centralized market makers and periodic double auctions, for Rex can be explored, the results of which can be used to compare.
+Key assumptions in simulation programs can be evaluated using the experiment results. Besides, it is vital to validate simulation programs based on measured data. [ross2012simulation](#reference) For example, simulated forecast evolution should be analyzed according to standard analytical tools for forecasting [madsen2005standardizing](#reference) and compared to results from state-of-art forecast techniques.
 
 ## 5. Expected Contributions
 
-The assumption of time invariance can be relaxed once short-term models are mature. The existence of investments, ageing and accidents bring about more randomness and flexibility. [spyrou2019planning](#reference) Usually, massive long-term infrastructure investment is required in power industries, and simulation results from Rex can indicate investment opportunities. The ultimate goal of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems based on Rex.
+The assumption of time invariance can be relaxed once short-term models are mature. The existence of investments, ageing and accidents bring about more randomness and flexibility. [spyrou2019planning](#reference) Usually, massive long-term infrastructure investment is required in power industries. Simulation results from Rex indicate investment opportunities. The ultimate goal of this project is to formulate a new structure for resilient, low-carbon, low-cost energy systems based on Rex.
 
-Once simulation methods validated, reservation-based exchange markets can be applied in other industries like food supply chains, retailing, banking, etc. For example, similar assets can still be pooled, when personalized limit order books are introduced to make matches satisfy requirements from both sides. The process is similar to that in peer-to-peer markets with bilateral trade agreements. [sousa2019peer](#reference)
+Once simulation methods validated, reservation-based exchange markets can be applied in other industries like food supply chains, retailing, banking, etc. In addition, similar assets can still be pooled, when personalized limit order books are introduced to find matches with requirements satisfied from both sides. The process is similar to that in peer-to-peer markets with bilateral trade agreements. [sousa2019peer](#reference)
 
 Some problems are expected to be solved:
 
-* The effect of reservations on responsive clients, who can adapt their needs to current states, is not clear. It may be modelled by an intra-personal game where a decision-maker is summarized by a succession of selves [brocas2009dynamic](#reference) and joint workings of time inconsistency and consciousness. [birchler2007information](#reference)
-* When optimization problems in RHPO are formulated nonlinearly, it may be hard to obtain shadow prices, which helps indicate costs of flexibility and responsiveness.
+* The effect of reservations on responsive clients, who can adapt their needs to current states, is not clear. It may be modelled by an intra-personal game where a decision-maker is summarized by a succession of selves [brocas2009dynamic](#reference) or joint workings of time inconsistency & consciousness. [birchler2007information](#reference)
+* When optimization problems in RHPO are formulated nonlinearly, it may be hard to obtain shadow prices, which indicate costs of flexibility and responsiveness.
 * Agent-based models should be able to learn and adapt to evolving situations. [franklin1997it](#reference)
 * The determination of weight matrices is the challenge faced by MPC researchers as well [rawlings2019model](#reference), and the tuning relies heavily on methods discussed in section 4-3.
 * How to make Rex robust to external factors.
 
-As discussed above, the project can be divided into two stages. Expected outputs of simulation experiments in the first year are:
+As discussed above, the project can be divided into two stages. Expected outputs of simulation experiments in the first stage are:
 
 * Introduction to Rex. (my DTU master thesis)
 * RHPO for more complex CPPs, like those with stochastic MIMOs, and their statistical identification methods.
 * Rex with responsive clients.
 
 ## Reference
-
 * [bacher2011identifying](https://www.sciencedirect.com/science/article/pii/S0378778811000491) Identifying suitable models for the heat dynamics of buildings.
 * [birchler2007information](https://www.taylorfrancis.com/books/9780203946558) Information economics. How the market aggregates information is discussed in 5 chapters in part 2. All kinds of deviations of behaviours by later self are introduced briefly in chapter 17.
 * [blok2017introduction](https://www.taylorfrancis.com/books/9781315617213) Introduction to energy analysis. Figure `a` is the figure 0.1 on page xxv.
@@ -171,6 +170,7 @@ As discussed above, the project can be divided into two stages. Expected outputs
 * [nair2014energy](https://dl.acm.org/doi/10.1145/2591971.2591982) Energy procurement strategies in the presence of intermittent sources.
 * [page2008generalised](https://www.sciencedirect.com/science/article/pii/S037877880700031X) A generalised stochastic model for the simulation of occupant presence.
 * [parag2016electricity](https://www.nature.com/articles/nenergy201632) Electricity market design for the prosumer era
+* [prasad2011advance](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1937-5956.2010.01133.x?casa_token=lVRyRU67RhMAAAAA:8Dj0zKFhuT8i_4hkKs0PDvKRC3RUMLWaJk_poEYL7Z9oYcOJVB4-ZsEuT18KN15fuZcrCWLtaAeNayg) Prasad, A., Stecke, K. E., & Zhao, X. (2011). Advance selling by a newsvendor retailer. Production and Operations Management, 20(1), 129-142. Behaviors of customers are discussed in subsection 3.2
 * [qin2011newsvendor](https://www.sciencedirect.com/science/article/pii/S0377221710008040) The newsvendor problem: Review and directions for future research
 * [rawlings2019model](https://sites.engineering.ucsb.edu/~jbraw/mpc/) Model predictive control: theory, computation, and design. MPC regulators are introduced in chapter 1.
 * [ross2012simulation](https://www.elsevier.com/books/simulation/ross/978-0-12-415825-2) Simulation.
@@ -182,11 +182,13 @@ As discussed above, the project can be divided into two stages. Expected outputs
 * [siroky2011experimental](https://www.sciencedirect.com/science/article/pii/S0306261911001668) Experimental analysis of model predictive control for an energy efficient building heating system. There are two outputs and inputs in the model.
 * [sousa2019peer](https://www.sciencedirect.com/science/article/pii/S1364032119300462) Peer-to-peer and community-based markets: A comprehensive review.
 * [spyrou2019planning](https://www.nature.com/articles/s41560-019-0346-x) Planning power systems in fragile and conflict-affected states.
+* [su2010intertemporal](https://pubsonline.informs.org/doi/abs/10.1287/opre.1090.0797?casa_token=ToDJ8Q4lVrwAAAAA:PMHqig45Pa7ai5FpOPhTgs-4U8cI_dbkkScDXU9gZBcPngxvOQnVoEJ_qENYKTfUHjLoVAGiwg) Su, X. (2010). Intertemporal pricing and consumer stockpiling. Operations research, 58(4-part-2), 1133-1147. The rational expectations equilibrium is solved with the assumption that all players make optimal dynamic decisions given correct beliefs about others’ behavior, while the communication of information is omitted.
 * [su2010optimal](https://pubsonline.informs.org/doi/10.1287/mnsc.1090.1075) Optimal pricing with speculators and strategic consumers. There are four different types of consumers coming and going described in section 3. Their welfare is not analyzed. Besides, there are only two types of consumer valuations. Though there are random variables, the outcomes are always assumed to be known to everyone immediately.
 * [varian2017intermediate](https://wwnorton.com/books/9780393689983/about-the-book/product-details) Intermediate microeconomics with calculus: a modern approach. Chapter 3 writes "it is often useful to think of the 'same' good available in different locations or circumstances as a different good, since the consumer may value the good differently in those situations." So preferences for assets with different leads time are different, and the short-term elasticity is expected to decrease as the gate closure approaches.
 * [wang2012multiordering](https://pubsonline.informs.org/doi/pdf/10.1287/msom.1120.0387) A multi-ordering newsvendor model with dynamic forecast evolution. Discrete forecast evolutions are used, and there is only one target selling season. Instead, continuous updates are required in the CDA market and the provision process is discrete over time.
 * [weber2010adequate](https://www.sciencedirect.com/science/article/pii/S0301421509005564) Adequate intraday market design to enable the integration of wind energy into the European power systems. Trading volumes in intra-day markets in Europe 10 years ago are shown in table 3.
 * [woods2013simulation](https://ieeexplore.ieee.org/document/6262462) Simulation of wind power at several locations.
+* [zhao2010pre](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1937-5956.2009.01092.x?casa_token=OFXPwPdWLU0AAAAA:5l-61h0Fl19UbgKSXoJEyS85zUGGyqK8-G6A4TImpG4StMJtsJKjokbC6r4jwvezceSVpybsbpqsZ8A) Zhao, X., & Stecke, K. E. (2010). Pre‐orders for new to‐be‐released products considering consumer loss aversion. Production and Operations Management, 19(2), 198-215. Behaviors of customers are discussed in subsection 2.2
 
 ## Appendix
 
