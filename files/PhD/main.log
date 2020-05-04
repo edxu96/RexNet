@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.27)  27 APR 2020 15:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.27)  28 APR 2020 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1547,14 +1547,14 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.82996pt on input line 78.
 LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line
- 90.
+ 83.
 
 (/Users/edxu96/Library/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/ts1mdbch.f
 d
 File: ts1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdbch.
 )
 LaTeX Font Info:    Font shape `TS1/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 90.
+(Font)              scaled to size 7.68005pt on input line 83.
 Package microtype Info: Character `texttwelveudash ' is missing
 (microtype)             in font `TS1/mdbch/m/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1577,48 +1577,11 @@ Package microtype Info: Character `textcelsius ' is missing
 (microtype)             in font `TS1/mdbch/m/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 119.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 5.29797pt on input line 208.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.18097pt on input line 224.
-[1{/Users/edxu96/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-<../../../images/1-3.png, id=98, 397.93669pt x 392.51643pt>
-File: ../../../images/1-3.png Graphic file (type png)
-<use ../../../images/1-3.png>
-Package pdftex.def Info: ../../../images/1-3.png  used on input line 322.
-(pdftex.def)             Requested size: 242.73215pt x 239.42868pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 336--341
-[]\T1/mdbch/m/n/8 (+20) Hence, \T1/mdbch/b/n/8 agent-based mod-els \T1/mdbch/m/
-n/8 (+20) are used [][]iori2012agent[][],
- []
-
-[2 <../../../images/1-3.png>]
-<../../../images/4-10.png, id=123, 554.67226pt x 202.8077pt>
-File: ../../../images/4-10.png Graphic file (type png)
-<use ../../../images/4-10.png>
-Package pdftex.def Info: ../../../images/4-10.png  used on input line 445.
-(pdftex.def)             Requested size: 242.73215pt x 88.7529pt.
-<../../../images/4-11.png, id=126, 452.13919pt x 201.45262pt>
-File: ../../../images/4-11.png Graphic file (type png)
-<use ../../../images/4-11.png>
-Package pdftex.def Info: ../../../images/4-11.png  used on input line 470.
-(pdftex.def)             Requested size: 222.50769pt x 99.13991pt.
-<../../../images/4-12.png, id=140, 321.14981pt x 168.93112pt>
-File: ../../../images/4-12.png Graphic file (type png)
-<use ../../../images/4-12.png>
-Package pdftex.def Info: ../../../images/4-12.png  used on input line 534.
-(pdftex.def)             Requested size: 182.05104pt x 95.7633pt.
-[3 <../../../images/4-10.png> <../../../images/4-11.png> <../../../images/4-12.
-png>]
+(Font)              scaled to size 7.68005pt on input line 93.
 LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
-(Font)              scaled to size 7.68005pt on input line 623.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
-28.
+(Font)              scaled to size 7.68005pt on input line 95.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+01.
 (/Users/edxu96/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1626,52 +1589,54 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.18097pt on input line 237.
+[1{/Users/edxu96/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+] 
+AED: lastpage setting LastPage
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[4] 
-AED: lastpage setting LastPage
 - LAST -
 Extra skip:675.94505pt
 Left:675.94505pt/0.0pt
 Right:0.0pt/0.0pt
 Output:337.97252pt
-[5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 866.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 866.
+[2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
 (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 866.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 866.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 345.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2F04C36520FF307559A89192EC50BB06;699.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 866.
+(rerunfilecheck)             Checksum: 603B0F3CE2585E67ACA1ACC14F204C1B;44.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
  ) 
 Here is how much of TeX's memory you used:
- 27085 strings out of 482530
- 490378 string characters out of 5950156
- 802276 words of memory out of 5000000
- 41773 multiletter control sequences out of 15000+600000
- 621570 words of font info for 314 fonts, out of 8000000 for 9000
+ 26918 strings out of 482530
+ 487873 string characters out of 5950156
+ 810276 words of memory out of 5000000
+ 41714 multiletter control sequences out of 15000+600000
+ 614379 words of font info for 258 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 68i,11n,77p,447b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/Users/edxu96/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/
-edxu96/Library/TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}{/Users/edxu
-96/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/edxu96/Librar
-y/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></Users/edxu96/Lib
-rary/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></Users/edxu96/
-Library/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></Users/edx
-u96/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Users/edxu9
-6/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/edxu96/L
-ibrary/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb></Us
-ers/edxu96/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Use
-rs/edxu96/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (5 pages, 270173 bytes).
+ 68i,11n,64p,447b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/edxu96/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/User
+s/edxu96/Library/TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}{/Users/ed
+xu96/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/edxu96/Libr
+ary/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></Users/edxu96/L
+ibrary/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></Users/edxu9
+6/Library/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></Users/e
+dxu96/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Users/edx
+u96/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/edxu96
+/Library/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb></
+Users/edxu96/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></U
+sers/edxu96/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on main.pdf (2 pages, 107549 bytes).
 PDF statistics:
- 254 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 31 named destinations out of 1000 (max. 500000)
- 49265 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 5 named destinations out of 1000 (max. 500000)
+ 45077 words of extra memory for PDF output out of 51595 (max. 10000000)
 
