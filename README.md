@@ -42,7 +42,7 @@ two-sided market, limit order books, agent-based models, reservation-realization
 1. [Key points, arguments, data](./discussion/1.md)
 2. [Self anticipation and manipulation of future state](./discussion/2.md)
 3. [DES-MAS-CDA Simulation Platform for RexNet](./discussion/3.md)
-4. [Difference between RexNet and incumbent electricity market families](./discussion/4.md)
+4. [Difference compared to incumbent electricity market families](./discussion/4.md)
 5. [Why ABM and DES?](./discussion/5.md)
 6. [Hierarchical system structure](./discussion/6.md)
 7. [Difference compared to ordinary limit order markets](./discussion/7.md)
